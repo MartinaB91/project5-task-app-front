@@ -9,6 +9,7 @@
 ### Languages
 ### Frameworks and Libraries
 - [React Bootstrap (2.5.0)](https://react-bootstrap.github.io/)
+- [React Router (6.3.0)](https://reactrouter.com/en/main)
 ### Databases
 ### Storage
 ### Other tools
