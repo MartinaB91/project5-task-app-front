@@ -1,20 +1,19 @@
 import React from "react";
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Container, Nav} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container fluid>
-                <Navbar.Brand href="#">Family Star <i className="fas fa-star"></i></Navbar.Brand>
+                <Link to="/">
+                    <Navbar.Brand href="#">Family Star <i className="fas fa-star"></i></Navbar.Brand>
+                </Link>
                 <Navbar.Toggle aria-controls="navbarScroll" />
-                <Navbar.Collapse id="navbarScroll">
-                    <Nav
-                        className="me-auto my-2 my-lg-0"
-                        navbarScroll
-                    >
-                        <Nav.Link href="#"></Nav.Link>
+                <Navbar.Collapse id="navbarScroll" className="justify-content-end">
+                    <Nav>
                         {/* <Navbar.Text>Change family member</Navbar.Text> */}
-                        <Nav.Link href="#">Sign In</Nav.Link>
+                        <Link to="/signin">Sign In</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
