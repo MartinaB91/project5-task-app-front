@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import SignUpForm from "./pages/SignUp";
 import SignInForm from './pages/SignIn';
-
+import "./api/axiosDefaults";
 
 const  App = () => {
   return (
