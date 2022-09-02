@@ -1,5 +1,6 @@
 import './App.css';
-import NavBar from './components/NavBar';
+import NavBar from './components/common/NavBar';
+import Footer from './components/common/Footer';
 import { Container } from 'react-bootstrap';
 import { Routes, Route } from 'react-router-dom';
 import SignUpForm from "./pages/SignUp";
@@ -18,6 +19,7 @@ const  App = () => {
           <Route exact path="/taskboard" element={<h1>Task board</h1>} />
         </Routes>
       </Container>
+      <Footer />
     </div>
   );
 }
