@@ -1,0 +1,12 @@
+/* Styling for Navbar */
+
+.Link {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#star-icon {
+    color: Yellow;
+    padding-left: 0.5rem;
+}
