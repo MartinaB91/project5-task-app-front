@@ -1,0 +1,26 @@
+/* Styling for home page */
+
+#home-page-wrapper {
+    position: relative;
+}
+
+#home-img {
+    object-fit: cover;
+    width: 100%;
+}
+
+#home-text-wrapper {
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 7%;
+}
+
+#home-header {
+    font-size: 8rem;
+}
+
+#home-info-text {
+    width: 60%;
+    text-align: left;
+
+}
