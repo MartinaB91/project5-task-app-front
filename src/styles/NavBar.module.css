@@ -1,4 +1,9 @@
 /* Styling for Navbar */
+.NavBar {
+    position: absolute;
+    z-index: 1;
+    background: rgba(244, 240, 240, 0.4);
+}
 
 .Link {
     color: black;
@@ -7,6 +12,6 @@
 }
 
 #star-icon {
-    color: Yellow;
+    color: #D4AF37;
     padding-left: 0.5rem;
 }
