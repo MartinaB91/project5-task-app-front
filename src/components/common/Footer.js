@@ -5,8 +5,8 @@ import styles from "../../styles/Footer.module.css";
 
 const Footer = () => {
     return (
-        <Container fluid className={styles.Container}>
-            <ul className="nav justify-content-center border-bottom pb-3 mb-3">
+        <Container fluid id={styles["footer-container"]}>
+            <ul className="nav justify-content-center border-bottom border-dark pb-3 mb-3">
                 <li className="px-2 text-muted">
                     <Link className={styles.Link} to="/">Home</Link>
                 </li>

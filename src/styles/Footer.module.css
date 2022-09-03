@@ -1,9 +1,9 @@
 /* Styling for footer */
 
-.Container {
-    height: 15vh;
+#footer-container {
+    height: auto;
     padding: 1rem 0;
-    margin: 1.5rem 0;
+    position: absolute;
 }
 
 .Link {
