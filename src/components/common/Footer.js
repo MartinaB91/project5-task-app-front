@@ -17,7 +17,7 @@ const Footer = () => {
                     <Link className={styles.Link} to="#">Admin</Link>
                 </li>
             </ul>
-            <p class="text-center text-muted">© 2022 Martina Björlin</p>
+            <p className="text-center text-muted">© 2022 Martina Björlin</p>
         </Container>
     )
 };
