@@ -5,6 +5,16 @@ import styles from "../../styles/NavBar.module.css";
 
 
 const NavBar = () => {
+    const currentUser = true;
+
+    const buttonForSignedInUser = (
+        <Link to="/signout" className={styles.Link}>Sign Out</Link>
+        );
+
+    const buttonForNotSignedInUser = (
+        <Link to="/signin" className={styles.Link}>Sign In</Link>
+    );
+
     return (
         <Navbar className={styles.NavBar} bg="none" expand="lg" fixed="top">
             <Container fluid>
@@ -14,8 +24,8 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll" className="justify-content-end">
                     <Nav>
+                        {currentUser ? buttonForSignedInUser : buttonForNotSignedInUser}
                         {/* <Navbar.Text>Change family member</Navbar.Text> */}
-                        <Link to="/signin" className={styles.Link}>Sign In</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
