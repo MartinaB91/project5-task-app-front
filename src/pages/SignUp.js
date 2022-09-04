@@ -30,9 +30,9 @@ const SignUpForm = () => {
         e.preventDefault();
         try {
             axios.post('/dj-rest-auth/registration/', signUpForm);
-            navigate.push("/signin");
-        } catch (ex) {
-            setError(ex.response?.data);
+            navigate("/signin");
+        } catch (error) {
+            setError(error.response?.data);
         }
     };
 
