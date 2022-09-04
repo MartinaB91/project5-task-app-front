@@ -2,10 +2,16 @@ import React from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "../../styles/NavBar.module.css";
+import {
+    useCurrentUser,
+    useSetCurrentUser,
+  } from "../../context/CurrentUser";
 
 
 const NavBar = () => {
-    const currentUser = true;
+    const getCurrentUser = useCurrentUser();
+    const setCurrentUser = useSetCurrentUser();
+
 
     const buttonForSignedInUser = (
         <Link to="/signout" className={styles.Link}>Sign Out</Link>
@@ -24,7 +30,7 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll" className="justify-content-end">
                     <Nav>
-                        {currentUser ? buttonForSignedInUser : buttonForNotSignedInUser}
+                        {getCurrentUser ? buttonForSignedInUser : buttonForNotSignedInUser}
                         {/* <Navbar.Text>Change family member</Navbar.Text> */}
                     </Nav>
                 </Navbar.Collapse>
