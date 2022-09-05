@@ -7,8 +7,10 @@ import SignUpForm from "./pages/SignUp";
 import SignInForm from './pages/SignIn';
 import HomePage from './pages/Home';
 import "./api/axiosDefaults";
+import TaskBoard from './pages/TaskBoard';
 
 const  App = () => {
+
   return (
     <div className="App">
       < NavBar />
@@ -17,7 +19,7 @@ const  App = () => {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/signin" element={<SignInForm />} />
           <Route exact path="/signup" element={<SignUpForm />} />
-          <Route exact path="/taskboard" element={<h1>Task board</h1>} />
+          <Route exact path="/taskboard" element={<TaskBoard />} />
         </Routes>
       </Container>
       <Footer />
