@@ -1,4 +1,5 @@
 import axios from 'axios';
+import styles from '../styles/SignUp.module.css';
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Container, Alert } from 'react-bootstrap';
@@ -37,7 +38,7 @@ const SignUpForm = () => {
     };
 
     return (
-        <Container>
+        <Container className={styles.Container}>
             <Form onSubmit={handleFormSubmit}>
                 <Form.Group className="mb-3" controlId="username">
                     <Form.Label>Username</Form.Label>
