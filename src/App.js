@@ -1,4 +1,4 @@
-import './App.css';
+import styles from './App.module.css';
 import NavBar from './components/common/NavBar';
 import Footer from './components/common/Footer';
 import { Container } from 'react-bootstrap';
@@ -9,12 +9,13 @@ import HomePage from './pages/Home';
 import "./api/axiosDefaults";
 import TaskBoard from './pages/TaskBoard';
 
-const  App = () => {
 
+const  App = () => {
+  
   return (
-    <div className="App">
+    <div className={styles.App}>
       < NavBar />
-      <Container fluid className="p-0">
+      <Container fluid className={styles.Container}>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/signin" element={<SignInForm />} />
