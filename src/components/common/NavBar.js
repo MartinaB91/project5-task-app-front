@@ -1,24 +1,27 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import axios from 'axios';
+import { Navbar, Container, Nav, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "../../styles/NavBar.module.css";
 import {
     useCurrentUser,
     useSetCurrentUser,
   } from "../../context/CurrentUser";
+import SignInForm from "../../pages/SignIn";
 
 
 const NavBar = () => {
     const getCurrentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
-
     const buttonForSignedInUser = (
-        <Link to="/signout" className={styles.Link}>Sign Out</Link>
+        <>
+        <Link to="/taskboard" className={styles.Link}>Task Board</Link>
+        </>
         );
 
     const buttonForNotSignedInUser = (
-        <Link to="/signin" className={styles.Link}>Sign In</Link>
+        <Link to="/signin" className={styles.Link} onClick={SignInForm}>Sign In</Link>
     );
 
     return (
