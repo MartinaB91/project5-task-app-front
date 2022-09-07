@@ -7,7 +7,8 @@ import SignUpForm from "./pages/SignUp";
 import SignInForm from './pages/SignIn';
 import HomePage from './pages/Home';
 import "./api/axiosDefaults";
-import TaskBoard from './pages/TaskBoard';
+import TaskBoard from './pages/task/TaskBoard';
+import CreateFamilyMemberForm from './pages/family_member/CreateFamilyMember';
 
 
 const  App = () => {
@@ -21,6 +22,7 @@ const  App = () => {
           <Route exact path="/signin" element={<SignInForm />} />
           <Route exact path="/signup" element={<SignUpForm />} />
           <Route exact path="/taskboard" element={<TaskBoard />} />
+          <Route exact path="/addfamilymember" element={<CreateFamilyMemberForm />} />
         </Routes>
       </Container>
       <Footer />
