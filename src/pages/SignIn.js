@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 
 import { Link, useNavigate } from "react-router-dom";
@@ -9,7 +11,8 @@ import Container from 'react-bootstrap/Container';
 import SignUpForm from "./SignUp";
 
 import { useSetCurrentUser } from "../context/CurrentUser";
-import {useRedirect} from "../hooks/useRedirect";
+import { useRedirect } from "../hooks/useRedirect";
+import styles from "../styles/SignIn.module.css";
 
 
 const SignInForm = () => {
@@ -46,33 +49,37 @@ const SignInForm = () => {
     };
 
     return (
-        <Container>
+        <Container className={styles.Container}>
             <Form onSubmit={handleFormSubmit}>
-                <Form.Group className="mb-3" controlId="username">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Username"
-                        name="username"
-                        onChange={onFormFieldUpdate}
-                        value={username}
-                    />
-                </Form.Group>
+                <Row>
+                    <Col xs={12} md={10} lg={6} className="mx-auto text-start">
+                    <Form.Group className="mb-3" controlId="username">
+                        <Form.Label>Username</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter username"
+                            name="username"
+                            onChange={onFormFieldUpdate}
+                            value={username}
+                        />
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="password">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        onChange={onFormFieldUpdate}
-                        value={password}
-                    />
-                </Form.Group>
+                    <Form.Group className="mb-3" controlId="password">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control
+                            type="password"
+                            placeholder="Enter password"
+                            name="password"
+                            onChange={onFormFieldUpdate}
+                            value={password}
+                        />
+                    </Form.Group>
 
-                <Button variant="secondary" type="submit">
-                    Sign In
-                </Button>
+                    <Button variant="secondary" type="submit">
+                        Sign In
+                    </Button>
+                    </Col>
+                </Row>
             </Form>
             <Link to="/signup" onClick={SignUpForm}>Sign Up</Link>
         </Container>
