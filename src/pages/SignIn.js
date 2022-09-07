@@ -50,6 +50,7 @@ const SignInForm = () => {
 
     return (
         <Container className={styles.Container}>
+            <h2>Sign Up</h2>
             <Form onSubmit={handleFormSubmit}>
                 <Row>
                     <Col xs={12} md={10} lg={6} className="mx-auto text-start">
