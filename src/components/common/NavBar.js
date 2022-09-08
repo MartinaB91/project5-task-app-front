@@ -17,13 +17,6 @@ const NavBar = () => {
     const handleSignOut = async () => {
         try {
         await axios.post("/dj-rest-auth/logout/");
-        //   .then(res => {
-        //     localStorage.removeItem('user');
-        //     localStorage.removeItem('username');
-        //     localStorage.removeItem('expirationDate');
-        //     localStorage.removeItem('token');
-        // })
-
           setCurrentUser(null);
         } catch (err) {
             alert(err);
