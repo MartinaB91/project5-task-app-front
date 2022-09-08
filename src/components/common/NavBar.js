@@ -14,9 +14,27 @@ const NavBar = () => {
     const getCurrentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
 
+    const handleSignOut = async () => {
+        try {
+        await axios.post("/dj-rest-auth/logout/");
+        //   .then(res => {
+        //     localStorage.removeItem('user');
+        //     localStorage.removeItem('username');
+        //     localStorage.removeItem('expirationDate');
+        //     localStorage.removeItem('token');
+        // })
+
+          setCurrentUser(null);
+        } catch (err) {
+            alert(err);
+          console.log(err);
+        }
+      };
+
     const buttonForSignedInUser = (
         <>
         <Link to="/taskboard" className={styles.Link}>Task Board</Link>
+        <Link to="/" className={styles.Link} onClick={handleSignOut}>Sign Out</Link>
         </>
         );
 
