@@ -17,6 +17,7 @@ const NavBar = () => {
     const handleSignOut = async () => {
         try {
         await axios.post("/dj-rest-auth/logout/");
+
           setCurrentUser(null);
         } catch (err) {
             alert(err);
@@ -28,6 +29,7 @@ const NavBar = () => {
         <>
         <Link to="/taskboard" className={styles.Link}>Task Board</Link>
         <Link to="/" className={styles.Link} onClick={handleSignOut}>Sign Out</Link>
+        <Link to="/addfamilymember" className={styles.Link}>Add Family Member</Link>
         </>
         );
 
