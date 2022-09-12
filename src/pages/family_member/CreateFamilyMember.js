@@ -5,9 +5,11 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
+import { Image } from "react-bootstrap";
 import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+
 
 
 const CreateFamilyMemberForm = () => {
@@ -32,6 +34,16 @@ const CreateFamilyMemberForm = () => {
 
     };
 
+    const onImagefieldUpdate = (event) => {
+        if (event.target.files.length){
+            URL.revokeObjectURL(family_member_img);
+            setCreateFamilyMemberForm({
+                ...createFamilyMemberForm,
+                family_member_img: URL.createObjectURL(event.target.files[0])
+            });            
+        }
+    };
+
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -48,17 +60,28 @@ const CreateFamilyMemberForm = () => {
             <Form onSubmit={handleFormSubmit}>
                 <Row>
                     <Col xs={12} md={10} lg={6} className="mx-auto text-start">
-                    <Form.Group roundedCircle className="mb-3" controlId="memberImage">
-                            <img src={"https://www.svgrepo.com/show/182626/user-profile.svg"} className="mb-4"/>
+                    <Form.Group className="mb-3">
+                        {family_member_img ? (
+                            <>
+                            <Image roundedCircle className={`${styles.Image} mb-4 d-block`}  src={family_member_img}/>
+                            <Form.Label htmlFor="image-upload">Change Photo</Form.Label>
+                            </>
+
+                        ) : (
+                            <>
+                            <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={"https://www.svgrepo.com/show/182626/user-profile.svg"}/>
+                            <Form.Label htmlFor="image-upload">Add a Photo</Form.Label>
+                            </>
+                        )}
                             <Form.Control
                                 type="file"
                                 name="family_member_img"
-                                accept = "image/jpeg,image/png"
-                                onChange={onFormFieldUpdate}
-                                value={family_member_img}
+                                id="image-upload"
+                                accept = "image/jpeg,image/png,image/jpg"
+                                onChange={onImagefieldUpdate}
                             />
                         </Form.Group>
-
+                        
                         <Form.Group className="mb-3" controlId="nickname">
                             <Form.Label>Nickname</Form.Label>
                             <Form.Control
