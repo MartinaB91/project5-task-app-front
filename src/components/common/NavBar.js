@@ -33,11 +33,11 @@ const NavBar = () => {
         <>
             <Link to="/taskboard" className={styles.Link}>Task Board</Link>
             <Link to="/" className={styles.Link} onClick={handleSignOut}>Sign Out</Link>
-            <Dropdown>
+            <Dropdown align="end">
                 <Dropdown.Toggle>
                 <FontAwesomeIcon icon={faUser} />
                 </Dropdown.Toggle>
-                <Dropdown.Menu>
+                <Dropdown.Menu className={styles.Menu}>
                     <DisplayFamilyMember />
                 </Dropdown.Menu>
             </Dropdown>

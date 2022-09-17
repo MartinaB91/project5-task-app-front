@@ -12,7 +12,7 @@ import CreateFamilyMemberForm from './pages/family_member/CreateFamilyMember';
 
 
 const  App = () => {
-  
+
   return (
     <div className={styles.App}>
       < NavBar />
