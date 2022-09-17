@@ -5,14 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { CurrentUserProvider } from "../src/context/CurrentUser";
+import { CurrentFamilyMemberProvider } from "../src/context/CurrentFamilyMemberContext";
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-    <CurrentUserProvider>
+      <CurrentUserProvider>
+        <CurrentFamilyMemberProvider>
           <App />
+        </CurrentFamilyMemberProvider>
       </CurrentUserProvider>
     </Router>
   </React.StrictMode>
