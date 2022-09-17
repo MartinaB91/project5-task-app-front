@@ -42,7 +42,7 @@ export const DisplayFamilyMember = () => {
         <Col>
           {familymembers.map((familymember) => {
             return (
-              <Dropdown.Item key={familymember.name}><Button onClick={() => setFamilyMemberContext(JSON.stringify(familymember))} to="taskboard/">{familymember.name}</Button></Dropdown.Item>
+              <Dropdown.Item key={familymember.name}><Link onClick={() => setFamilyMemberContext(JSON.stringify(familymember))} to="taskboard/">{familymember.name}</Link></Dropdown.Item>
               )
           })}
           <Link to="/addfamilymember" className={styles.Link}>Add Family Member<FontAwesomeIcon icon={faUserPlus} /></Link>
