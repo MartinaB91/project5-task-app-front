@@ -16,3 +16,11 @@
 #tasks-wrapper {
     background-color: yellow;
 }
+
+#todo-tasks-wrapper {
+    background-color: pink;
+}
+
+.FontAwesomeIcon {
+    color: #D4AF37;
+}

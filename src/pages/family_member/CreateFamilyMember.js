@@ -8,7 +8,8 @@ import Button from 'react-bootstrap/Button';
 import { Image } from "react-bootstrap";
 import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { DisplayFamilyMember } from "../../components/common/DisplayFamilyMember";
 
 
 
@@ -24,6 +25,7 @@ const CreateFamilyMemberForm = () => {
 
     const [error, setError] = useState({});
 
+    const imageInput = useRef(null);
     const navigate = useNavigate();
 
     const onFormFieldUpdate = (e) => {
@@ -47,8 +49,10 @@ const CreateFamilyMemberForm = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
-            axios.post('/familymembers/', createFamilyMemberForm);
-            navigate("/");
+            const { data } = axios.post('familymembers/members/', createFamilyMemberForm);
+            
+            // navigate(`/familymembers/members/${data.id}`);
+            navigate('/');
         } catch (error) {
             alert.apply(error);
             setError(error.response?.data);
@@ -79,6 +83,7 @@ const CreateFamilyMemberForm = () => {
                                 id="image-upload"
                                 accept = "image/jpeg,image/png,image/jpg"
                                 onChange={onImagefieldUpdate}
+                                ref={imageInput}
                             />
                         </Form.Group>
                         
