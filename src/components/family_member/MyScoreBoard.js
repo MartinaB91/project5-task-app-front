@@ -3,15 +3,15 @@ import { useParams } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import { useState, useContext } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Container } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
-import {CurrentFamilyMemberContext} from "../../context/CurrentFamilyMemberContext";
+import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 
 
 export const MyScoreBoard = () => {
     const currentUser = useCurrentUser();
     const { id } = useParams();
-    
+
     const [familymember, setFamilyMember] = useState({ results: [] });
 
     useEffect(() => {
@@ -29,18 +29,19 @@ export const MyScoreBoard = () => {
             }
         };
         handleMount();
-    },[id]);
+    }, [id]);
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
 
     // Convert json to js object
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
     return (
-        <Container>
-            <h1>{currentFamilyMemberObj.name}</h1>
-            <Image roundedCircle cmb-4 src={currentFamilyMemberObj.family_member_img}/>
-            <h2>Star points: {currentFamilyMemberObj.star_points}</h2>
-            <h2>ongoing tasks: {currentFamilyMemberObj.ongoing_tasks}</h2>
-            <h2>closed tasks: {currentFamilyMemberObj.closed_tasks}</h2>
-        </Container>
+        <>
+            <h3>My Score board</h3>
+            <h4>{currentFamilyMemberObj.name}</h4>
+            <Image roundedCircle cmb-4 src={currentFamilyMemberObj.family_member_img} />
+            <h4>Star points: {currentFamilyMemberObj.star_points}</h4>
+            <h4>ongoing tasks: {currentFamilyMemberObj.ongoing_tasks}</h4>
+            <h4>closed tasks: {currentFamilyMemberObj.closed_tasks}</h4>
+        </>
     )
 }
