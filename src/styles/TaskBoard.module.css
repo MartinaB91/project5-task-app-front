@@ -23,4 +23,25 @@
 
 .FontAwesomeIcon {
     color: #D4AF37;
+    margin-left: 6%;
+}
+
+.Button {
+    color: black;
+}
+
+.userPlus {
+    color: black;
+}
+
+.checkMark {
+    color: green;
+}
+
+.endDate {
+    font-size: 1rem;
+}
+
+.taskTitle {
+    font-size: 1.7rem;
 }
