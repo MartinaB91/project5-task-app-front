@@ -11,7 +11,8 @@ import SignInForm from "../../pages/SignIn";
 import { DisplayFamilyMember } from "../common/DisplayFamilyMember";
 import { Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faStar, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+
 
 const NavBar = () => {
     const getCurrentUser = useCurrentUser();
@@ -38,7 +39,10 @@ const NavBar = () => {
                 <FontAwesomeIcon icon={faUser} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu className={styles.Menu}>
-                    <DisplayFamilyMember />
+                <Dropdown.Item ><DisplayFamilyMember /></Dropdown.Item>
+                <Dropdown.Item >
+                    <Link to="/addtask">Add Task <FontAwesomeIcon icon={faCirclePlus} /></Link>
+                </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
 
