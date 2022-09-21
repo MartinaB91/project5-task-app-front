@@ -33,16 +33,18 @@ const NavBar = () => {
     const buttonForSignedInUser = (
         <>
             <Link to="/taskboard" className={styles.Link}>Task Board</Link>
-            <Link to="/" className={styles.Link} onClick={handleSignOut}>Sign Out</Link>
             <Dropdown align="end">
                 <Dropdown.Toggle>
-                <FontAwesomeIcon icon={faUser} />
+                    <FontAwesomeIcon icon={faUser} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu className={styles.Menu}>
-                <Dropdown.Item ><DisplayFamilyMember /></Dropdown.Item>
-                <Dropdown.Item >
-                    <Link to="/addtask">Add Task <FontAwesomeIcon icon={faCirclePlus} /></Link>
-                </Dropdown.Item>
+                    <Dropdown.Item ><DisplayFamilyMember /></Dropdown.Item>
+                    <Dropdown.Item >
+                        <Link to="/addtask" className={styles.Link}>Add Task <FontAwesomeIcon icon={faCirclePlus} /></Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item >
+                        <Link to="/" className={styles.Link} onClick={handleSignOut}>Sign Out</Link>
+                    </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
 
@@ -58,7 +60,7 @@ const NavBar = () => {
             <Container fluid>
                 <Link to="/" className={styles.Link}>
                     <Navbar.Brand>Family Star
-                    <FontAwesomeIcon icon={faStar} id={styles["star-icon"]} /></Navbar.Brand>
+                        <FontAwesomeIcon icon={faStar} id={styles["star-icon"]} /></Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll" className="justify-content-end">
