@@ -20,6 +20,7 @@ export const CreateTask = () => {
 
     const [error, setError] = useState({});
     const [categories, setCategories] = useState([]);
+    const [familymembers, setFamilymember] = useState([]);
 
     const navigate = useNavigate();
 
@@ -31,6 +32,7 @@ export const CreateTask = () => {
     };
 
     const handleCategories = async () => {
+        // Gets all categories options
         await axios.get("category/categories/")
             .then((response) => {
                 console.log(response);
@@ -47,8 +49,27 @@ export const CreateTask = () => {
             .catch((e) => console.log(e));
     };
 
+
+    const handleFamilyMembers = async () => {
+        // Gets all family member you can assign your task to
+        await axios.get("familymembers/members/")
+            .then((response) => {
+                console.log(response);
+
+                // "Convert" json to array
+                let responseAsArray = [];
+                for (let resp of response.data) {
+                    responseAsArray.push(resp);
+                }
+                setFamilymember(responseAsArray);
+
+            })
+            .catch((e) => console.log(e));
+    };
+
     useEffect(() => {
         handleCategories();
+        handleFamilyMembers();
     }, []);
 
     const handleFormSubmit = async (e) => {
@@ -87,8 +108,11 @@ export const CreateTask = () => {
                                 name="category"
                                 onChange={onFormFieldUpdate}
                                 value={category}
-                            >
-                                <option value="" disabled selected>Choose a category</option>
+                            >   
+                                {/* Inspiration from:
+                                    https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react
+                                 */}
+                                <option disabled={true} value="">Choose a category</option>
                                 {categories.map((category) => (
                                     <option key={category.id}>{category.name}</option>
                                 ))}
@@ -98,7 +122,7 @@ export const CreateTask = () => {
                         <Form.Group className="mb-3" controlId="endDate">
                             <Form.Label>End date</Form.Label>
                             <Form.Control
-                                type="datetime-local"
+                                type="date"
                                 name="end_date"
                                 onChange={onFormFieldUpdate}
                                 value={end_date}
@@ -128,16 +152,20 @@ export const CreateTask = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="assigned">
-                            <Form.Label>Assign</Form.Label>
+                            <Form.Label>Want to assign your task?</Form.Label>
                             <Form.Control
-                                // as = {options.map((option) => (
-                                //     <option>{option.name}</option>
-                                // ))}
+                                as="select"
                                 type="arrayOf"
                                 name="assigned"
                                 onChange={onFormFieldUpdate}
                                 value={assigned}
-                            />
+                            >   
+                                <option disabled={true} value="">Choose a member</option>
+                                {familymembers.map((familymember) => (
+                                    <option key={familymember.id}>{familymember.name}</option>
+                                ))}
+
+                            </Form.Control>
                         </Form.Group>
                     </Col>
                 </Row>
