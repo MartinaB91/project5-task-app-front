@@ -9,14 +9,15 @@ import styles from '../../styles/CreateTask.module.css';
 export const CreateTask = () => {
     const [createTaskForm, setCreateTaskForm] = useState({
         title: "",
-        category: "",
+        category_name: "",
         end_date: "",
         description: "",
         star_points: "",
         assigned: "",
+        creator: 28, // TODO: Get actual
     });
 
-    const { title, category, end_date, description, star_points, assigned } = createTaskForm;
+    const { title, category_name, end_date, description, star_points, assigned } = createTaskForm;
 
     const [error, setError] = useState({});
     const [categories, setCategories] = useState([]);
@@ -44,7 +45,6 @@ export const CreateTask = () => {
                 }
 
                 setCategories(responseAsArray);
-
             })
             .catch((e) => console.log(e));
     };
@@ -75,7 +75,7 @@ export const CreateTask = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = axios.post('tasks/', createTaskForm);
+            const { data } = axios.post('taskboard/tasks/', createTaskForm);
             navigate('/taskboard');
         } catch (error) {
             alert.apply(error);
@@ -105,16 +105,16 @@ export const CreateTask = () => {
                             <Form.Control
                                 as="select"
                                 type="arrayOf"
-                                name="category"
+                                name="category_name"
                                 onChange={onFormFieldUpdate}
-                                value={category}
+                                value={category_name}
                             >   
                                 {/* Inspiration from:
                                     https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react
                                  */}
                                 <option disabled={true} value="">Choose a category</option>
-                                {categories.map((category) => (
-                                    <option key={category.id}>{category.name}</option>
+                                {categories.map((categoryObj) => (
+                                    <option value={categoryObj.name} key={categoryObj.id}>{categoryObj.name}</option>
                                 ))}
                             </Form.Control>
                         </Form.Group>
@@ -162,7 +162,7 @@ export const CreateTask = () => {
                             >   
                                 <option disabled={true} value="">Choose a member</option>
                                 {familymembers.map((familymember) => (
-                                    <option key={familymember.id}>{familymember.name}</option>
+                                    <option value={familymember.id} key={familymember.id}>{familymember.name}</option>
                                 ))}
 
                             </Form.Control>
