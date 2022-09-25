@@ -2,15 +2,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faUserPlus, faEllipsisVertical, faStar, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import axios from "axios";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Col, Card, Button, Row } from "react-bootstrap";
 import styles from "../../styles/TaskBoard.module.css";
+import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 
 
 
 export const DisplayFamilyMemberTasks = () => {
 
   const [tasks, setTasks] = useState([])
+
+  // Todo: Use when assigning by click on user +
+  const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
+  const currentFamilyMemberObj = JSON.parse(familyMemberContext);
+  const [familymembersList, setFamilymembersList] = useState([])
 
   useEffect(() => {
     const handleMount = async () => {
@@ -29,9 +35,40 @@ export const DisplayFamilyMemberTasks = () => {
         .catch((e) => console.log(e));
 
     };
+
+    
+  const handleFamilyMembersList = async () => {
+    await axios.get("familymembers/members/")
+      .then((response) => {
+        console.log(response);
+
+        // "Convert" json to array
+        let responseAsArray = [];
+        for (let resp of response.data) {
+          responseAsArray.push(resp);
+        }
+
+        setFamilymembersList(responseAsArray);
+      })
+      .catch((e) => console.log(e));
+  };
+
     handleMount();
+    handleFamilyMembersList();
   }, []);
 
+  // Return the name of the person that is asssigned a task. 
+  const getFamilyMemberNameById = (familymemberId) => {
+    for (const familymember of familymembersList) {
+      if (familymember.id === familymemberId) {
+        return familymember.name;
+      }
+    } 
+  }
+
+  const notAssignedTask = (
+    <Button className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x`}/></Button>
+  )
 
   return (
     <Row className="g-1">
@@ -58,7 +95,8 @@ export const DisplayFamilyMemberTasks = () => {
                 </Card.Text>
                 <Row>
                   <Col xs={2} md={2}>
-                    <Button className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x`}/></Button>
+                    {task.assigned === null || task.assigned === ""  ? notAssignedTask :  getFamilyMemberNameById(task.assigned)}
+                  
                   </Col>
                   <Col xs={7}md={7}>
                     <Card.Text className="text-start">{task.category_name}</Card.Text>
