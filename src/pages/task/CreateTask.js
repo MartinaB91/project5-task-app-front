@@ -1,12 +1,16 @@
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Form, Row, Col } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
+import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 
 export const CreateTask = () => {
+    const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
+    const currentFamilyMemberObj = JSON.parse(familyMemberContext);
+
     const [createTaskForm, setCreateTaskForm] = useState({
         title: "",
         category_name: "",
@@ -14,7 +18,7 @@ export const CreateTask = () => {
         description: "",
         star_points: "",
         assigned: "",
-        creator: 28, // TODO: Get actual
+        creator: currentFamilyMemberObj.id,
     });
 
     const { title, category_name, end_date, description, star_points, assigned } = createTaskForm;
