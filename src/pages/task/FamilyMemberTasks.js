@@ -6,17 +6,19 @@ import { useState, useEffect, useContext } from "react";
 import { Col, Card, Button, Row } from "react-bootstrap";
 import styles from "../../styles/TaskBoard.module.css";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
+import { EllipsisDropdown } from "../../components/common/task/EllipsisButton";
 
 
 
 export const DisplayFamilyMemberTasks = () => {
 
   const [tasks, setTasks] = useState([])
-
+ 
   // Todo: Use when assigning by click on user +
   const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
   const currentFamilyMemberObj = JSON.parse(familyMemberContext);
-  const [familymembersList, setFamilymembersList] = useState([])
+  const [familymembersList, setFamilymembersList] = useState([]);
+
 
   useEffect(() => {
     const handleMount = async () => {
@@ -57,6 +59,10 @@ export const DisplayFamilyMemberTasks = () => {
     handleFamilyMembersList();
   }, []);
 
+  const handleAssignment = () => {
+    alert(currentFamilyMemberObj);
+  }
+
   // Return the name of the person that is asssigned a task. 
   const getFamilyMemberNameById = (familymemberId) => {
     for (const familymember of familymembersList) {
@@ -80,7 +86,7 @@ export const DisplayFamilyMemberTasks = () => {
               <Card.Header>
                 <Card.Title className="text-start" >
                   <Row>
-                    <Col xs={1} sm={1} md={2} lg={1}><Button className={styles.Button} variant="link"><FontAwesomeIcon icon={faEllipsisVertical} /></Button></Col>
+                    <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown/></Col>
                     <Col xs={8} sm={8} md={6} lg={7} className={`${styles.Button} ${styles.taskTitle} text-center`}>{task.title}</Col>
                     <Col xs={3} sm={3} md={4} lg={3} className={`${styles.Button} text-end`}>{task.star_points}<FontAwesomeIcon className={styles.FontAwesomeIcon} icon={faStar}/></Col>
                   </Row>

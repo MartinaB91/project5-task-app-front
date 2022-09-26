@@ -1,0 +1,7 @@
+/* Styling for ellipsis button and dropdown */
+
+.DropdownItem {
+    display: block;
+    width: auto;
+    padding: 1rem;
+}
