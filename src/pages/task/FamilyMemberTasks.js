@@ -1,13 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faUserPlus, faEllipsisVertical, faStar, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import {faUserPlus, faStar, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import axios from "axios";
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { Col, Card, Button, Row } from "react-bootstrap";
 import styles from "../../styles/TaskBoard.module.css";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
-import { EllipsisDropdown } from "../../components/common/task/EllipsisButton";
-
+import { EllipsisDropdown } from "../../components/task/TaskEllipsisButtons";
 
 
 export const DisplayFamilyMemberTasks = () => {
@@ -18,7 +17,6 @@ export const DisplayFamilyMemberTasks = () => {
   const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
   const currentFamilyMemberObj = JSON.parse(familyMemberContext);
   const [familymembersList, setFamilymembersList] = useState([]);
-
 
   useEffect(() => {
     const handleMount = async () => {
@@ -35,9 +33,7 @@ export const DisplayFamilyMemberTasks = () => {
           setTasks(tasksAsArray);
         })
         .catch((e) => console.log(e));
-
     };
-
     
   const handleFamilyMembersList = async () => {
     await axios.get("familymembers/members/")
@@ -58,10 +54,6 @@ export const DisplayFamilyMemberTasks = () => {
     handleMount();
     handleFamilyMembersList();
   }, []);
-
-  const handleAssignment = () => {
-    alert(currentFamilyMemberObj);
-  }
 
   // Return the name of the person that is asssigned a task. 
   const getFamilyMemberNameById = (familymemberId) => {
@@ -86,7 +78,7 @@ export const DisplayFamilyMemberTasks = () => {
               <Card.Header>
                 <Card.Title className="text-start" >
                   <Row>
-                    <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown/></Col>
+                    <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown id={task.id}/></Col>
                     <Col xs={8} sm={8} md={6} lg={7} className={`${styles.Button} ${styles.taskTitle} text-center`}>{task.title}</Col>
                     <Col xs={3} sm={3} md={4} lg={3} className={`${styles.Button} text-end`}>{task.star_points}<FontAwesomeIcon className={styles.FontAwesomeIcon} icon={faStar}/></Col>
                   </Row>
