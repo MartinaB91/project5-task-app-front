@@ -34,7 +34,8 @@ export const MyScoreBoard = () => {
 
     // Convert json to js object
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
-    return (
+
+    const familyMemberInfo = (
         <>
             <h3>My Score board</h3>
             <h4>{currentFamilyMemberObj.name}</h4>
@@ -43,5 +44,17 @@ export const MyScoreBoard = () => {
             <h4>ongoing tasks: {currentFamilyMemberObj.ongoing_tasks}</h4>
             <h4>closed tasks: {currentFamilyMemberObj.closed_tasks}</h4>
         </>
+        
     )
+
+    const emptyFamilyMemberInfo = (
+        <h3>there is no choosen familymember. Please choose a member</h3>
+    )
+ 
+    return (
+        <>
+         {familyMemberContext === null || familyMemberContext === "" ? emptyFamilyMemberInfo :  familyMemberInfo}
+        </>
+    )
+
 }
