@@ -70,7 +70,7 @@ export const DisplayFamilyMemberTasks = () => {
 
   return (
     <Row className="g-1">
-      <h2>To-Do</h2>
+      <h2>Tasks</h2>
       {tasks.map((task) => {
         return (
           <Col key={task.id} sm={12} md={6} lg={4}>
