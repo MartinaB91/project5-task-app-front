@@ -11,6 +11,7 @@ import { axiosReq } from '../../api/axiosDefaults';
 export const EditTask = () => {
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
+    const { id } = useParams();
 
     const [createTaskForm, setCreateTaskForm] = useState({
         title: "",
@@ -20,23 +21,23 @@ export const EditTask = () => {
         star_points: "",
         assigned: "",
         creator: currentFamilyMemberObj.id,
+        task_id: id
     });
 
-    const { title, category_name, end_date, description, star_points, assigned, creator } = createTaskForm;
+    const { title, category_name, end_date, description, star_points, assigned, creator, task_id } = createTaskForm;
 
     const [error, setError] = useState({});
     const [categories, setCategories] = useState([]);
     const [familymembers, setFamilymember] = useState([]);
 
     const navigate = useNavigate();
-    const { id } = useParams();
 
     useEffect(() => {
         const handleMount = async () => {
             try {
                 const { data } = await axiosReq.get(`taskboard/tasks/${id}/`);
                 const { title, category_name, end_date, description, star_points, assigned, belongs_to_profile } = data;
-                belongs_to_profile ? setCreateTaskForm({title, category_name, end_date, description, star_points, assigned, creator}) : navigate('/taskboard');
+                belongs_to_profile ? setCreateTaskForm({title, category_name, end_date, description, star_points, assigned, creator, id}) : navigate('/taskboard');
                 
             } catch (error) {
                 console.log(error);
