@@ -31,25 +31,29 @@ export const ProfileScoreBoard = () => {
 
     return (
     <>
-        {/* <h4 className={styles.h4}>{currentUser.username} Scoreboard</h4> */}
-        <Row>
+        <Row className="justify-content-sm-center">
         <Col xs={5} sm={3}>
             <Image roundedCircle src={Test} className={styles.Image} />
-            <p className={styles.ScoreBoardText}>Family star
+            <p className={styles.FamilyStar}>User</p>
+            <p className={styles.ScoreBoardTextImage}>Family star
                 <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIcon} />
             </p>
         </Col>
         <Col xs={3} sm={3} className="text-start text-md-center">
             <p className={styles.ScoreBoardNumber}>10</p>
             <p className={styles.ScoreBoardText}>To-Do</p>
-        </Col>
+        </Col> 
         <Col xs={4} sm={3}>
             <p className={styles.ScoreBoardNumber}>10</p>
-            <p className={styles.ScoreBoardText}>Completed</p>
-        </Col> 
+            <p className={styles.ScoreBoardText}>Completed Tasks</p>
+        </Col>
+        <Col className="d-none d-sm-block">
+            <p className={styles.ScoreBoardNumber}>10</p>
+            <p className={styles.ScoreBoardText}>Ongoing Tasks</p>
+        </Col>
         </Row>
     </>
     )
-
+    {/* <h4 className={styles.h4}>{currentUser.username} Scoreboard</h4> */}
     // <p>{profile["user"]}</p>
 }
