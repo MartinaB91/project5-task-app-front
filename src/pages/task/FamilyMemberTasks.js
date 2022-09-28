@@ -7,6 +7,8 @@ import { Col, Card, Button, Row } from "react-bootstrap";
 import styles from "../../styles/TaskBoard.module.css";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import { EllipsisDropdown } from "../../components/task/TaskEllipsisButtons";
+import Image from "react-bootstrap/Image";
+import Test from "../../assets/images/test-sign-in.jpg";
 
 
 export const DisplayFamilyMemberTasks = () => {
@@ -69,8 +71,7 @@ export const DisplayFamilyMemberTasks = () => {
   )
 
   return (
-    <Row className="g-1">
-      <h2>Tasks</h2>
+    <Row className="g-2">
       {tasks.map((task) => {
         return (
           <Col key={task.id} sm={12} md={6} lg={4}>
@@ -84,7 +85,7 @@ export const DisplayFamilyMemberTasks = () => {
                   </Row>
                 </Card.Title> 
                 </Card.Header>
-              <Card.Body>
+              <Card.Body className={styles.CardBody}>
               <Card.Text className={`${styles.endDate} text-end`}>
                   Done: {task.end_date}
                 </Card.Text>
@@ -93,11 +94,12 @@ export const DisplayFamilyMemberTasks = () => {
                 </Card.Text>
                 <Row>
                   <Col xs={2} md={2}>
-                    {task.assigned === null || task.assigned === ""  ? notAssignedTask :  getFamilyMemberNameById(task.assigned)}
+                    {/* {task.assigned === null || task.assigned === ""  ? notAssignedTask :  getFamilyMemberNameById(task.assigned)} */}
+                    {task.assigned === null || task.assigned === ""  ? notAssignedTask :  <Image roundedCircle src={Test} className={styles.Image} />}
                   
                   </Col>
                   <Col xs={7}md={7}>
-                    <Card.Text className="text-start">{task.category_name}</Card.Text>
+                    <Card.Text className="text-center mt-3">{task.category_name}</Card.Text>
                   </Col>
                   <Col xs={3} md={3}>
                     <Button variant="link" className="text-end"><FontAwesomeIcon icon={ faCircleCheck } size="lg" className={`${styles.checkMark} fa-2x`}  /></Button>

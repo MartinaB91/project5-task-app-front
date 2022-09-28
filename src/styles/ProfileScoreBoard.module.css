@@ -19,11 +19,11 @@ h4 {
 }
 
 .ScoreBoardText {
-    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .ScoreBoardTextImage {
-    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
 }
 
 .FontAwesomeIcon {
@@ -35,7 +35,7 @@ h4 {
 .FamilyStar {
     margin-top: 0.5rem;
     margin-bottom: 0;
-    font-weight: bold;
+    font-family: 'Permanent Marker', cursive;
 }
 
 /* Media queries for profile scoreboard */

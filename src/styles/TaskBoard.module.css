@@ -1,24 +1,27 @@
 /* Styling for taskboard page */
 
 .Container {
-    margin-top: 6rem;
+    margin-top: 4rem;
 }
 
+.Headers {
+    font-family: 'Permanent Marker', cursive;
+  }
+
 #family-member-score-board {
-    background-color: blue;
+    background-color: #FFC0CB;
+    border-radius: 1rem;
+    
 }
 
 #my-score-board {
-    background-color: red;
-}
-
-
-#tasks-wrapper {
-    background-color: yellow;
+    background-color: #D1EDF2;
+    border-radius: 1rem;
+    height: fit-content;
 }
 
 #todo-tasks-wrapper {
-    background-color: pink;
+    height: fit-content;
 }
 
 .FontAwesomeIcon {
@@ -39,9 +42,22 @@
 }
 
 .endDate {
-    font-size: 1rem;
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
 }
 
 .taskTitle {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.CardBody {
+    padding: 0.2rem 0 0.3rem 0;
+}
+
+.Image {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-left: 0.7rem;
 }

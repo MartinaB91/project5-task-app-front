@@ -29,7 +29,6 @@ const NavBar = () => {
         }
     };
 
-
     const buttonForSignedInUser = (
         <>
             <Link to="/taskboard" className={styles.Link}>Task Board</Link>
@@ -59,7 +58,7 @@ const NavBar = () => {
         <Navbar className={styles.NavBar} bg="none" expand="lg" fixed="top">
             <Container fluid>
                 <Link to="/" className={styles.Link}>
-                    <Navbar.Brand>Family Star
+                    <Navbar.Brand className={styles.Headers}>Family Star
                         <FontAwesomeIcon icon={faStar} id={styles["star-icon"]} /></Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="navbarScroll" />
