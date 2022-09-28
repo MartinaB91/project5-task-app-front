@@ -3,7 +3,10 @@ import { useCurrentUser, setCurrentUser, CurrentUserContext } from "../../contex
 import { useParams } from "react-router-dom";
 import { useState } from 'react';
 import axios from 'axios';
-import { Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
+import styles from "../../styles/ProfileScoreBoard.module.css";
+import Test from "../../assets/images/test-sign-in.jpg";
 
 export const ProfileScoreBoard = () => {
     const currentUser = useCurrentUser();
@@ -24,11 +27,24 @@ export const ProfileScoreBoard = () => {
     }, [id]);
 
     return (
-        <Container>
-            <h4>{currentUser.username} Scoreboard</h4>
-            <h4>{profile["user"]} user</h4>
-            <h4>{profile["created_at"]} created_at</h4>
-            <h4>{profile["updated_at"]} updated_at</h4>
-        </Container>
+    <>
+        {/* <h4 className={styles.h4}>{currentUser.username} Scoreboard</h4> */}
+        <Row>
+        <Col xs={4}>
+            <Image roundedCircle src={Test} className={styles.Image} />
+            <p className={styles.ScoreBoardText}>Family star</p>
+        </Col>
+        <Col xs={4}>
+            <p className={styles.ScoreBoardNumber}>10</p>
+            <p className={styles.ScoreBoardText}>To-Do</p>
+        </Col>
+        <Col xs={4}>
+            <p className={styles.ScoreBoardNumber}>10</p>
+            <p className={styles.ScoreBoardText}>Completed</p>
+        </Col> 
+        </Row>
+    </>
     )
+
+    // <p>{profile["user"]}</p>
 }
