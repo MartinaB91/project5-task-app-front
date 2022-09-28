@@ -16,9 +16,9 @@ import { EditTask } from './pages/task/EditTask';
 const  App = () => {
 
   return (
-    <div className={styles.App}>
+    <div className={`${styles.App} ${styles.TextBody}`}>
       < NavBar />
-      <Container fluid className={styles.Container}>
+      <Container fluid className= {`${styles.Container}`}>
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/signin" element={<SignInForm />} />
