@@ -19,14 +19,10 @@ const TaskBoard = () => {
             <Row>
             <Col className="flex-start" id={styles["todo-tasks-wrapper"]} xs={{ span: 12, order: 2 }} md={{ span: 10, order: 1 }}>
                 <h2>Search section</h2>
+                <DisplayFamilyMemberTasks />
                 </Col>
                 <Col className="flex-start" id={styles["my-score-board"]} xs={{ span: 12, order: 1 }} md={{ span: 2, order: 2 }}>
                     <MyScoreBoard  />
-                </Col>
-            </Row>
-            <Row>
-                <Col id={styles["tasks-wrapper"]} xs={{ span: 12}} md={{ span: 10}}>
-                    <DisplayFamilyMemberTasks />
                 </Col>
             </Row>
         </Container>
