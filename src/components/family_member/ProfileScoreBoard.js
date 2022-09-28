@@ -5,7 +5,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Container } from 'react-bootstrap';
 
-export const FamilyMemberScoreBoard = () => {
+export const ProfileScoreBoard = () => {
     const currentUser = useCurrentUser();
     const { id } = useParams();
 
