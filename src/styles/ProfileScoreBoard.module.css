@@ -21,3 +21,9 @@ h4 {
 .ScoreBoardText {
     font-weight: bold;
 }
+
+.FontAwesomeIcon {
+    color: #D4AF37;
+    padding-left: 0.5rem;
+    padding-bottom: 0.1rem;
+}
