@@ -1,0 +1,23 @@
+/* Styling for family member scoreboard */
+/* 
+h4 {
+    display: inline-block;
+} */
+
+.Image {
+    height: 4rem;
+    width: 4rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.4rem;
+    /* display: inline-block; */
+}
+
+.ScoreBoardNumber {
+    font-size: 3rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+}
+
+.ScoreBoardText {
+    font-weight: bold;
+}
