@@ -12,7 +12,7 @@ const TaskBoard = () => {
         <Container className={styles.Container}>
             <h1>Task Board</h1>
             <Row>
-                <Col lg={12} id={styles["family-member-score-board"]}>
+                <Col lg={12} id={styles["family-member-score-board"]} className="mb-2 mb-md-3">
                     <ProfileScoreBoard />
                 </Col>
             </Row>
