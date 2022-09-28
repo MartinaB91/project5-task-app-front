@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { MyScoreBoard } from "../../components/family_member/MyScoreBoard";
 import { DisplayFamilyMemberTasks } from "../task/FamilyMemberTasks";
 import styles from "../../styles/TaskBoard.module.css";
-import { FamilyMemberScoreBoard } from "../../components/family_member/FamilyMemberScoreBoard";
+import { ProfileScoreBoard } from "../../components/family_member/ProfileScoreBoard";
 
 
 const TaskBoard = () => {
@@ -13,7 +13,7 @@ const TaskBoard = () => {
             <h1>Task Board</h1>
             <Row>
                 <Col lg={12} id={styles["family-member-score-board"]}>
-                    <FamilyMemberScoreBoard />
+                    <ProfileScoreBoard />
                 </Col>
             </Row>
             <Row>
