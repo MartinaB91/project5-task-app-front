@@ -1,0 +1,36 @@
+/* Styling for my scoreboard section */
+
+.Image {
+    height: 4rem;
+    width: 4rem;
+    margin-top: 1.7rem;
+    margin-bottom: 0.4rem;
+    /* display: inline-block; */
+}
+
+.ScoreBoardNumber {
+    font-size: 3rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.ScoreBoardText {
+    font-weight: bold;
+}
+
+/* Media queries for my scoreboard */
+
+@media screen and (min-width: 768px) {
+    .Image {
+        height: 5rem;
+        width: 5rem;
+    }
+  }
+
+@media screen and (min-width: 992px) {
+    .Image {
+        height: 6rem;
+        width: 6rem;
+    }
+  }
