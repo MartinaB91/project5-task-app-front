@@ -10,13 +10,13 @@
 
 #family-member-score-board {
     background-color: #FFC0CB;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     
 }
 
 #my-score-board {
     background-color: #D1EDF2;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     height: fit-content;
 }
 
@@ -49,7 +49,12 @@
 .taskTitle {
     font-size: 1.5rem;
     font-weight: 100;
-    font-family: 'Permanent Marker', cursive;
+    /* font-family: 'Permanent Marker', cursive; */
+    font-weight: bold;
+}
+
+.CardTitle {
+    background-color: #D1F3C5;
 }
 
 .CardBody {
@@ -61,3 +66,19 @@
     width: 2.5rem;
     margin-left: 0.7rem;
 }
+
+/* Media queries for profile scoreboard */
+@media screen and (max-width: 376px) {
+    #family-member-score-board {
+        border-radius: 0;
+        
+    }
+  }
+
+/* Media queries for my scoreboard */
+@media screen and (max-width: 376px) {
+    #my-score-board {
+        border-radius: 0;
+        
+    }
+  }
