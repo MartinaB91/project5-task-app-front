@@ -19,6 +19,10 @@
     font-family: 'Permanent Marker', cursive;
 }
 
+.FontAwesomeIcon {
+    color: #D4AF37;
+}
+
 /* Media queries for my scoreboard */
 
 @media screen and (min-width: 768px) {

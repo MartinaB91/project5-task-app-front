@@ -41,8 +41,8 @@ export const MyScoreBoard = (props) => {
 
     const emptyFamilyMemberInfo = (
         <>
-        <FontAwesomeIcon icon={faFaceSmile} />
-        <p>Choose a member</p>
+        <FontAwesomeIcon className={styles.FontAwesomeIcon} icon={faFaceSmile} />
+        <p className={styles.ScoreBoardText}>Choose a member</p>
         </>
     )
 
