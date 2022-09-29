@@ -36,12 +36,12 @@ const NavBar = () => {
                 <Dropdown.Toggle variant="link">
                     <FontAwesomeIcon icon={faUser} />
                 </Dropdown.Toggle>
-                <Dropdown.Menu className={`${styles.Menu}`} >
-                    <Dropdown.Item ><DisplayFamilyMember /></Dropdown.Item>
-                    <Dropdown.Item >
+                <Dropdown.Menu className={`${styles.Menu} p-3 mt-2`} >
+                    <Dropdown.Item><DisplayFamilyMember /></Dropdown.Item>
+                    <Dropdown.Item>
                         <Link to="/addtask" className={styles.Link}>Add Task <FontAwesomeIcon icon={faCirclePlus} /></Link>
                     </Dropdown.Item>
-                    <Dropdown.Item >
+                    <Dropdown.Item>
                         <Link to="/" className={styles.Link} onClick={handleSignOut}>Sign Out</Link>
                     </Dropdown.Item>
                 </Dropdown.Menu>
@@ -51,14 +51,14 @@ const NavBar = () => {
     );
 
     const buttonForNotSignedInUser = (
-        <Link to="/signin" className={styles.Link} onClick={SignInForm}>Sign In</Link>
+        <Link to="/signin" className={`${styles.Link} p-3`} onClick={SignInForm}>Sign In</Link>
     );
 
     return (
         <Navbar className={styles.NavBar}fixed="top">
-            <Container fluid>
+            <Container fluid className={styles.Container}>
                 <Link to="/" className={styles.Link}>
-                    <Navbar.Brand className={styles.Headers}>Family Star
+                    <Navbar.Brand className={`${styles.Headers} p-3`}>Family Star 
                         <FontAwesomeIcon icon={faStar} id={styles["star-icon"]} /></Navbar.Brand>
                 </Link>
                 <Navbar.Toggle aria-controls="navbarScroll" />
