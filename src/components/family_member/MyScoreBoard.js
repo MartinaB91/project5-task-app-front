@@ -8,6 +8,8 @@ import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import Test from "../../assets/images/test-sign-in.jpg";
 import styles from "../../styles/MyScoreBoard.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFaceSmile } from '@fortawesome/free-solid-svg-icons'
 
 
 export const MyScoreBoard = (props) => {
@@ -37,7 +39,15 @@ export const MyScoreBoard = (props) => {
     // Convert json to js object
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
-    const familyMemberInfo = (
+    const emptyFamilyMemberInfo = (
+        <>
+        <FontAwesomeIcon icon={faFaceSmile} />
+        <p>Choose a member</p>
+        </>
+    )
+
+    const familyMemberInfo = currentFamilyMemberObj === null || currentFamilyMemberObj === "" ? 
+        emptyFamilyMemberInfo : 
             <Row className="d-md-block">
                 <Col xs={5} sm={12} className="text-center">
                     <Image roundedCircle src={currentFamilyMemberObj.family_member_img} className={styles.Image} />
@@ -55,16 +65,12 @@ export const MyScoreBoard = (props) => {
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.closed_tasks}</p>
                     <h4 className={styles.ScoreBoardText}>Closed Tasks</h4>
                 </Col>
-            </Row>
-    )
-
-    const emptyFamilyMemberInfo = (
-        <h3>there is no choosen familymember. Please choose a member</h3>
-    )
+            </Row> ;
 
     return (
         <>
-            {familyMemberContext === null || familyMemberContext === "" ? emptyFamilyMemberInfo : familyMemberInfo}
+            {/* {familyMemberContext === null || familyMemberContext === "" ? emptyFamilyMemberInfo : familyMemberInfo} */}
+            {familyMemberInfo}
         </>
     )
 
