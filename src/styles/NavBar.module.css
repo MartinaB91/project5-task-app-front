@@ -5,6 +5,11 @@
     background: rgba(244, 240, 240, 0.4);
 }
 
+.Container {
+    margin: 0;
+    padding: 0;
+}
+
 .Link {
     color: black;
     text-decoration: none;
@@ -17,8 +22,10 @@
 }
 
 .Menu {
-    text-align: center;
-
+    /* text-align: center; */
+    /* width: 100vh; */
+    border: none;
+    border-radius: 0;
 }
 
 .Headers {
