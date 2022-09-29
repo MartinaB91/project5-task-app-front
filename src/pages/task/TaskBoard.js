@@ -10,7 +10,6 @@ const TaskBoard = () => {
 
     return (
         <Container className={styles.Container}>
-            <h1 className={styles.Headers}>Task Board</h1>
             <Row>
                 <Col lg={12} id={styles["family-member-score-board"]} className="mb-2 mb-md-3">
                     <ProfileScoreBoard />
