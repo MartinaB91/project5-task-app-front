@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Row, Col, Button } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { Image } from "react-bootstrap";
 import styles from "../../styles/DisplayFamilyMember.module.css"
 import Dropdown from 'react-bootstrap/esm/Dropdown';
 import { useEffect } from 'react';
@@ -39,14 +40,19 @@ export const DisplayFamilyMember = () => {
   return (
     <>
       <Row>
-        <Col>
+        {/* <Col> */}
           {familymembers.map((familymember) => {
             return (
-              <Dropdown.Item key={familymember.name}><Link onClick={() => setFamilyMemberContext(JSON.stringify(familymember))} to="taskboard/">{familymember.name}</Link></Dropdown.Item>
+              <Col xs={6} className={styles.Col}>
+                <Link key={familymember.name} className={styles.Link} onClick={() => setFamilyMemberContext(JSON.stringify(familymember))} to="taskboard/">
+                  <Image roundedCircle className={styles.Image} src={familymember.family_member_img}></Image>
+                  <p className={styles.MemberDropdownText}>{familymember.name}</p>
+                </Link>
+              </Col>
               )
           })}
           <Link to="/addfamilymember" className={styles.Link}>Add Family Member<FontAwesomeIcon icon={faUserPlus} /></Link>
-        </Col>
+        {/* </Col> */}
       </Row>
     </>
   )

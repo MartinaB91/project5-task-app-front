@@ -9,3 +9,17 @@
 .Button {
     border: none;
 }
+
+.Image {
+    height: 2rem;
+    width: 2rem;
+}
+
+.MemberDropdownText {
+    font-size: small;
+
+}
+
+.Col {
+    
+}

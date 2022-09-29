@@ -33,10 +33,10 @@ const NavBar = () => {
         <>
             <Link to="/taskboard" className={styles.Link}>Task Board</Link>
             <Dropdown align="end">
-                <Dropdown.Toggle>
+                <Dropdown.Toggle variant="link">
                     <FontAwesomeIcon icon={faUser} />
                 </Dropdown.Toggle>
-                <Dropdown.Menu className={styles.Menu}>
+                <Dropdown.Menu className={`${styles.Menu}`} >
                     <Dropdown.Item ><DisplayFamilyMember /></Dropdown.Item>
                     <Dropdown.Item >
                         <Link to="/addtask" className={styles.Link}>Add Task <FontAwesomeIcon icon={faCirclePlus} /></Link>
@@ -55,7 +55,7 @@ const NavBar = () => {
     );
 
     return (
-        <Navbar className={styles.NavBar} bg="none" expand="lg" fixed="top">
+        <Navbar className={styles.NavBar}fixed="top">
             <Container fluid>
                 <Link to="/" className={styles.Link}>
                     <Navbar.Brand className={styles.Headers}>Family Star
