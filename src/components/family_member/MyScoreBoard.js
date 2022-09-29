@@ -40,20 +40,20 @@ export const MyScoreBoard = (props) => {
     const familyMemberInfo = (
             <Row className="d-md-block">
                 <Col xs={5} sm={12} className="text-center">
-                    <Image roundedCircle src={Test} className={styles.Image} />
-                    <p className={styles.ScoreBoardText}>{currentFamilyMemberObj.name}</p>
+                    <Image roundedCircle src={currentFamilyMemberObj.family_member_img} className={styles.Image} />
+                    <h4 className={styles.ScoreBoardText}>{currentFamilyMemberObj.name}</h4>
                 </Col>
                 <Col xs={3} sm={12} className="text-center">
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.star_points}</p>
-                    <p className={styles.ScoreBoardText}>Star Points</p>
+                    <h4 className={styles.ScoreBoardText}>Star Points</h4>
                 </Col>
                 <Col xs={4} sm={12} className="text-center">
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.ongoing_tasks}</p>
-                    <p className={styles.ScoreBoardText}>Ongoing Tasks</p>
+                    <h4 className={styles.ScoreBoardText}>Ongoing Tasks</h4>
                 </Col>
                 <Col className="d-none d-sm-block">
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.closed_tasks}</p>
-                    <p className={styles.ScoreBoardText}>Closed Tasks</p>
+                    <h4 className={styles.ScoreBoardText}>Closed Tasks</h4>
                 </Col>
             </Row>
     )

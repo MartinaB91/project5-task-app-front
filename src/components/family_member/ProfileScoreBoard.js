@@ -34,22 +34,22 @@ export const ProfileScoreBoard = () => {
         <Row className="justify-content-sm-center">
         <Col xs={5} sm={3}>
             <Image roundedCircle src={Test} className={styles.Image} />
-            <p className={styles.FamilyStar}>User</p>
-            <p className={styles.ScoreBoardTextImage}>Family star
+            <h4 className={styles.FamilyStar}>User</h4>
+            <h4 className={styles.ScoreBoardTextImage}>Family star
                 <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIcon} />
-            </p>
+            </h4>
         </Col>
         <Col xs={3} sm={3} className="text-start text-md-center">
             <p className={styles.ScoreBoardNumber}>10</p>
-            <p className={styles.ScoreBoardText}>To-Do</p>
+            <h4 className={styles.ScoreBoardText}>To-Do</h4>
         </Col> 
         <Col xs={4} sm={3}>
             <p className={styles.ScoreBoardNumber}>10</p>
-            <p className={styles.ScoreBoardText}>Completed Tasks</p>
+            <h4 className={styles.ScoreBoardText}>Completed Tasks</h4>
         </Col>
         <Col className="d-none d-sm-block">
             <p className={styles.ScoreBoardNumber}>10</p>
-            <p className={styles.ScoreBoardText}>Ongoing Tasks</p>
+            <h4 className={styles.ScoreBoardText}>Ongoing Tasks</h4>
         </Col>
         </Row>
     </>
