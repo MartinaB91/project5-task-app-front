@@ -10,6 +10,7 @@ import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
 import { useState, useRef } from 'react';
 import { DisplayFamilyMember } from "../../components/common/DisplayFamilyMember";
+import FormImage from "../../assets/images/test-sign-in.jpg"
 
 
 
@@ -49,8 +50,15 @@ const CreateFamilyMemberForm = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
-            const { data } = axios.post('familymembers/members/', createFamilyMemberForm);
-            
+
+            const formData = new FormData();
+
+            formData.append("name", name);
+            formData.append("role", role);
+            formData.append("family_member_img", imageInput.current.files[0]);
+
+
+            const { data } = axios.post('familymembers/members/', formData);
             // navigate(`/familymembers/members/${data.id}`);
             navigate('/');
         } catch (error) {
@@ -59,22 +67,23 @@ const CreateFamilyMemberForm = () => {
         }
     };
     return (
-        <Container className={styles.Container}>
-            <h2>Add Family Member</h2>
+        <Container fluid className={styles.Container}>
+        <div className={styles.FormWrapper}>
+            <h2 className={styles.Header}>Add Family Member</h2>
             <Form onSubmit={handleFormSubmit}>
                 <Row>
-                    <Col xs={12} md={10} lg={6} className="mx-auto text-start">
+                    <Col className="mx-auto text-start">
                     <Form.Group className="mb-3">
                         {family_member_img ? (
                             <>
                             <Image roundedCircle className={`${styles.Image} mb-4 d-block`}  src={family_member_img}/>
-                            <Form.Label htmlFor="image-upload">Change Photo</Form.Label>
+                            <Form.Label htmlFor="image-upload" className={styles.Header}>Change Photo</Form.Label>
                             </>
 
                         ) : (
                             <>
                             <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={"https://www.svgrepo.com/show/182626/user-profile.svg"}/>
-                            <Form.Label htmlFor="image-upload">Add a Photo</Form.Label>
+                            <Form.Label htmlFor="image-upload" className={styles.Header}>Add a Photo</Form.Label>
                             </>
                         )}
                             <Form.Control
@@ -88,7 +97,7 @@ const CreateFamilyMemberForm = () => {
                         </Form.Group>
                         
                         <Form.Group className="mb-3" controlId="nickname">
-                            <Form.Label>Nickname</Form.Label>
+                            <Form.Label className={styles.Header}>Nickname</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Enter nickname"
@@ -119,10 +128,12 @@ const CreateFamilyMemberForm = () => {
                         />
                     </Col>
                 </Row>
-                <Button variant="secondary" type="submit">
+                <Button variant="dark" type="submit" className="mt-4">
                     Create member
                 </Button>
             </Form>
+            </div>
+            <Image className={styles.BackgroundImage} src={FormImage} />
         </Container>
     )
 }

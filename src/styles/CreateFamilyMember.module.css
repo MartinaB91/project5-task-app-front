@@ -1,11 +1,29 @@
 /* Styling for create family member page */
 
 .Container {
-    margin-top: 8rem;
+    background-color: white;
+    position: relative;
 }
 
 .Image {
     object-fit: cover;
-    height: 20rem;
-    width: 20rem;
+    height: 15rem;
+    width: 15rem;
+    margin-left: 18%;
+}
+
+.BackgroundImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.FormWrapper {
+    position: absolute;
+    top: 12%;
+    left: 35%;
+}
+
+.Header {
+    font-family: 'Permanent Marker', cursive;
 }
