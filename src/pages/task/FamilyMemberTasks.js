@@ -19,6 +19,7 @@ export const DisplayFamilyMemberTasks = () => {
   const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
   const currentFamilyMemberObj = JSON.parse(familyMemberContext);
   const [familymembersList, setFamilymembersList] = useState([]);
+  const [error, setError] = useState({});
 
   useEffect(() => {
     const handleMount = async () => {
@@ -57,6 +58,17 @@ export const DisplayFamilyMemberTasks = () => {
     handleFamilyMembersList();
   }, []);
 
+  const handleAssign = async (e) => {
+    e.preventDefault();
+    try {
+      const taskId = e.currentTarget.value;
+        axios.patch(`taskboard/tasks/${taskId}/assign`, {"assigned":currentFamilyMemberObj.id});
+    } catch (error) {
+        alert.apply(error);
+        setError(error.response?.data);
+    }
+};
+
   // Return the name of the person that is asssigned a task. 
   const getFamilyMemberNameById = (familymemberId) => {
     for (const familymember of familymembersList) {
@@ -66,8 +78,8 @@ export const DisplayFamilyMemberTasks = () => {
     } 
   }
 
-  const notAssignedTask = (
-    <Button className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x`}/></Button>
+  const assignedTask = (
+    <Image roundedCircle src={Test} className={styles.Image} />
   )
 
   return (
@@ -76,7 +88,7 @@ export const DisplayFamilyMemberTasks = () => {
         return (
           <Col key={task.id} sm={12} md={6} lg={4}>
             <Card>
-              <Card.Header>
+              <Card.Header className={styles.CardTitle}>
                 <Card.Title className="text-start" >
                   <Row>
                     <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown id={task.id}/></Col>
@@ -95,7 +107,9 @@ export const DisplayFamilyMemberTasks = () => {
                 <Row>
                   <Col xs={2} md={2}>
                     {/* {task.assigned === null || task.assigned === ""  ? notAssignedTask :  getFamilyMemberNameById(task.assigned)} */}
-                    {task.assigned === null || task.assigned === ""  ? notAssignedTask :  <Image roundedCircle src={Test} className={styles.Image} />}
+                    {task.assigned === null || task.assigned === ""  ? 
+                    <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x`}/></Button>
+                    : assignedTask}
                   
                   </Col>
                   <Col xs={7}md={7}>
