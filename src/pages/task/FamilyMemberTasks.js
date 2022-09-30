@@ -48,7 +48,6 @@ export const DisplayFamilyMemberTasks = () => {
         for (let resp of response.data) {
           responseAsArray.push(resp);
         }
-
         setFamilymembersList(responseAsArray);
       })
       .catch((e) => console.log(e));
@@ -57,16 +56,51 @@ export const DisplayFamilyMemberTasks = () => {
     handleMount();
     handleFamilyMembersList();
   }, []);
-
+  
   const handleAssign = async (e) => {
     e.preventDefault();
     try {
       const taskId = e.currentTarget.value;
-        axios.patch(`taskboard/tasks/${taskId}/assign`, {"assigned":currentFamilyMemberObj.id});
+      const response = axios.patch(`taskboard/tasks/${taskId}/assign`, {"assigned":currentFamilyMemberObj.id});
+      // TODO: make the patch return statusCode so we only change state when patch i succesful
+      const tasksAsArray = [];
+      for (let task of tasks) {
+        // Find the task we are updating in the tasks-state/list
+        if (task.id == taskId){
+          task.assigned === currentFamilyMemberObj.id ? task.assigned = null : task.assigned = currentFamilyMemberObj.id;
+        }
+        tasksAsArray.push(task);
+      }
+      setTasks(tasksAsArray);
+        
     } catch (error) {
         alert.apply(error);
         setError(error.response?.data);
     }
+};
+
+const handleTaskDone = async (e) => {
+  e.preventDefault();
+  try {
+    const taskId = e.currentTarget.value;
+    
+    axios.patch(`taskboard/tasks/${taskId}/done`, {"status":"Done"});
+    const tasksAsArray = [];
+    for (let task of tasks) {
+      // Find the task we are updating in the tasks-state/list
+      if (task.id == taskId){
+        task.status === 'Done' ? task.status = 'Todo' : task.status = 'Done';
+      }
+      tasksAsArray.push(task);
+    }
+
+    setTasks(tasksAsArray);
+      
+  } catch (error) {
+      alert.apply(error);
+      setError(error.response?.data);
+  }
+  
 };
 
   // Return the name of the person that is asssigned a task. 
@@ -77,10 +111,6 @@ export const DisplayFamilyMemberTasks = () => {
       }
     } 
   }
-
-  const assignedTask = (
-    <Image roundedCircle src={Test} className={styles.Image} />
-  )
 
   return (
     <Row className="g-2">
@@ -106,17 +136,20 @@ export const DisplayFamilyMemberTasks = () => {
                 </Card.Text>
                 <Row>
                   <Col xs={2} md={2}>
-                    {/* {task.assigned === null || task.assigned === ""  ? notAssignedTask :  getFamilyMemberNameById(task.assigned)} */}
                     {task.assigned === null || task.assigned === ""  ? 
                     <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x`}/></Button>
-                    : assignedTask}
+                    :
+                    <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={Test} className={styles.Image} /></button>}
                   
                   </Col>
                   <Col xs={7}md={7}>
                     <Card.Text className="text-center mt-3">{task.category_name}</Card.Text>
                   </Col>
                   <Col xs={3} md={3}>
-                    <Button variant="link" className="text-end"><FontAwesomeIcon icon={ faCircleCheck } size="lg" className={`${styles.checkMark} fa-2x`}  /></Button>
+                    {task.status === "Todo" ?  
+                    <Button variant="link" onClick={handleTaskDone}value={task.id} className="text-end"><FontAwesomeIcon icon={ faCircleCheck } size="lg"className={`${styles.checkMark} fa-2x`}  /></Button>
+                  : <Button variant="link" onClick={handleTaskDone}value={task.id} className="text-end"><FontAwesomeIcon icon={ faCircleCheck } size="lg" className={`${styles.checkMarkDone} fa-2x text-end`}  /></Button>}
+                   
                   </Col>
                 </Row>
               </Card.Body>
