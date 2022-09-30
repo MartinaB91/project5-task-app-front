@@ -1,15 +1,20 @@
 /* Styling for create family member page */
+#create-member-header {
+    text-align: center;
+}
 
 .Container {
     background-color: white;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 .Image {
     object-fit: cover;
     height: 15rem;
     width: 15rem;
-    margin-left: 18%;
+    margin-left: 23%;
 }
 
 .BackgroundImage {
@@ -27,3 +32,24 @@
 .Header {
     font-family: 'Permanent Marker', cursive;
 }
+
+.Label {
+    font-size: 1.5rem;
+}
+
+/* Meida queries for create member form */
+@media screen and (max-width: 376px) {
+    .FormWrapper {
+        top: 12%;
+        left: 0%;
+    }
+
+    .Image {
+        height: 10rem;
+        width: 10rem;
+        margin-left: 25%;
+    }
+
+}
+
+

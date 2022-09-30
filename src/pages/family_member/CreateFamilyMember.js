@@ -38,12 +38,12 @@ const CreateFamilyMemberForm = () => {
     };
 
     const onImagefieldUpdate = (event) => {
-        if (event.target.files.length){
+        if (event.target.files.length) {
             URL.revokeObjectURL(family_member_img);
             setCreateFamilyMemberForm({
                 ...createFamilyMemberForm,
                 family_member_img: URL.createObjectURL(event.target.files[0])
-            });            
+            });
         }
     };
 
@@ -68,36 +68,37 @@ const CreateFamilyMemberForm = () => {
     };
     return (
         <Container fluid className={styles.Container}>
-        <div className={styles.FormWrapper}>
-            <h2 className={styles.Header}>Add Family Member</h2>
-            <Form onSubmit={handleFormSubmit}>
-                <Row>
-                    <Col className="mx-auto text-start">
-                    <Form.Group className="mb-3">
-                        {family_member_img ? (
-                            <>
-                            <Image roundedCircle className={`${styles.Image} mb-4 d-block`}  src={family_member_img}/>
-                            <Form.Label htmlFor="image-upload" className={styles.Header}>Change Photo</Form.Label>
-                            </>
+            <Row>
+                <Col xs={12} sm={10} md={4} className={`${styles.FormWrapper} text-start`}>
+                    <h1 className={styles.Header} id={styles["create-member-header"]}>Add Family Member</h1>
+                    <Form onSubmit={handleFormSubmit}>
 
-                        ) : (
-                            <>
-                            <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={"https://www.svgrepo.com/show/182626/user-profile.svg"}/>
-                            <Form.Label htmlFor="image-upload" className={styles.Header}>Add a Photo</Form.Label>
-                            </>
-                        )}
+                        {/* <Col xs={12} className="mx-auto text-start"> */}
+                        <Form.Group className="mb-3">
+                            {family_member_img ? (
+                                <>
+                                    <Image roundedCircle className={`${styles.Image} mb-4 d-block`} src={family_member_img} />
+                                    <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Change Photo</Form.Label>
+                                </>
+
+                            ) : (
+                                <>
+                                    <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={"https://www.svgrepo.com/show/182626/user-profile.svg"} />
+                                    <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Add a Photo</Form.Label>
+                                </>
+                            )}
                             <Form.Control
                                 type="file"
                                 name="family_member_img"
                                 id="image-upload"
-                                accept = "image/jpeg,image/png,image/jpg"
+                                accept="image/jpeg,image/png,image/jpg"
                                 onChange={onImagefieldUpdate}
                                 ref={imageInput}
                             />
                         </Form.Group>
-                        
+
                         <Form.Group className="mb-3" controlId="nickname">
-                            <Form.Label className={styles.Header}>Nickname</Form.Label>
+                            <Form.Label className={`${styles.Header} ${styles.Label}`}>Nickname</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Enter nickname"
@@ -126,13 +127,13 @@ const CreateFamilyMemberForm = () => {
                             onChange={onFormFieldUpdate}
                             value="1"
                         />
-                    </Col>
-                </Row>
-                <Button variant="dark" type="submit" className="mt-4">
-                    Create member
-                </Button>
-            </Form>
-            </div>
+                        {/* </Col> */}
+                    </Form>
+                    <Button variant="dark" type="submit" className="mt-4">
+                        Add family member
+                    </Button>
+                </Col>
+            </Row>
             <Image className={styles.BackgroundImage} src={FormImage} />
         </Container>
     )
