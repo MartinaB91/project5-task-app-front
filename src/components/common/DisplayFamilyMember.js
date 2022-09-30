@@ -40,10 +40,9 @@ export const DisplayFamilyMember = () => {
   return (
     <>
       <Row>
-        {/* <Col> */}
           {familymembers.map((familymember) => {
             return (
-              <Col xs={12} md={4} className={styles.Col} key={familymember.id}>
+              <Col xs={6} md={4}  key={familymember.id}>
                 <Link  className={styles.Link} onClick={() => setFamilyMemberContext(JSON.stringify(familymember))} to="taskboard/">
                   <Image roundedCircle className={styles.Image} src={familymember.family_member_img}></Image>
                   <p className={styles.MemberDropdownText}>{familymember.name}</p>
@@ -52,7 +51,6 @@ export const DisplayFamilyMember = () => {
               )
           })}
           <Link to="/addfamilymember" className={styles.Link}>Add Family Member<FontAwesomeIcon icon={faUserPlus} /></Link>
-        {/* </Col> */}
       </Row>
     </>
   )

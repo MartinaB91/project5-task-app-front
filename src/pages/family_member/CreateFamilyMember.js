@@ -128,10 +128,10 @@ const CreateFamilyMemberForm = () => {
                             value="1"
                         />
                         {/* </Col> */}
-                    </Form>
-                    <Button variant="dark" type="submit" className="mt-4">
+                        <Button variant="dark" type="submit" className="mt-4">
                         Add family member
                     </Button>
+                    </Form>
                 </Col>
             </Row>
             <Image className={styles.BackgroundImage} src={FormImage} />
