@@ -52,4 +52,45 @@
 
 }
 
+@media screen and (min-width:377px) and (max-width: 576px) {
+    .FormWrapper {
+        top: 12%;
+        left: 0%;
+    }
+
+    .Image {
+        height: 10rem;
+        width: 10rem;
+        margin-left: 30%;
+    } 
+}
+
+@media screen and (min-width:577px) and (max-width: 768px) {
+    .FormWrapper {
+        top: 12%;
+        left: 8%;
+    }
+
+    .Image {
+        height: 12rem;
+        width: 12rem;
+        margin-left: 30%;
+    } 
+}
+
+@media screen and (min-width:767px) and (max-width: 992px) {
+    .FormWrapper {
+        top: 12%;
+        left: 25%;
+    }
+
+    .Image {
+        height: 12rem;
+        width: 12rem;
+        margin-left: 30%;
+    } 
+}
+
+
+
 
