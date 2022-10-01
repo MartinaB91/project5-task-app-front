@@ -69,7 +69,7 @@ const CreateFamilyMemberForm = () => {
     return (
         <Container fluid className={styles.Container}>
             <Row>
-                <Col xs={12} sm={10} md={4} className={`${styles.FormWrapper} text-start`}>
+                <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header} id={styles["create-member-header"]}>Add Family Member</h1>
                     <Form onSubmit={handleFormSubmit}>
 
@@ -128,7 +128,7 @@ const CreateFamilyMemberForm = () => {
                             value="1"
                         />
                         {/* </Col> */}
-                        <Button variant="dark" type="submit" className="mt-4">
+                        <Button variant="dark" type="submit" className="mt-4 d-block">
                         Add family member
                     </Button>
                     </Form>
