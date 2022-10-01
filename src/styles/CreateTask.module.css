@@ -1,0 +1,85 @@
+/* Styles for create task form */
+
+
+.Container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.FormWrapper {
+    position: absolute;
+    top: 10%;
+    left: 35%;
+}
+
+.Header {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+}
+
+.Label {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+
+}
+
+.BackgroundImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Media queries for create task form */
+@media screen and (max-width: 376px) {
+    .FormWrapper {
+        top: 12%;
+        left: 0%;
+    }
+
+    .Image {
+        height: 10rem;
+        width: 10rem;
+        margin-left: 25%;
+    }
+
+}
+
+@media screen and (min-width:377px) and (max-width: 576px) {
+    .FormWrapper {
+        top: 12%;
+        left: 0%;
+    }
+
+    .Image {
+        height: 10rem;
+        width: 10rem;
+        margin-left: 30%;
+    } 
+}
+
+@media screen and (min-width:577px) and (max-width: 768px) {
+    .FormWrapper {
+        top: 12%;
+        left: 8%;
+    }
+
+    .Image {
+        height: 12rem;
+        width: 12rem;
+        margin-left: 30%;
+    } 
+}
+
+@media screen and (min-width:767px) and (max-width: 992px) {
+    .FormWrapper {
+        top: 10%;
+        left: 25%;
+    }
+
+    .Image {
+        height: 12rem;
+        width: 12rem;
+        margin-left: 30%;
+    } 
+}

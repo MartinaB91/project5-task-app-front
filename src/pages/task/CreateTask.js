@@ -3,9 +3,11 @@ import { useState, useEffect, useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Form, Row, Col } from 'react-bootstrap';
+import { Image } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
+import FormImage from "../../assets/images/test-sign-in.jpg"
 
 export const CreateTask = () => {
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
@@ -88,13 +90,14 @@ export const CreateTask = () => {
     };
 
     return (
-        <Container className={styles.Container}>
-            <h2>Add Task</h2>
-            <Form onSubmit={handleFormSubmit}>
-                <Row>
-                    <Col xs={12} md={10} lg={6} className="mx-auto text-start">
+        <Container fluid className={styles.Container}>
+            <Row>
+                <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} mx-auto text-start`}>
+                    <h1 className={styles.Header}>Add Task</h1>
+                    <Form onSubmit={handleFormSubmit}>
+
                         <Form.Group className="mb-3" controlId="title">
-                            <Form.Label>Title</Form.Label>
+                            <Form.Label className={styles.Label}>Title</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Enter title"
@@ -105,14 +108,14 @@ export const CreateTask = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="category">
-                            <Form.Label>Category</Form.Label>
+                            <Form.Label className={styles.Label}>Category</Form.Label>
                             <Form.Control
                                 as="select"
                                 type="arrayOf"
                                 name="category_name"
                                 onChange={onFormFieldUpdate}
                                 value={category_name}
-                            >   
+                            >
                                 {/* Inspiration from:
                                     https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react
                                  */}
@@ -124,7 +127,7 @@ export const CreateTask = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="endDate">
-                            <Form.Label>End date</Form.Label>
+                            <Form.Label className={styles.Label}>End date</Form.Label>
                             <Form.Control
                                 type="date"
                                 name="end_date"
@@ -134,7 +137,7 @@ export const CreateTask = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="description">
-                            <Form.Label>Description</Form.Label>
+                            <Form.Label className={styles.Label}>Description</Form.Label>
                             <Form.Control
                                 as="textarea"
                                 rows={5}
@@ -146,7 +149,7 @@ export const CreateTask = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="star_points">
-                            <Form.Label>Star Points</Form.Label>
+                            <Form.Label className={styles.Label}>Star Points</Form.Label>
                             <Form.Control
                                 type="number"
                                 name="star_points"
@@ -156,14 +159,14 @@ export const CreateTask = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="assigned">
-                            <Form.Label>Want to assign your task?</Form.Label>
+                            <Form.Label className={styles.Label}>Want to assign your task?</Form.Label>
                             <Form.Control
                                 as="select"
                                 type="arrayOf"
                                 name="assigned"
                                 onChange={onFormFieldUpdate}
                                 value={assigned}
-                            >   
+                            >
                                 <option disabled={true} value="">Choose a member</option>
                                 {familymembers.map((familymember) => (
                                     <option value={familymember.id} key={familymember.id}>{familymember.name}</option>
@@ -171,12 +174,13 @@ export const CreateTask = () => {
 
                             </Form.Control>
                         </Form.Group>
-                    </Col>
-                </Row>
-                <Button variant="secondary" type="submit">
-                    Create Task
-                </Button>
-            </Form>
+                        <Button variant="dark" type="submit">
+                            Add Task
+                        </Button>
+                    </Form>
+                </Col>
+            </Row>
+            <Image className={styles.BackgroundImage} src={FormImage} />
         </Container>
 
     )
