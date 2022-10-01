@@ -1,5 +1,109 @@
 /* Styling for sign in form */
 
 .Container {
-    margin-top: 8rem;
+    /* margin-top: 8rem; */
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.Header {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+}
+
+.Label {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+}
+
+.SignUpLink {
+    color: black;
+    margin-left: 0.3rem;
+}
+
+.SignUpText {
+    font-weight: bold;
+    margin-top: 1.3rem;
+}
+
+.FormWrapper {
+    position: absolute;
+    top: 12%;
+    left: 25%;
+}
+
+.BackgroundImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Media queries for sign in form */
+@media screen and (max-width: 376px) {
+    .FormWrapper {
+        top: 14%;
+        left: 0%;
+    }
+
+    .Image {
+        height: 10rem;
+        width: 10rem;
+        margin-left: 25%;
+    }
+
+    .SignUpText {
+        margin-top: 0.6rem;
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width:377px) and (max-width: 576px) {
+    .FormWrapper {
+        top: 12%;
+        left: 0%;
+    }
+
+    .Image {
+        height: 10rem;
+        width: 10rem;
+        margin-left: 30%;
+    } 
+
+    .SignUpText {
+        margin-top: 0.9rem;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width:577px) and (max-width: 768px) {
+    .FormWrapper {
+        top: 12%;
+        left: 25%;
+    }
+
+    .Image {
+        height: 12rem;
+        width: 12rem;
+        margin-left: 30%;
+    } 
+}
+
+@media screen and (min-width:767px) and (max-width: 992px) {
+    .FormWrapper {
+        top: 12%;
+        left: 25%;
+    }
+
+    .Image {
+        height: 12rem;
+        width: 12rem;
+        margin-left: 30%;
+    }
+    
+    .SignUpText {
+        margin-top: 2.2rem;
+        text-align: center;
+    }
 }

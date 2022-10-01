@@ -13,6 +13,9 @@ import SignUpForm from "./SignUp";
 import { useSetCurrentUser } from "../context/CurrentUser";
 import { useRedirect } from "../hooks/useRedirect";
 import styles from "../styles/SignIn.module.css";
+import FormImage from "../assets/images/test-sign-in.jpg";
+import { Image } from "react-bootstrap";
+
 
 
 const SignInForm = () => {
@@ -49,40 +52,42 @@ const SignInForm = () => {
     };
 
     return (
-        <Container className={styles.Container}>
-            <h2>Sign In</h2>
-            <Form onSubmit={handleFormSubmit}>
-                <Row>
-                    <Col xs={12} md={10} lg={6} className="mx-auto text-start">
-                    <Form.Group className="mb-3" controlId="username">
-                        <Form.Label>Username</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Enter username"
-                            name="username"
-                            onChange={onFormFieldUpdate}
-                            value={username}
-                        />
-                    </Form.Group>
+        <Container fluid className={styles.Container}>
+            <Row>
+                <Col xs={12} sm={6} lg={4} className={`${styles.FormWrapper} mx-auto text-start`}>
+                    <h1 className={styles.Header}>Sign In</h1>
+                    <Form onSubmit={handleFormSubmit}>
 
-                    <Form.Group className="mb-3" controlId="password">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control
-                            type="password"
-                            placeholder="Enter password"
-                            name="password"
-                            onChange={onFormFieldUpdate}
-                            value={password}
-                        />
-                    </Form.Group>
+                        <Form.Group className="mb-3" controlId="username">
+                            <Form.Label className={styles.Label}>Username</Form.Label>
+                            <Form.Control
+                                type="text"
+                                placeholder="Enter username"
+                                name="username"
+                                onChange={onFormFieldUpdate}
+                                value={username}
+                            />
+                        </Form.Group>
 
-                    <Button variant="secondary" type="submit">
-                        Sign In
-                    </Button>
-                    </Col>
-                </Row>
-            </Form>
-            <Link to="/signup" onClick={SignUpForm}>Sign Up</Link>
+                        <Form.Group className="mb-3" controlId="password">
+                            <Form.Label className={styles.Label}>Password</Form.Label>
+                            <Form.Control
+                                type="password"
+                                placeholder="Enter password"
+                                name="password"
+                                onChange={onFormFieldUpdate}
+                                value={password}
+                            />
+                        </Form.Group>
+
+                        <Button variant="dark" type="submit">
+                            Sign In
+                        </Button>
+                    </Form>
+                    <p className={styles.SignUpText}>Don't have an account yet?<Link to="/signup" className={styles.SignUpLink} onClick={SignUpForm}>Sign Up</Link></p>
+                </Col>
+            </Row>
+            <Image className={styles.BackgroundImage} src={FormImage} />
         </Container>
     )
 }
