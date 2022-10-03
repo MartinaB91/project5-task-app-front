@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 export const DeleteTask = () => {
-    const { id } = useParams();
+    const { id, title } = useParams();
     const navigate = useNavigate();
     const [error, setError] = useState({});
 
@@ -22,7 +22,7 @@ export const DeleteTask = () => {
 
   return (
     <Container>
-        <p className='mt-5'>Want to delete task {id}?</p>
+        <p className='mt-5'>Want to delete task {title}?</p>
         <Button variant="dark"  onClick={handleDelete}>Delete</Button>
     </Container>
   )

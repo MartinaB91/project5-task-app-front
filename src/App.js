@@ -11,6 +11,7 @@ import TaskBoard from './pages/task/TaskBoard';
 import CreateFamilyMemberForm from './pages/family_member/CreateFamilyMember';
 import { CreateTask } from './pages/task/CreateTask';
 import { EditTask } from './pages/task/EditTask';
+import { DeleteTask } from './pages/task/DeleteTask';
 
 
 const  App = () => {
@@ -27,6 +28,7 @@ const  App = () => {
           <Route exact path="/addfamilymember" element={<CreateFamilyMemberForm />} />
           <Route exact path="/addtask" element={<CreateTask />}/>
           <Route exact path="/tasks/:id/edit" element={<EditTask />}/>
+          <Route exact path="/tasks/:id/:title/delete" element={<DeleteTask />}/>
 
           
         </Routes>
