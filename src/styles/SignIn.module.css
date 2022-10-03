@@ -1,7 +1,6 @@
 /* Styling for sign in form */
 
 .Container {
-    /* margin-top: 8rem; */
     position: relative;
     margin: 0;
     padding: 0;
@@ -29,8 +28,8 @@
 
 .FormWrapper {
     position: absolute;
-    top: 12%;
-    left: 25%;
+    top: 23%;
+    left: 32%;
 }
 
 .BackgroundImage {
