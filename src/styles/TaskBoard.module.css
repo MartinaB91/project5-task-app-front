@@ -1,7 +1,7 @@
 /* Styling for taskboard page */
 
 .Container {
-    margin-top: 4rem;
+    margin-top: 4.5rem;
 }
 
 .Headers {
@@ -9,13 +9,17 @@
   }
 
 #family-member-score-board {
-    background-color: #FFC0CB;
+    /* background-color: #FFC0CB; */
+    background-image: url("../assets/images/scoreboard-background.PNG");
+    background-size: cover;
     border-radius: 0.5rem;
     
 }
 
 #my-score-board {
-    background-color: #D1EDF2;
+    /* background-color: #D1EDF2; */
+    background-image: url("../assets/images/scoreboard-background.PNG");
+    background-size: cover;
     border-radius: 0.5rem;
     height: fit-content;
 }
@@ -58,7 +62,7 @@
 }
 
 .CardTitle {
-    background-color: #D1F3C5;
+    background: rgb(195, 1, 1, 0.7);
 }
 
 .CardBody {
