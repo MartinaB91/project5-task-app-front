@@ -20,6 +20,7 @@ export const DisplayFamilyMemberTasks = () => {
   const currentFamilyMemberObj = JSON.parse(familyMemberContext);
   const [familymembersList, setFamilymembersList] = useState([]);
   const [error, setError] = useState({});
+  const [familymemberName, setFamilymemberName] = useState([]);
 
   useEffect(() => {
     const handleMount = async () => {
@@ -70,16 +71,19 @@ export const DisplayFamilyMemberTasks = () => {
             //task.assigned === currentFamilyMemberObj.id ? task.assigned = null : task.assigned = currentFamilyMemberObj.id;
             if (task.assigned === currentFamilyMemberObj.id) {
               task.assigned = null;
-              //currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
+              currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
               
             } else {
               task.assigned = currentFamilyMemberObj.id;
-              //currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
+              currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
             }
           }
           tasksAsArray.push(task);
         }
         setTasks(tasksAsArray);
+        setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
+
+        
 
       })
       .catch((e) => console.log(e));
@@ -110,18 +114,10 @@ export const DisplayFamilyMemberTasks = () => {
         }
   
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
+        
       })
       .catch((e) => console.log(e));
     };
-
-  // Return the name of the person that is asssigned a task. 
-  const getFamilyMemberNameById = (familymemberId) => {
-    for (const familymember of familymembersList) {
-      if (familymember.id === familymemberId) {
-        return familymember.name;
-      }
-    } 
-  }
 
   return (
     <Row className="g-2">
@@ -132,9 +128,9 @@ export const DisplayFamilyMemberTasks = () => {
               <Card.Header className={styles.CardTitle}>
                 <Card.Title className="text-start" >
                   <Row>
-                    <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown id={task.id} /></Col>
+                    <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown title={task.title} id={task.id} /></Col>
                     <Col xs={8} sm={8} md={6} lg={7} className={`${styles.Button} ${styles.taskTitle} text-center`}>{task.title}</Col>
-                    <Col xs={3} sm={3} md={4} lg={3} className={`${styles.Button} text-end`}>{task.star_points}<FontAwesomeIcon className={styles.FontAwesomeIcon} icon={faStar} /></Col>
+                    <Col xs={3} sm={3} md={4} lg={4} className={`${styles.Button} text-end`}>{task.star_points}<FontAwesomeIcon className={styles.FontAwesomeIcon} icon={faStar} /></Col>
                   </Row>
                 </Card.Title>
               </Card.Header>
@@ -150,7 +146,11 @@ export const DisplayFamilyMemberTasks = () => {
                     {task.assigned === null || task.assigned === "" ?
                       <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x`} /></Button>
                       :
-                      <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={Test} className={styles.Image} /></button>}
+                      <>
+                      <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={Test} className={styles.Image} /></button>
+                      <p>{}</p>
+                      </>
+                      }
 
                   </Col>
                   <Col xs={7} md={7}>
