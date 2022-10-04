@@ -18,7 +18,8 @@ export const ProfileScoreBoard = () => {
     const [profile, setProfile] = useState({});
     
     const [completedAndOngoingTasks, setCompletedAndOngoingTasks] = useState({
-        // family_star_leader: "DEFAULT",
+        family_star_leader_name: "No leader yet",
+        family_star_leader_points: 0,
         total_completed_tasks: 0,
         total_ongoing_tasks: 0
 
@@ -28,7 +29,7 @@ export const ProfileScoreBoard = () => {
         total_todo_tasks: 0,
     });
 
-    const { family_star_leader, total_completed_tasks, total_ongoing_tasks} = completedAndOngoingTasks;
+    const { family_star_leader_name, family_star_leader_points, total_completed_tasks, total_ongoing_tasks} = completedAndOngoingTasks;
     const {total_todo_tasks,} = todoTasks;
 
     useEffect(() => {
@@ -41,18 +42,25 @@ export const ProfileScoreBoard = () => {
                 .catch((e) => console.log(e));
         };
 
-        const handleTotalCompletedAndOngoingTasks = async () => {
+        const handleScoreBoard = async () => {
             await axios.get("familymembers/members/")
               .then((response) => {
                 console.log(response);
 
                 let completed = 0;
                 let ongoing = 0;
+                let starPointsArray = [];
                 for (let resp of response.data) {
                     completed += parseInt(resp.closed_tasks);
                     ongoing += parseInt(resp.ongoing_tasks);
+                    starPointsArray.push(resp);
                 }
-                setCompletedAndOngoingTasks({"total_completed_tasks":completed, "total_ongoing_tasks":ongoing});
+                // Finds the the highest star points and then find the object that belongs to the highest score. 
+                // Todo: Handle if family members have the same star points
+                const findHighestStarPoints = Math.max(...starPointsArray.map(x => x.star_points))
+                var familyMemberWithHighestStarPoints = starPointsArray.find(starPointsArray => starPointsArray.star_points === findHighestStarPoints);
+
+                setCompletedAndOngoingTasks({"total_completed_tasks":completed, "total_ongoing_tasks":ongoing, "family_star_leader_name": familyMemberWithHighestStarPoints.name, "family_star_leader_points": familyMemberWithHighestStarPoints.star_points});
               })
               .catch((e) => console.log(e));
           };
@@ -75,7 +83,7 @@ export const ProfileScoreBoard = () => {
           };
         
         handleTotalTodoTasks();
-        handleTotalCompletedAndOngoingTasks();
+        handleScoreBoard();
         handleMount();
     }, [id]);
     
@@ -85,7 +93,7 @@ export const ProfileScoreBoard = () => {
         <Row className="justify-content-sm-center">
         <Col xs={5} sm={3}>
             <Image roundedCircle src={Test} className={styles.Image} />
-            <h4 className={styles.FamilyStar}>{family_star_leader}</h4>
+            <h4 className={styles.FamilyStar}>{family_star_leader_name} {family_star_leader_points}</h4>
             <h4 className={styles.ScoreBoardTextImage}>Family star
                 <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIcon} />
             </h4>
