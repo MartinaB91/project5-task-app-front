@@ -56,7 +56,7 @@ const NavBar = () => {
     );
 
     return (
-        <Navbar className={styles.NavBar}fixed="top">
+        <Navbar className={styles.NavBar} fixed="top">
             <Container fluid className={styles.Container}>
                 <Link to="/" className={styles.Link}>
                     <Navbar.Brand className={`${styles.Headers} p-3`}>Family Star 
