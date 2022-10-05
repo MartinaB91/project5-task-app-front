@@ -6,7 +6,6 @@ import { axiosReq } from "../../api/axiosDefaults";
 import { Container, Row, Col } from "react-bootstrap";
 import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
-import Test from "../../assets/images/test-sign-in.jpg";
 import styles from "../../styles/MyScoreBoard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceSmile } from '@fortawesome/free-solid-svg-icons'

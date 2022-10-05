@@ -9,16 +9,14 @@
   }
 
 #family-member-score-board {
-    /* background-color: #FFC0CB; */
-    background-image: url("../assets/images/scoreboard-background.PNG");
+    background: #FBD1DB;
     background-size: cover;
     border-radius: 0.5rem;
     
 }
 
 #my-score-board {
-    /* background-color: #D1EDF2; */
-    background-image: url("../assets/images/scoreboard-background.PNG");
+    background-image: url("../assets/images/sign-in-rabbit.jpg");
     background-size: cover;
     border-radius: 0.5rem;
     height: fit-content;
@@ -62,7 +60,7 @@
 }
 
 .CardTitle {
-    background: rgb(195, 1, 1, 0.7);
+    background: #FBD1DB;
 }
 
 .CardBody {
@@ -81,6 +79,9 @@
     background-color: white;
 }
 
+.SearchForm {
+    width: 65%;
+}
 /* Media queries for profile scoreboard */
 @media screen and (max-width: 376px) {
     #family-member-score-board {
