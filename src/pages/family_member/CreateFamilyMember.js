@@ -10,7 +10,7 @@ import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
 import { useState, useRef } from 'react';
 import { DisplayFamilyMember } from "../../components/common/DisplayFamilyMember";
-import FormImage from "../../assets/images/test-sign-in.jpg"
+import BackgroundForm from "../../assets/images/sparkles.jpg";
 
 
 
@@ -134,7 +134,7 @@ const CreateFamilyMemberForm = () => {
                     </Form>
                 </Col>
             </Row>
-            <Image className={styles.BackgroundImage} src={FormImage} />
+            <Image className={styles.BackgroundImage} src={BackgroundForm} />
         </Container>
     )
 }
