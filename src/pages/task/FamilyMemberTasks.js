@@ -124,7 +124,7 @@ export const DisplayFamilyMemberTasks = () => {
       {tasks.map((task) => {
         return (
           <Col key={task.id} sm={12} md={6} lg={4}>
-            <Card>
+            <Card className="shadow-sm">
               <Card.Header className={styles.CardTitle}>
                 <Card.Title className="text-start" >
                   <Row>

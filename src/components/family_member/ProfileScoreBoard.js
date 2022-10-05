@@ -90,7 +90,7 @@ export const ProfileScoreBoard = () => {
     
     return (
     <>
-        <Row className="justify-content-sm-center">
+        <Row className="justify-content-sm-center shadow-sm">
         <Col xs={5} sm={3}>
             <Image roundedCircle src={Test} className={styles.Image} />
             <h4 className={styles.ScoreBoardTextImage}>Family star</h4>

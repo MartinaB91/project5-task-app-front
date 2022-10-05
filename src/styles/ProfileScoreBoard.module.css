@@ -1,15 +1,10 @@
 /* Styling for family member scoreboard */
-/* 
-h4 {
-    display: inline-block;
-} */
 
 .Image {
     height: 4rem;
     width: 4rem;
     margin-top: 1.7rem;
     margin-bottom: 0.2rem;
-    /* display: inline-block; */
 }
 
 .ScoreBoardNumber {
