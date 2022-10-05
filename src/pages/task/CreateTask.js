@@ -7,7 +7,7 @@ import { Image } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
-import BackgroundForm  from "../../assets/images/dots.webp";
+import BackgroundForm from "../../assets/images/dots.webp";
 
 export const CreateTask = () => {
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
@@ -107,25 +107,41 @@ export const CreateTask = () => {
                             />
                         </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="category">
-                            <Form.Label className={styles.Label}>Category</Form.Label>
-                            <Form.Control
-                                as="select"
-                                type="arrayOf"
-                                name="category_name"
-                                onChange={onFormFieldUpdate}
-                                value={category_name}
-                            >
-                                {/* Inspiration from:
+                        <Row>
+                            <Col>
+                                <Form.Group className="mb-3" controlId="category">
+                                    <Form.Label className={styles.Label}>Category</Form.Label>
+                                    <Form.Control
+                                        as="select"
+                                        type="arrayOf"
+                                        name="category_name"
+                                        onChange={onFormFieldUpdate}
+                                        value={category_name}
+                                    >
+                                        {/* Inspiration from:
                                     https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react
                                  */}
-                                <option disabled={true} value="">Choose a category</option>
-                                {categories.map((categoryObj) => (
-                                    <option value={categoryObj.name} key={categoryObj.id}>{categoryObj.name}</option>
-                                ))}
-                            </Form.Control>
-                        </Form.Group>
+                                        <option disabled={true} value="">Choose a category</option>
+                                        {categories.map((categoryObj) => (
+                                            <option value={categoryObj.name} key={categoryObj.id}>{categoryObj.name}</option>
+                                        ))}
+                                    </Form.Control>
+                                </Form.Group>
+                            </Col>
 
+                            <Col>
+                                <Form.Group className="mb-3" controlId="star_points">
+                                    <Form.Label className={styles.Label}>Star Points</Form.Label>
+                                    <Form.Control
+                                        type="number"
+                                        name="star_points"
+                                        onChange={onFormFieldUpdate}
+                                        value={star_points}
+                                    />
+                                </Form.Group>
+                            </Col>
+                        </Row>
+        
                         <Form.Group className="mb-3" controlId="endDate">
                             <Form.Label className={styles.Label}>End date</Form.Label>
                             <Form.Control
@@ -140,21 +156,11 @@ export const CreateTask = () => {
                             <Form.Label className={styles.Label}>Description</Form.Label>
                             <Form.Control
                                 as="textarea"
-                                rows={5}
+                                rows={4}
                                 type="text"
                                 name="description"
                                 onChange={onFormFieldUpdate}
                                 value={description}
-                            />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="star_points">
-                            <Form.Label className={styles.Label}>Star Points</Form.Label>
-                            <Form.Control
-                                type="number"
-                                name="star_points"
-                                onChange={onFormFieldUpdate}
-                                value={star_points}
                             />
                         </Form.Group>
 
