@@ -7,7 +7,7 @@ import { Image } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
-import FormImage from "../../assets/images/test-sign-in.jpg"
+import BackgroundForm  from "../../assets/images/sparkles.jpg";
 
 export const CreateTask = () => {
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
@@ -180,7 +180,8 @@ export const CreateTask = () => {
                     </Form>
                 </Col>
             </Row>
-            <Image className={styles.BackgroundImage} src={FormImage} />
+            {/* <Image className={styles.BackgroundImage} src={FormImage} /> */}
+            <Image className={styles.BackgroundImage} src={BackgroundForm} />
         </Container>
 
     )
