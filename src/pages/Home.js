@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
-import HomeImage from "../assets/images/test-1.jpg"
-import styles from "../styles/Home.module.css"
+import styles from "../styles/Home.module.css";
+import Rabbit from "../assets/images/rabbit-5.jpg";
 
 const HomePage = () => {
     return (
@@ -18,7 +18,7 @@ const HomePage = () => {
                     amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora. 
                 </p>
             </div>
-            <img id={styles["home-img"]} src={HomeImage} alt="throphy" />
+            <img id={styles["home-img"]} src={Rabbit} alt="throphy" />
         </Container>
     )
 }
