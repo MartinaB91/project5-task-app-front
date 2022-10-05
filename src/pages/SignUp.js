@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Image } from 'react-bootstrap';
+import Rabbit3 from "../assets/images/rabbit-5.jpg";
 
 
 const SignUpForm = () => {
@@ -40,10 +42,10 @@ const SignUpForm = () => {
     };
 
     return (
-        <Container className={styles.Container}>
-            <h2>Sign Up</h2>
+        <Container fluid className={styles.Container}>
             <Row>
-                <Col xs={12} md={10} lg={6} className="mx-auto text-start">
+                <Col xs={12} sm={6} lg={4} className={`${styles.FormWrapper} mx-auto text-start`}>
+                <h1 className={styles.Header}>Sign Up</h1>
                     <Form onSubmit={handleFormSubmit}>
                         <Form.Group className="mb-3" controlId="username">
                             <Form.Label>Username</Form.Label>
@@ -86,12 +88,13 @@ const SignUpForm = () => {
                                 value={password2}
                             />
                         </Form.Group>
-                        <Button variant="secondary" type="submit">
+                        <Button className={styles.SignUpButton} variant="dark" type="submit">
                             Sign Up
                         </Button>
                     </Form>
                 </Col>
             </Row>
+            <Image className={styles.BackgroundImage} src={Rabbit3} />
         </Container>
     )
 }

@@ -1,5 +1,58 @@
 /* Styling for sign up form */
 
 .Container {
-    margin-top: 8rem;
+    /* margin-top: 8rem; */
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.BackgroundImage {
+    object-fit: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     width: 100%;
+     height: 100vh;
+ }
+
+ .FormWrapper {
+    position: absolute;
+    top: 12%;
+    left: 30%;
+}
+
+.Header {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+}
+
+
+/* Media queries for sign up form */
+@media screen and (max-width: 376px) {
+    .FormWrapper {
+        top: 10;
+        left: 0%;
+    }
+}
+
+@media screen and (min-width:377px) and (max-width: 576px) {
+    .FormWrapper {
+        top: 12%;
+        left: 0%;
+    }
+}
+
+@media screen and (min-width:577px) and (max-width: 768px) {
+    .FormWrapper {
+        top: 12%;
+        left: 25%;
+    }
+
+}
+
+@media screen and (min-width:767px) and (max-width: 992px) {
+    .FormWrapper {
+        top: 12%;
+        left: 25%;
+    }
 }
