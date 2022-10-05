@@ -1,0 +1,55 @@
+/* Styles for delete task page */
+.Container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.BackgroundImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.FormWrapper {
+    position: absolute;
+    top: 15%;
+    left: 33%;
+}
+
+.DeleteHeader {
+    margin-top: 8%;
+}
+
+.DeleteButton {
+    width: 30%;
+}
+
+/* Media queries for delete task form */
+@media screen and (max-width: 376px) {
+    .FormWrapper {
+        top: 15%;
+        left: 0;
+    }
+}
+
+@media screen and (min-width:377px) and (max-width: 576px) {
+    .FormWrapper {
+        top: 12%;
+        left: 0%;
+    } 
+}
+
+@media screen and (min-width:577px) and (max-width: 768px) {
+    .FormWrapper {
+        top: 12%;
+        left: 8%;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width: 992px) {
+    .FormWrapper {
+        top: 20%;
+        left: 25%;
+    }
+}
