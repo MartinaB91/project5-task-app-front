@@ -144,7 +144,7 @@ export const DisplayFamilyMemberTasks = () => {
                 <Row>
                   <Col xs={2} md={2}>
                     {task.assigned === null || task.assigned === "" ?
-                      <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x`} /></Button>
+                      <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
                       :
                       <>
                       <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={Test} className={styles.Image} /></button>

@@ -91,6 +91,10 @@
     color: grey;
 }
 
+.userPlus:hover {
+    color: grey;
+}
+
 /* Media queries for profile scoreboard */
 @media screen and (max-width: 376px) {
     #family-member-score-board {
