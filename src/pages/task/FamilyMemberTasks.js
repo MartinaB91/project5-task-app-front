@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserPlus, faStar, faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import { faUserPlus, faStar, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
 import React from "react";
 import { useState, useEffect, useContext } from "react";
