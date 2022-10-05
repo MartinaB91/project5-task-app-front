@@ -15,6 +15,7 @@ import { useRedirect } from "../hooks/useRedirect";
 import styles from "../styles/SignIn.module.css";
 import FormImage from "../assets/images/test-sign-in.jpg";
 import { Image } from "react-bootstrap";
+import Rabbit from "../assets/images/sign-in-rabbit.jpg";
 
 
 
@@ -87,7 +88,7 @@ const SignInForm = () => {
                     <p className={styles.SignUpText}>Don't have an account yet?<Link to="/signup" className={styles.SignUpLink} onClick={SignUpForm}>Sign Up</Link></p>
                 </Col>
             </Row>
-            <Image className={styles.BackgroundImage} src={FormImage} />
+            <Image className={styles.BackgroundImage} src={Rabbit} />
         </Container>
     )
 }
