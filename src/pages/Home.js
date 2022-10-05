@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import styles from "../styles/Home.module.css";
-import Rabbit from "../assets/images/rabbit-5.jpg";
+import Rabbit from "../assets/images/rabbit-5.webp";
 
 const HomePage = () => {
     return (

@@ -8,7 +8,7 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Image } from 'react-bootstrap';
-import Rabbit3 from "../assets/images/rabbit-5.jpg";
+import Rabbit3 from "../assets/images/rabbit-5.webp";
 
 
 const SignUpForm = () => {

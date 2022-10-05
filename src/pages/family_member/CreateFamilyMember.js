@@ -10,7 +10,7 @@ import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
 import { useState, useRef } from 'react';
 import { DisplayFamilyMember } from "../../components/common/DisplayFamilyMember";
-import BackgroundForm from "../../assets/images/sparkles.jpg";
+import BackgroundForm from "../../assets/images/dots.webp";
 
 
 

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Image } from "react-bootstrap";
-import Rabbit from "../../assets/images/rabbit-3.jpg";
+import Rabbit from "../../assets/images/rabbit-3.webp";
 import styles from "../../styles/DeleteTask.module.css";
 
 export const DeleteTask = () => {

@@ -7,7 +7,7 @@ import { Image } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
-import BackgroundForm  from "../../assets/images/sparkles.jpg";
+import BackgroundForm  from "../../assets/images/dots.webp";
 
 export const CreateTask = () => {
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);

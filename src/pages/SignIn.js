@@ -15,7 +15,7 @@ import { useRedirect } from "../hooks/useRedirect";
 import styles from "../styles/SignIn.module.css";
 import FormImage from "../assets/images/test-sign-in.jpg";
 import { Image } from "react-bootstrap";
-import Rabbit from "../assets/images/sign-in-rabbit.jpg";
+import Rabbit from "../assets/images/rabbit-2.webp";
 
 
 

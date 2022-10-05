@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import { axiosReq } from '../../api/axiosDefaults';
-import BackgroundForm  from "../../assets/images/sparkles.jpg";
+import BackgroundForm  from "../../assets/images/dots.webp";
 
 export const EditTask = () => {
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
