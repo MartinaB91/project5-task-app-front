@@ -158,8 +158,8 @@ export const DisplayFamilyMemberTasks = () => {
                   </Col>
                   <Col xs={3} md={3}>
                     {task.status === "Todo" ?
-                      <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x`} /></Button>
-                      : <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end`} /></Button>}
+                      <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
+                      : <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}
 
                   </Col>
                 </Row>
