@@ -37,7 +37,7 @@ const TaskBoard = () => {
             </Row>
             <Row>
             <Col className="flex-start" id={styles["todo-tasks-wrapper"]} xs={{ span: 12, order: 2 }} md={{ span: 10, order: 1 }}>
-                    <Form className={styles.SearchForm} onSubmit={(event) => event.preventDefault()}>
+                    <Form className={`${styles.SearchForm} mb-4`} onSubmit={(event) => event.preventDefault()}>
                         <Form.Control 
                         value={query}
                         onChange={(event) => setQuery(event.target.value)}
