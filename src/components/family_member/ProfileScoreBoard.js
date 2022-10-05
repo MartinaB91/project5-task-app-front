@@ -55,6 +55,8 @@ export const ProfileScoreBoard = () => {
                     ongoing += parseInt(resp.ongoing_tasks);
                     starPointsArray.push(resp);
                 }
+                // Inspiration from:
+                // https://stackoverflow.com/questions/36941115/return-object-with-highest-value
                 // Finds the the highest star points and then find the object that belongs to the highest score. 
                 // Todo: Handle if family members have the same star points
                 const findHighestStarPoints = Math.max(...starPointsArray.map(x => x.star_points))
