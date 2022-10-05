@@ -9,7 +9,7 @@ import styles from "../../styles/ProfileScoreBoard.module.css";
 import Test from "../../assets/images/test-sign-in.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-
+import InformationTrigger from "../task/ScoreBoardInformationTrigger";
 
 export const ProfileScoreBoard = () => {
     const currentUser = useCurrentUser();
@@ -93,9 +93,13 @@ export const ProfileScoreBoard = () => {
     return (
     <>
         <Row className="justify-content-sm-center shadow-sm">
-        <Col xs={5} sm={3}>
+        <span className='mt-2'><InformationTrigger /></span>
+        <Col xs={5} sm={3} className="text-center">
             <Image roundedCircle src={Test} className={styles.Image} />
-            <h4 className={styles.ScoreBoardTextImage}>Family star</h4>
+            <h4 className={styles.ScoreBoardTextImage}>
+                
+                <span>Family star</span>
+            </h4>
             <h4>
                 <span className={`${styles.FamilyStar} ${styles.FamilyStarName} mb-5`}>{family_star_leader_name}</span>
                 <span className={styles.FamilyStarPoints}>{family_star_leader_points}</span> 
