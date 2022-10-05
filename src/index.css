@@ -8,6 +8,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0;
   height: 100vh;
+  background-color: #F9F5F2;
+
 }
 
 code {
