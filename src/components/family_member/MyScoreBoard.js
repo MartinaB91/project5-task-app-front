@@ -8,7 +8,7 @@ import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import styles from "../../styles/MyScoreBoard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFaceSmile } from '@fortawesome/free-solid-svg-icons'
+import { faFaceSmile, faStar } from '@fortawesome/free-solid-svg-icons'
 
 
 export const MyScoreBoard = (props) => {
@@ -54,7 +54,7 @@ export const MyScoreBoard = (props) => {
                 </Col>
                 <Col xs={3} sm={12} className="text-center">
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.star_points}</p>
-                    <h4 className={styles.ScoreBoardText}>Star Points</h4>
+                    <h4 className={styles.ScoreBoardText}>Star Points<FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIcon} /></h4>
                 </Col>
                 <Col xs={4} sm={12} className="text-center">
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.ongoing_tasks}</p>
