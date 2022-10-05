@@ -93,13 +93,11 @@ export const ProfileScoreBoard = () => {
         <Row className="justify-content-sm-center">
         <Col xs={5} sm={3}>
             <Image roundedCircle src={Test} className={styles.Image} />
-            <h4 className={styles.ScoreBoardTextImage}>Family star
-                <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIcon} />
-            </h4>
-            <h4 className={styles.FamilyStar}>
-                <span className={styles.FamilyStarName}>{family_star_leader_name}</span>
-                <span>{family_star_leader_points}</span> 
-            <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIconMember} />
+            <h4 className={styles.ScoreBoardTextImage}>Family star</h4>
+            <h4>
+                <span className={`${styles.FamilyStar} ${styles.FamilyStarName} mb-5`}>{family_star_leader_name}</span>
+                <span className={styles.FamilyStarPoints}>{family_star_leader_points}</span> 
+            <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIcon} />
             </h4>
         </Col>
         <Col xs={3} sm={3} className="text-start text-md-center">
