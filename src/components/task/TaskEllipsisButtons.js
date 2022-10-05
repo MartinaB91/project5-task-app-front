@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const EllipsisButton = React.forwardRef(({ onClick }, ref) => (
-    <FontAwesomeIcon icon={faEllipsisVertical}
+    <FontAwesomeIcon icon={faEllipsisVertical} className={styles.EllipsisButton}
       ref={ref}
       onClick={(e) => {
         e.preventDefault();
