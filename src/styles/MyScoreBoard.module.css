@@ -25,6 +25,12 @@
     padding-left: 0.5rem;
 }
 
+.FontAwesomeIconSmiley {
+    color: #D4AF37;
+    padding-left: 0.5rem;
+    font-size: 4rem;
+}
+
 /* Media queries for my scoreboard */
 
 @media screen and (min-width: 768px) {

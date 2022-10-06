@@ -39,10 +39,10 @@ export const MyScoreBoard = (props) => {
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
     const emptyFamilyMemberInfo = (
-        <>
-        <FontAwesomeIcon className={styles.FontAwesomeIcon} icon={faFaceSmile} />
-        <p className={styles.ScoreBoardText}>Choose a member</p>
-        </>
+        <Row className="d-md-block">
+        <FontAwesomeIcon className={`${styles.FontAwesomeIconSmiley} mt-3`} icon={faFaceSmile} />
+        <p className={`${styles.ScoreBoardText} text-center`}>You haven't choosen a family member yet. Please Select one in the navbar</p>
+        </Row>
     )
 
     const familyMemberInfo = currentFamilyMemberObj === null || currentFamilyMemberObj === "" ? 
