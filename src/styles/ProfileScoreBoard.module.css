@@ -11,10 +11,12 @@
     font-size: 3rem;
     margin-top: 1rem;
     margin-bottom: 0.8rem;
+    text-align: center;
 }
 
 .ScoreBoardText {
     font-family: 'Permanent Marker', cursive;
+    text-align: center;
 }
 
 .ScoreBoardTextImage {
