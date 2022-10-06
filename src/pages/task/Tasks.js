@@ -210,7 +210,7 @@ export const DisplayFamilyMemberTasks = () => {
                       }
                     </Col>
                     <Col xs={7} md={7}>
-                      <Card.Text className="text-center mt-3">{task.category_name}</Card.Text>
+                      <Card.Text className={`${styles.cardCategory} text-center mt-3`}>{task.category_name}</Card.Text>
                     </Col>
                     <Col xs={3} md={3}>
                       {/* If task status is todo but the task is not assigned the done btn will be

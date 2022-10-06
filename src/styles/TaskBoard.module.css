@@ -97,6 +97,11 @@
     --bs-gutter-x: 0;
 }
 
+.cardCategory {
+    font-weight: bold;
+    margin-left: 1.5rem;
+}
+
 /* Media queries for profile scoreboard */
 @media screen and (max-width: 376px) {
     #family-member-score-board {
