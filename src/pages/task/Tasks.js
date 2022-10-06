@@ -22,8 +22,8 @@ export const DisplayFamilyMemberTasks = () => {
   const currentFamilyMemberObj = JSON.parse(familyMemberContext);
   const [familymembersList, setFamilymembersList] = useState([]);
   const [error, setError] = useState({});
-  const [familymemberName, setFamilymemberName] = useState([]);
   const [query, setQuery] = useState();
+  const [filter, setFilter] = useState('no_selected_value');
 
   useEffect(() => {
     const handleFamilyMembersList = async () => {
@@ -45,24 +45,27 @@ export const DisplayFamilyMemberTasks = () => {
 
   useEffect(() => {
     const handleMount = async () => {
-      await axios.get("taskboard/tasks")
-        .then((response) => {
-          console.log(response);
+      if (filter == "no_selected_value" && query == undefined) {
+        await axios.get("taskboard/tasks")
+          .then((response) => {
+            console.log(response);
 
-          // "Convert" json to array
-          let tasksAsArray = [];
-          for (let resp of response.data) {
-            tasksAsArray.push(resp);
-          }
+            // "Convert" json to array
+            let tasksAsArray = [];
+            for (let resp of response.data) {
+              tasksAsArray.push(resp);
+            }
 
-          setTasks(tasksAsArray);
-        })
-        .catch((e) => console.log(e));
+            setTasks(tasksAsArray);
+          })
+          .catch((e) => console.log(e));
+      }
+
     };
 
     const fetchTasks = async () => {
-      if (query !== null && query !== "" && query !== undefined) {
-        await axios.get(`taskboard/tasks/?search=${query}`)
+      if (filter !== "no_selected_value" || query !== undefined) {
+        await axios.get(`taskboard/tasks/?filter=${filter}&search=${query}&family_member_id=${currentFamilyMemberObj.id}`)
           .then((response) => {
             console.log(response);
 
@@ -74,15 +77,14 @@ export const DisplayFamilyMemberTasks = () => {
             setTasks(tasksAsArray);
           })
           .catch((e) => console.log(e));
-      };
+      }
     }
-
     const timer = setTimeout(() => {
       fetchTasks();
     }, 1000)
 
     handleMount();
-  }, [query]);
+  }, [query, filter, currentFamilyMemberObj.id]);
 
   const handleAssign = async (e) => {
     e.preventDefault();
@@ -142,19 +144,39 @@ export const DisplayFamilyMemberTasks = () => {
       .catch((e) => console.log(e));
   };
 
-  return (
-    <>
-      <Row>
-        <Form className={`${styles.SearchForm} mt-3 mb-4`} onSubmit={(event) => event.preventDefault()}>
+  const searchSection = (
+    <Form className="mt-3 mb-4" onSubmit={(event) => event.preventDefault()}>
+      <Row className="justify-content-center">
+        <Col xs={8} lg={5}>
           <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             type="text"
             placeholder="Search for tasks"
           ></Form.Control>
+        </Col>
 
-        </Form>
+        <Col xs={4} lg={2}>
+          <Form.Select
+            aria-label="Select a task filter"
+            onChange={(event) => setFilter(event.target.value)}
+            value={filter}
+          >
+            <option value="no_filter">Filter</option>
+            <option value="my_tasks">My tasks</option>
+            <option value="assigned">Assigned</option>
+            <option value="done">Done</option>
+            <option value="all_tasks">All</option>
+          </Form.Select>
+        </Col>
       </Row>
+    </Form>
+
+  )
+
+  return (
+    <>
+      <Row> {searchSection}</Row>
       <Row className="g-2">
         {tasks.map((task) => {
           return (
@@ -186,7 +208,6 @@ export const DisplayFamilyMemberTasks = () => {
                           <p>{ }</p>
                         </>
                       }
-
                     </Col>
                     <Col xs={7} md={7}>
                       <Card.Text className="text-center mt-3">{task.category_name}</Card.Text>
