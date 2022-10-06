@@ -93,6 +93,10 @@
     color:  #00000096;
 }
 
+.DoneAndAssignBtnsWrapper {
+    --bs-gutter-x: 0;
+}
+
 /* Media queries for profile scoreboard */
 @media screen and (max-width: 376px) {
     #family-member-score-board {

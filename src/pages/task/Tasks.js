@@ -198,7 +198,7 @@ export const DisplayFamilyMemberTasks = () => {
                   <Card.Text className="text-center">
                     {task.description}
                   </Card.Text>
-                  <Row>
+                  <Row className={styles.DoneAndAssignBtnsWrapper}>
                     <Col xs={2} md={2}>
                       {task.assigned === null || task.assigned === "" ?
                         <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
