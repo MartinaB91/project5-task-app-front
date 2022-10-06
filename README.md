@@ -7,6 +7,10 @@
 ### User Stories
 ## Technologies Used
 ### Languages
+- [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+- [JavaScript](https://www.javascript.com/)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css)
+- [JSX](https://reactjs.org/docs/introducing-jsx.html)
 ### Frameworks and Libraries
 - [React Bootstrap (2.5.0)](https://react-bootstrap.github.io/)
 - [React Router (6.3.0)](https://reactrouter.com/en/main)
