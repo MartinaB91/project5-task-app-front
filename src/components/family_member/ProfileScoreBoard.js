@@ -121,6 +121,4 @@ export const ProfileScoreBoard = () => {
         </Row>
     </>
     )
-    {/* <h4 className={styles.h4}>{currentUser.username} Scoreboard</h4> */}
-    // <p>{profile["user"]}</p>
 }
