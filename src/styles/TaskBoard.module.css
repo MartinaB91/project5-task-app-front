@@ -81,10 +81,6 @@
     background-color: white;
 }
 
-.SearchForm {
-    width: 65%;
-}
-
 .checkMarkDone:hover {
     color: darkgreen;
 }
