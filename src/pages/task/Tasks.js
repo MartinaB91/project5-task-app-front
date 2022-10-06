@@ -162,7 +162,7 @@ export const DisplayFamilyMemberTasks = () => {
             onChange={(event) => setFilter(event.target.value)}
             value={filter}
           >
-            <option value="no_filter">Filter</option>
+            <option value="todo">Todo</option>
             <option value="my_tasks">My tasks</option>
             <option value="assigned">Assigned</option>
             <option value="done">Done</option>
