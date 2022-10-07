@@ -43,10 +43,12 @@ const SignInForm = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        const { data } = await axios.post('/dj-rest-auth/login/', signInForm)
+        const {data} = await axios.post('/dj-rest-auth/login/', signInForm)
         .then((response) => {
-            setCurrentUser(data.user);
-            navigate("/taskboard");
+            setCurrentUser(response.data.user);
+            if (response.status === 200) {
+                navigate("/taskboard");
+            } 
         })
         .catch((e) => {
             console.log(e);
@@ -93,9 +95,9 @@ const SignInForm = () => {
                         <Button variant="dark" type="submit">
                             Sign In
                         </Button>
-                        {errors.non_field_errors?.map((message, idx) =>
+                        {/* {errors.non_field_errors?.map((message, idx) =>
                         <Alert variant='warning' key={idx}>{message}</Alert>
-                        )}
+                        )} */}
                     </Form>
                     <p className={styles.SignUpText}>Don't have an account yet?<Link to="/signup" className={styles.SignUpLink} onClick={SignUpForm}>Sign Up</Link></p>
                 </Col>
