@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Form, Row, Col } from 'react-bootstrap';
 import { Image } from "react-bootstrap";
+import { Alert } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
@@ -25,7 +26,7 @@ export const CreateTask = () => {
 
     const { title, category_name, end_date, description, star_points, assigned } = createTaskForm;
 
-    const [error, setError] = useState({});
+    const [errors, setError] = useState({});
     const [categories, setCategories] = useState([]);
     const [familymembers, setFamilymember] = useState([]);
 
@@ -80,13 +81,16 @@ export const CreateTask = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const { data } = axios.post('taskboard/tasks/', createTaskForm);
-            navigate('/taskboard');
-        } catch (error) {
-            alert.apply(error);
-            setError(error.response?.data);
-        }
+        const { data } = axios.post('taskboard/tasks/', createTaskForm)
+            .then((response) => {
+                if (response.status === 200) {
+                    navigate('/taskboard');
+                }
+            })
+            .catch((e) => {
+                console.log(e);
+                setError(e.response?.data);
+            });
     };
 
     return (
@@ -106,6 +110,9 @@ export const CreateTask = () => {
                                 value={title}
                             />
                         </Form.Group>
+                        {errors.title?.map((message, idx) =>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
 
                         <Row>
                             <Col>
@@ -127,6 +134,9 @@ export const CreateTask = () => {
                                         ))}
                                     </Form.Control>
                                 </Form.Group>
+                                {errors.category_name?.map((message, idx) =>
+                                    <Alert variant='warning' key={idx}>{message}</Alert>
+                                )}
                             </Col>
 
                             <Col>
@@ -139,9 +149,12 @@ export const CreateTask = () => {
                                         value={star_points}
                                     />
                                 </Form.Group>
+                                {errors.star_points?.map((message, idx) =>
+                                    <Alert variant='warning' key={idx}>{message}</Alert>
+                                )}
                             </Col>
                         </Row>
-        
+
                         <Form.Group className="mb-3" controlId="endDate">
                             <Form.Label className={styles.Label}>End date</Form.Label>
                             <Form.Control
@@ -151,6 +164,9 @@ export const CreateTask = () => {
                                 value={end_date}
                             />
                         </Form.Group>
+                        {errors.end_date?.map((message, idx) =>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
 
                         <Form.Group className="mb-3" controlId="description">
                             <Form.Label className={styles.Label}>Description</Form.Label>
@@ -163,6 +179,10 @@ export const CreateTask = () => {
                                 value={description}
                             />
                         </Form.Group>
+                        {errors.description?.map((message, idx) =>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
+
 
                         <Form.Group className="mb-3" controlId="assigned">
                             <Form.Label className={styles.Label}>Want to assign your task?</Form.Label>
@@ -180,9 +200,15 @@ export const CreateTask = () => {
 
                             </Form.Control>
                         </Form.Group>
+                        {errors.assigned?.map((message, idx) =>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
                         <Button variant="dark" type="submit">
                             Add Task
                         </Button>
+                        {errors.non_field_errors?.map((message, idx) =>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
                     </Form>
                 </Col>
             </Row>
