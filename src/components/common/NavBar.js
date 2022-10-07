@@ -12,17 +12,20 @@ import { DisplayFamilyMember } from "../common/DisplayFamilyMember";
 import { Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { useNavigate } from "react-router-dom";
 
 
 const NavBar = () => {
     const getCurrentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
+    const navigate = useNavigate();
 
     const handleSignOut = async () => {
         try {
             await axios.post("/dj-rest-auth/logout/");
 
             setCurrentUser(null);
+            navigate("/")
         } catch (err) {
             alert(err);
             console.log(err);
