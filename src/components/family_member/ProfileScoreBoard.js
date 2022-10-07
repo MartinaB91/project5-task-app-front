@@ -9,7 +9,7 @@ import styles from "../../styles/ProfileScoreBoard.module.css";
 import Test from "../../assets/images/test-sign-in.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import InformationTrigger from "../task/ScoreBoardInformationTrigger";
+import InformationTrigger from "../common/ScoreBoardInformationTrigger";
 
 export const ProfileScoreBoard = () => {
     const currentUser = useCurrentUser();
