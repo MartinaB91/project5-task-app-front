@@ -29,6 +29,14 @@
 
 }
 
+.FontAwesomeIconStar {
+    color: #D4AF37;
+}
+
+.LinkSignUp {
+    text-decoration: none;
+}
+
 /* Media queries for home page */
 @media screen and (max-width: 376px) {
     #home-header {
