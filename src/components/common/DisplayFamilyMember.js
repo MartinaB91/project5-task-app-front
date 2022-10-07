@@ -40,6 +40,7 @@ export const DisplayFamilyMember = () => {
   return (
     <>
       <Row>
+        <h4 className='mb-4 mt-2'>Choose a family member</h4>
           {familymembers.map((familymember) => {
             return (
               <Col xs={6} md={4}  key={familymember.id}>
