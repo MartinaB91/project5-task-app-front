@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useRef } from 'react';
 import { DisplayFamilyMember } from "../../components/common/DisplayFamilyMember";
 import BackgroundForm from "../../assets/images/dots.webp";
+import RabbitFace from "../../assets/images/rabbit-face-1.svg";
 
 
 
@@ -83,7 +84,7 @@ const CreateFamilyMemberForm = () => {
 
                             ) : (
                                 <>
-                                    <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={"https://www.svgrepo.com/show/182626/user-profile.svg"} />
+                                    <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={RabbitFace} />
                                     <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Add a Photo</Form.Label>
                                 </>
                             )}
