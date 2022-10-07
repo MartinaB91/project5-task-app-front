@@ -16,6 +16,7 @@ import styles from "../styles/SignIn.module.css";
 import FormImage from "../assets/images/test-sign-in.jpg";
 import { Image } from "react-bootstrap";
 import Rabbit from "../assets/images/rabbit-2.webp";
+import { Alert } from 'react-bootstrap';
 
 
 
@@ -29,7 +30,7 @@ const SignInForm = () => {
     });
     const { username, password } = signInForm;
 
-    const [error, setError] = useState({});
+    const [errors, setError] = useState({});
 
     const navigate = useNavigate({});
 
@@ -42,14 +43,16 @@ const SignInForm = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const { data } = await axios.post('/dj-rest-auth/login/', signInForm);
+        const { data } = await axios.post('/dj-rest-auth/login/', signInForm)
+        .then((response) => {
             setCurrentUser(data.user);
             navigate("/taskboard");
-        } catch (error) {
-            console.log(error);  // TODO: Remove before prod
-            setError(error.response?.data);
-        }
+        })
+        .catch((e) => {
+            console.log(e);
+            setError(e.response?.data);
+        });
+            
     };
 
     return (
@@ -69,7 +72,10 @@ const SignInForm = () => {
                                 value={username}
                             />
                         </Form.Group>
-
+                        {errors.username?.map((message, idx) =>
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
+                 
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Label className={styles.Label}>Password</Form.Label>
                             <Form.Control
@@ -80,10 +86,16 @@ const SignInForm = () => {
                                 value={password}
                             />
                         </Form.Group>
+                        {errors.password?.map((message, idx) =>
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
 
                         <Button variant="dark" type="submit">
                             Sign In
                         </Button>
+                        {errors.non_field_errors?.map((message, idx) =>
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
                     </Form>
                     <p className={styles.SignUpText}>Don't have an account yet?<Link to="/signup" className={styles.SignUpLink} onClick={SignUpForm}>Sign Up</Link></p>
                 </Col>

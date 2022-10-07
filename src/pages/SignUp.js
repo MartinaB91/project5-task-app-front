@@ -20,7 +20,7 @@ const SignUpForm = () => {
     });
     const { username, email, password1, password2 } = signUpForm;
 
-    const [error, setError] = useState({});
+    const [errors, setError] = useState({});
 
     const navigate = useNavigate();
 
@@ -33,12 +33,18 @@ const SignUpForm = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        try {
-            axios.post('/dj-rest-auth/registration/', signUpForm);
-            navigate("/signin");
-        } catch (error) {
-            setError(error.response?.data);
-        }
+        axios.post('/dj-rest-auth/registration/', signUpForm)
+        .then((response) => {
+            if (response.status === 201) {
+                navigate("/signin");
+            }
+        })
+        .catch((e) => {
+            console.log(e);
+            setError(e.response?.data);
+        });
+        
+      
     };
 
     return (
@@ -57,6 +63,9 @@ const SignUpForm = () => {
                                 value={username}
                             />
                         </Form.Group>
+                        {errors.username?.map((message, idx) =>
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
 
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Email address</Form.Label>
@@ -68,6 +77,10 @@ const SignUpForm = () => {
                                 value={email}
                             />
                         </Form.Group>
+                        {errors.email?.map((message, idx) =>
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
+
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Label>Password</Form.Label>
                             <Form.Control
@@ -78,6 +91,10 @@ const SignUpForm = () => {
                                 value={password1}
                             />
                         </Form.Group>
+                        {errors.password1?.map((message, idx) =>
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
+
                         <Form.Group className="mb-3" controlId="confirmPassword">
                             <Form.Label>Confirm password</Form.Label>
                             <Form.Control
@@ -88,9 +105,16 @@ const SignUpForm = () => {
                                 value={password2}
                             />
                         </Form.Group>
+                        {errors.password2?.map((message, idx) =>
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
+
                         <Button className={styles.SignUpButton} variant="dark" type="submit">
                             Sign Up
                         </Button>
+                        {errors.non_field_errors?.map((message, idx) =>
+                        <Alert variant='warning' key={idx}>{message}</Alert>
+                        )}
                     </Form>
                 </Col>
             </Row>
