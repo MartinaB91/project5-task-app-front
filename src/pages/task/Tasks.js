@@ -130,12 +130,14 @@ export const DisplayFamilyMemberTasks = () => {
         }
         setTasks(tasksAsArray);
 
-        if (response["data"].status == "Todo") {
+        if (response["data"].status == "Todo") { 
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points - response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks - 1;
+          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1; 
         } else {
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points + response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks + 1;
+          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks -1;
         }
 
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
