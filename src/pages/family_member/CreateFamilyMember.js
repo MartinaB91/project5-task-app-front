@@ -16,9 +16,8 @@ import BackgroundForm from "../../assets/images/dots.webp";
 import RabbitFace from "../../assets/images/rabbit-face-1.svg";
 
 
-
 const CreateFamilyMemberForm = () => {
-    const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
+    const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
     const [createFamilyMemberForm, setCreateFamilyMemberForm] = useState({
@@ -60,85 +59,95 @@ const CreateFamilyMemberForm = () => {
         formData.append("name", name);
         formData.append("role", role);
         formData.append("family_member_img", imageInput.current.files[0]);
-        try {
-            
-            const { data } = await axios.post('familymembers/members/', formData);
-            // navigate(`/familymembers/members/${data.id}`);
-            navigate('/');
-        } catch (error) {
-            alert.apply(error);
-            setError(error.response?.data);
-        }
+
+        await axios.post('familymembers/members/', formData)
+            .then((response) => {
+                if (response.status === 201) {
+                    navigate("/taskboard");
+                }
+            })
+            .catch((error) => {
+                setError(error.response?.data);
+            });
     };
+
+    
     return (
         <Container fluid className={styles.Container}>
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header} id={styles["create-member-header"]}>Add Family Member</h1>
                     {currentFamilyMemberObj.role == 1 ?
-                    <Form onSubmit={handleFormSubmit}>
+                        <Form onSubmit={handleFormSubmit}>
 
-                        {/* <Col xs={12} className="mx-auto text-start"> */}
-                        <Form.Group className="mb-3">
-                            {family_member_img ? (
-                                <>
-                                    <Image roundedCircle className={`${styles.Image} mb-4 d-block`} src={family_member_img} />
-                                    <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Change Photo</Form.Label>
-                                </>
+                            {/* <Col xs={12} className="mx-auto text-start"> */}
+                            <Form.Group className="mb-3">
+                                {family_member_img ? (
+                                    <>
+                                        <Image roundedCircle className={`${styles.Image} mb-4 d-block`} src={family_member_img} />
+                                        <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Change Photo</Form.Label>
+                                    </>
 
-                            ) : (
-                                <>
-                                    <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={RabbitFace} />
-                                    <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Add a Photo</Form.Label>
-                                </>
+                                ) : (
+                                    <>
+                                        <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={RabbitFace} />
+                                        <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Add a Photo</Form.Label>
+                                    </>
+                                )}
+                                <Form.Control
+                                    type="file"
+                                    name="family_member_img"
+                                    id="image-upload"
+                                    accept="image/jpeg,image/png,image/jpg"
+                                    onChange={onImagefieldUpdate}
+                                    ref={imageInput}
+                                />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="nickname">
+                                <Form.Label className={`${styles.Header} ${styles.Label}`}>Nickname</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter nickname"
+                                    name="name"
+                                    onChange={onFormFieldUpdate}
+                                    value={name}
+                                />
+                            </Form.Group>
+                            {errors.name?.map((message, idx) =>
+                                <Alert variant='warning' key={idx}>{message}</Alert>
                             )}
-                            <Form.Control
-                                type="file"
-                                name="family_member_img"
-                                id="image-upload"
-                                accept="image/jpeg,image/png,image/jpg"
-                                onChange={onImagefieldUpdate}
-                                ref={imageInput}
-                            />
-                        </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="nickname">
-                            <Form.Label className={`${styles.Header} ${styles.Label}`}>Nickname</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter nickname"
-                                name="name"
+                            <Form.Check
+                                defaultChecked
+                                inline
+                                label="Child"
+                                name="role"
+                                type="radio"
+                                aria-label="Family member child button choice"
                                 onChange={onFormFieldUpdate}
-                                value={name}
+                                value="0"
                             />
-                        </Form.Group>
-
-                        <Form.Check
-                            inline
-                            label="Child"
-                            name="role"
-                            type="radio"
-                            aria-label="Family member child button choice"
-                            onChange={onFormFieldUpdate}
-                            value="0"
-                        />
-                        <Form.Check
-                            inline
-                            radioGroup="role"
-                            label="Parent"
-                            name="role"
-                            type="radio"
-                            aria-label="Family member parent button choice"
-                            onChange={onFormFieldUpdate}
-                            value="1"
-                        />
-                        {/* </Col> */}
-                        <Button variant="dark" type="submit" className="mt-4 d-block">
-                            Add family member
-                        </Button>
-                    </Form>
-                    :
-                    <Alert variant='warning'>Ask your parents to add a new family member</Alert>
+                            <Form.Check
+                                inline
+                                radioGroup="role"
+                                label="Parent"
+                                name="role"
+                                type="radio"
+                                aria-label="Family member parent button choice"
+                                onChange={onFormFieldUpdate}
+                                value="1"
+                            />
+                            {/* </Col> */}
+                            <Button variant="dark" type="submit" className="mt-4 d-block">
+                                Add family member
+                            </Button>
+                            {errors.non_field_errors?.map((message, idx) =>
+                                <Alert variant='warning' key={idx}>{message}</Alert>
+                            )}
+                        </Form>
+                        :
+                        <Alert variant='warning'>Ask your parents to add a new family member</Alert>
                     }
                 </Col>
             </Row>
