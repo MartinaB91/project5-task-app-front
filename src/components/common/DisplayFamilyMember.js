@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Row, Col, Button } from "react-bootstrap";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Image } from "react-bootstrap";
 import styles from "../../styles/DisplayFamilyMember.module.css"
 import Dropdown from 'react-bootstrap/esm/Dropdown';
@@ -14,13 +14,12 @@ export const DisplayFamilyMember = () => {
 
   const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
   const [familymembers, setFamilymembers] = useState([])
-
+  const navigate = useNavigate();
 
   const handleFamilyMembers = async () => {
     await axios.get("familymembers/members/")
       .then((response) => {
         console.log(response);
-
         // "Convert" json to array
         let responseAsArray = [];
         for (let resp of response.data) {
@@ -32,10 +31,9 @@ export const DisplayFamilyMember = () => {
       .catch((e) => console.log(e));
   };
 
-  // Only call once per "lifecycle", only run once. 
   useEffect(() => {
     handleFamilyMembers();
-  }, []);
+  }, [navigate]);
 
   return (
     <>
