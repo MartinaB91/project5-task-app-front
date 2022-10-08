@@ -69,7 +69,6 @@ const NavBar = () => {
                 <Navbar.Collapse id="navbarScroll" className="justify-content-end">
                     <Nav>
                         {getCurrentUser ? buttonForSignedInUser : buttonForNotSignedInUser}
-                        {/* <Navbar.Text>Change family member</Navbar.Text> */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
