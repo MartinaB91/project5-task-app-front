@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import Container from "react-bootstrap/Container";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -8,7 +9,8 @@ import Button from 'react-bootstrap/Button';
 import { Image } from "react-bootstrap";
 import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
+import { Alert } from 'react-bootstrap';
 import { DisplayFamilyMember } from "../../components/common/DisplayFamilyMember";
 import BackgroundForm from "../../assets/images/dots.webp";
 import RabbitFace from "../../assets/images/rabbit-face-1.svg";
@@ -16,6 +18,9 @@ import RabbitFace from "../../assets/images/rabbit-face-1.svg";
 
 
 const CreateFamilyMemberForm = () => {
+    const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
+    const currentFamilyMemberObj = JSON.parse(familyMemberContext);
+
     const [createFamilyMemberForm, setCreateFamilyMemberForm] = useState({
         family_member_img: "",
         name: "",
@@ -70,6 +75,7 @@ const CreateFamilyMemberForm = () => {
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header} id={styles["create-member-header"]}>Add Family Member</h1>
+                    {currentFamilyMemberObj.role == 1 ?
                     <Form onSubmit={handleFormSubmit}>
 
                         {/* <Col xs={12} className="mx-auto text-start"> */}
@@ -131,6 +137,9 @@ const CreateFamilyMemberForm = () => {
                             Add family member
                         </Button>
                     </Form>
+                    :
+                    <Alert variant='warning'>Ask your parents to add a new family member</Alert>
+                    }
                 </Col>
             </Row>
             <Image className={styles.BackgroundImage} src={BackgroundForm} />
