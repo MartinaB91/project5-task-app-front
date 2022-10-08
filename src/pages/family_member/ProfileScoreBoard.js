@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
 import styles from "../../styles/ProfileScoreBoard.module.css";
-import Test from "../../assets/images/test-sign-in.jpg";
+import Default from "../../assets/images/rabbit-face-1.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import InformationTrigger from "../../components/common/ScoreBoardInformationTrigger";
@@ -21,7 +21,8 @@ export const ProfileScoreBoard = () => {
         family_star_leader_name: "No leader yet",
         family_star_leader_points: 0,
         total_completed_tasks: 0,
-        total_ongoing_tasks: 0
+        total_ongoing_tasks: 0,
+        family_star_leader_img: "",
 
     });
 
@@ -29,7 +30,7 @@ export const ProfileScoreBoard = () => {
         total_todo_tasks: 0,
     });
 
-    const { family_star_leader_name, family_star_leader_points, total_completed_tasks, total_ongoing_tasks} = completedAndOngoingTasks;
+    const { family_star_leader_name, family_star_leader_points, total_completed_tasks, total_ongoing_tasks, family_star_leader_img} = completedAndOngoingTasks;
     const {total_todo_tasks,} = todoTasks;
 
     useEffect(() => {
@@ -62,7 +63,7 @@ export const ProfileScoreBoard = () => {
                 const findHighestStarPoints = Math.max(...starPointsArray.map(x => x.star_points))
                 var familyMemberWithHighestStarPoints = starPointsArray.find(starPointsArray => starPointsArray.star_points === findHighestStarPoints);
 
-                setCompletedAndOngoingTasks({"total_completed_tasks":completed, "total_ongoing_tasks":ongoing, "family_star_leader_name": familyMemberWithHighestStarPoints.name, "family_star_leader_points": familyMemberWithHighestStarPoints.star_points});
+                setCompletedAndOngoingTasks({"total_completed_tasks":completed, "total_ongoing_tasks":ongoing, "family_star_leader_name": familyMemberWithHighestStarPoints.name, "family_star_leader_points": familyMemberWithHighestStarPoints.star_points, "family_star_leader_img": familyMemberWithHighestStarPoints.family_member_img});
               })
               .catch((e) => console.log(e));
           };
@@ -95,7 +96,11 @@ export const ProfileScoreBoard = () => {
         <Row className="justify-content-sm-center shadow-sm">
         <span className='mt-2'><InformationTrigger /></span>
         <Col xs={5} sm={3} className="text-center">
-            <Image roundedCircle src={Test} className={styles.Image} />
+            {family_star_leader_img !== "" ?
+            <Image roundedCircle src={family_star_leader_img} className={styles.Image} />
+            :
+            <Image roundedCircle src={Default} className={styles.Image} />
+            }
             <h4 className={styles.ScoreBoardTextImage}>
                 
                 <span>Family star</span>
