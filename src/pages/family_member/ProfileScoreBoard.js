@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useCurrentUser, setCurrentUser, CurrentUserContext } from "../../context/CurrentUser";
 import { useParams } from "react-router-dom";
 import { useState } from 'react';
+import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
@@ -13,6 +14,7 @@ import InformationTrigger from "../../components/common/ScoreBoardInformationTri
 
 export const ProfileScoreBoard = () => {
     const currentUser = useCurrentUser();
+    const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
     const { id } = useParams();
 
     const [profile, setProfile] = useState({});
@@ -34,6 +36,7 @@ export const ProfileScoreBoard = () => {
     const {total_todo_tasks,} = todoTasks;
 
     useEffect(() => {
+        alert('Hej')
         const handleMount = async () => {
             await axios.get(`profiles/${currentUser["profile_id"]}`)
                 .then((response) => {
@@ -88,7 +91,7 @@ export const ProfileScoreBoard = () => {
         handleTotalTodoTasks();
         handleScoreBoard();
         handleMount();
-    }, [id]);
+    }, [id, familyMemberContext]);
     
     
     return (
