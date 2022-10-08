@@ -17,8 +17,9 @@
 }
 
 .SignUpLink {
-    color: black;
+    /* color: black; */
     margin-left: 0.3rem;
+    text-decoration: none;
 }
 
 .SignUpText {
