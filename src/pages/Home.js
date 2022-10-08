@@ -15,7 +15,7 @@ const HomePage = () => {
                     <p>
                         Are you tired of trying to get your kids to help out at home?
                         With Family Star you can make ordinary households tasks something fun by turning it into a game!
-                        The are rules are quite simple, collect as many stars <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIconStar} /> as you can by completing households
+                        The rules are quite simple, collect as many stars <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIconStar} /> as you can by completing households
                         tasks from your shared taskboard. The member that has collected the highest amount of star points
                         is the Family Star.
                     </p>
