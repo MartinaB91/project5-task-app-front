@@ -25,7 +25,7 @@ const CreateFamilyMemberForm = () => {
 
     const { family_member_img, name, role } = createFamilyMemberForm;
 
-    const [error, setError] = useState({});
+    const [errors, setError] = useState({});
 
     const imageInput = useRef(null);
     const navigate = useNavigate();
@@ -50,16 +50,14 @@ const CreateFamilyMemberForm = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
+        const formData = new FormData();
+
+        formData.append("name", name);
+        formData.append("role", role);
+        formData.append("family_member_img", imageInput.current.files[0]);
         try {
-
-            const formData = new FormData();
-
-            formData.append("name", name);
-            formData.append("role", role);
-            formData.append("family_member_img", imageInput.current.files[0]);
-
-
-            const { data } = axios.post('familymembers/members/', formData);
+            
+            const { data } = await axios.post('familymembers/members/', formData);
             // navigate(`/familymembers/members/${data.id}`);
             navigate('/');
         } catch (error) {
@@ -130,8 +128,8 @@ const CreateFamilyMemberForm = () => {
                         />
                         {/* </Col> */}
                         <Button variant="dark" type="submit" className="mt-4 d-block">
-                        Add family member
-                    </Button>
+                            Add family member
+                        </Button>
                     </Form>
                 </Col>
             </Row>
