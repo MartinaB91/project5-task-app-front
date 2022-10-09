@@ -14,6 +14,9 @@ import { faFaceSmile, faStar } from '@fortawesome/free-solid-svg-icons'
 export const MyScoreBoard = (props) => {
     const currentUser = useCurrentUser();
     const { id } = useParams();
+    const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
+    // Convert json to js object
+    const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
     const [familymember, setFamilyMember] = useState({ results: [] });
 
@@ -21,7 +24,7 @@ export const MyScoreBoard = (props) => {
         const handleMount = async () => {
             try {
                 const [{ data: familymember }] = await Promise.all([
-                    axiosReq.get(`/familymembers/members/${id}`),
+                    axiosReq.get(`/familymembers/members/${currentFamilyMemberObj.id}`),
                 ]);
                 setFamilyMember({ results: [familymember] });
                 console.log(familymember);
@@ -32,11 +35,8 @@ export const MyScoreBoard = (props) => {
             }
         };
         handleMount();
-    }, [id]);
-    const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
+    }, [currentFamilyMemberObj.id]);
 
-    // Convert json to js object
-    const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
     const emptyFamilyMemberInfo = (
         <Row className="d-md-block">
