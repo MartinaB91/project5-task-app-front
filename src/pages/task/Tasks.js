@@ -8,7 +8,6 @@ import styles from "../../styles/TaskBoard.module.css";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import { EllipsisDropdown } from "../../components/task/TaskEllipsisButtons";
 import Image from "react-bootstrap/Image";
-import Test from "../../assets/images/test-sign-in.jpg";
 import { Form } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -186,6 +185,7 @@ export const DisplayFamilyMemberTasks = () => {
       <Row> {searchSection}</Row>
       <Row className="g-2">
         {tasks.map((task) => {
+        let family_member = familymembersList.find(x => x.id === task.assigned)
           return (
             <Col key={task.id} sm={12} md={6} lg={4}>
               <Card className="shadow-sm">
@@ -211,8 +211,9 @@ export const DisplayFamilyMemberTasks = () => {
                         <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
                         :
                         <>
-                          <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={Test} className={styles.Image} /></button>
-                          <p>{ }</p>
+                          <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
+                          <p>{family_member.name}</p>
+
                         </>
                       }
                     </Col>
