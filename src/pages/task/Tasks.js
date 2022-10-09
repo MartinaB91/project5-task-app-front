@@ -4,6 +4,7 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { Col, Card, Button, Row } from "react-bootstrap";
+import { Alert } from "bootstrap";
 import styles from "../../styles/TaskBoard.module.css";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import { EllipsisDropdown } from "../../components/task/TaskEllipsisButtons";
@@ -93,6 +94,7 @@ export const DisplayFamilyMemberTasks = () => {
   const handleAssign = async (e) => {
     e.preventDefault();
     const taskId = e.currentTarget.value;
+
     axios.patch(`taskboard/tasks/${taskId}/assign`, { "assigned": currentFamilyMemberObj.id })
       .then((response) => {
         // TODO: make the patch return statusCode so we only change state when patch i succesful
@@ -100,7 +102,6 @@ export const DisplayFamilyMemberTasks = () => {
         for (let task of tasks) {
           // Find the task we are updating in the tasks-state/list
           if (task.id == taskId) {
-            //task.assigned === currentFamilyMemberObj.id ? task.assigned = null : task.assigned = currentFamilyMemberObj.id;
             if (task.assigned === currentFamilyMemberObj.id) {
               task.assigned = null;
               currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
@@ -134,18 +135,17 @@ export const DisplayFamilyMemberTasks = () => {
         }
         setTasks(tasksAsArray);
 
-        if (response["data"].status == "Todo") { 
+        if (response["data"].status == "Todo") {
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points - response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks - 1;
-          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1; 
+          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
         } else {
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points + response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks + 1;
-          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks -1;
+          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
         }
 
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
-
       })
       .catch((e) => console.log(e));
   };
@@ -185,7 +185,7 @@ export const DisplayFamilyMemberTasks = () => {
       <Row> {searchSection}</Row>
       <Row className="g-2">
         {tasks.map((task) => {
-        let family_member = familymembersList.find(x => x.id === task.assigned)
+          let family_member = familymembersList.find(x => x.id === task.assigned)
           return (
             <Col key={task.id} sm={12} md={6} lg={4}>
               <Card className="shadow-sm">
@@ -211,10 +211,20 @@ export const DisplayFamilyMemberTasks = () => {
                         <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
                         :
                         <>
-                          <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
-                          <p>{family_member.name}</p>
+                          {task.assigned == currentFamilyMemberObj.id ?
 
+                            <>
+                              <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
+                              <p>{family_member.name}</p>
+                            </>
+                            :
+                            <>
+                              <button disabled value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
+                              <p>{family_member.name}</p>
+                            </>
+                          }
                         </>
+
                       }
                     </Col>
                     <Col xs={7} md={7}>
@@ -225,7 +235,7 @@ export const DisplayFamilyMemberTasks = () => {
                       disabled. When btn is assigned you can mark the task as done */}
                       {task.status === "Todo" ?
                         <>
-                          {task.assigned === null || task.assigned === "" ?
+                          {task.assigned === null || task.assigned === "" || task.assigned !== currentFamilyMemberObj.id ?
                             <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
                             :
                             <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>}
