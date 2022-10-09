@@ -79,11 +79,16 @@ export const DisplayFamilyMemberTasks = () => {
           .catch((e) => console.log(e));
       }
     }
+
+    handleMount();
     const timer = setTimeout(() => {
       fetchTasks();
     }, 1000)
 
-    handleMount();
+    return () => {
+      clearTimeout(timer);
+    };
+
   }, [query, filter, currentFamilyMemberObj.id]);
 
   const handleAssign = async (e) => {
