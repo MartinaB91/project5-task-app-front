@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Form, Row, Col } from 'react-bootstrap';
 import { Image } from "react-bootstrap";
+import { Alert } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
@@ -112,93 +113,97 @@ export const EditTask = () => {
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header}>Edit Task</h1>
-                    <Form onSubmit={handleFormSubmit}>
-                        <Form.Group className="mb-3" controlId="title">
-                            <Form.Label className={styles.Label}>Title</Form.Label>
-                            <Form.Control
-                                type="text"
-                                placeholder="Enter title"
-                                name="title"
-                                onChange={onFormFieldUpdate}
-                                value={title}
-                            />
-                        </Form.Group>
-                        <Row>
-                            <Col>
-                                <Form.Group className="mb-3" controlId="category">
-                                    <Form.Label className={styles.Label}>Category</Form.Label>
-                                    <Form.Control
-                                        as="select"
-                                        type="arrayOf"
-                                        name="category_name"
-                                        onChange={onFormFieldUpdate}
-                                        value={category_name}
-                                    >
-                                        {/* Inspiration from:
+                    {currentFamilyMemberObj.role == 1 ?
+                        <Form onSubmit={handleFormSubmit}>
+                            <Form.Group className="mb-3" controlId="title">
+                                <Form.Label className={styles.Label}>Title</Form.Label>
+                                <Form.Control
+                                    type="text"
+                                    placeholder="Enter title"
+                                    name="title"
+                                    onChange={onFormFieldUpdate}
+                                    value={title}
+                                />
+                            </Form.Group>
+                            <Row>
+                                <Col>
+                                    <Form.Group className="mb-3" controlId="category">
+                                        <Form.Label className={styles.Label}>Category</Form.Label>
+                                        <Form.Control
+                                            as="select"
+                                            type="arrayOf"
+                                            name="category_name"
+                                            onChange={onFormFieldUpdate}
+                                            value={category_name}
+                                        >
+                                            {/* Inspiration from:
                                     https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react
                                  */}
-                                        <option disabled={true} value="">Choose a category</option>
-                                        {categories.map((categoryObj) => (
-                                            <option value={categoryObj.name} key={categoryObj.id}>{categoryObj.name}</option>
-                                        ))}
-                                    </Form.Control>
-                                </Form.Group>
-                            </Col>
-                            <Col>
-                                <Form.Group className="mb-3" controlId="star_points">
-                                    <Form.Label className={styles.Label}>Star Points</Form.Label>
-                                    <Form.Control
-                                        type="number"
-                                        name="star_points"
-                                        onChange={onFormFieldUpdate}
-                                        value={star_points}
-                                    />
-                                </Form.Group>
-                            </Col>
-                        </Row>
+                                            <option disabled={true} value="">Choose a category</option>
+                                            {categories.map((categoryObj) => (
+                                                <option value={categoryObj.name} key={categoryObj.id}>{categoryObj.name}</option>
+                                            ))}
+                                        </Form.Control>
+                                    </Form.Group>
+                                </Col>
+                                <Col>
+                                    <Form.Group className="mb-3" controlId="star_points">
+                                        <Form.Label className={styles.Label}>Star Points</Form.Label>
+                                        <Form.Control
+                                            type="number"
+                                            name="star_points"
+                                            onChange={onFormFieldUpdate}
+                                            value={star_points}
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                        <Form.Group className="mb-3" controlId="endDate">
-                            <Form.Label className={styles.Label}>End date</Form.Label>
-                            <Form.Control
-                                type="date"
-                                name="end_date"
-                                onChange={onFormFieldUpdate}
-                                value={end_date}
-                            />
-                        </Form.Group>
+                            <Form.Group className="mb-3" controlId="endDate">
+                                <Form.Label className={styles.Label}>End date</Form.Label>
+                                <Form.Control
+                                    type="date"
+                                    name="end_date"
+                                    onChange={onFormFieldUpdate}
+                                    value={end_date}
+                                />
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="description">
-                            <Form.Label className={styles.Label}>Description</Form.Label>
-                            <Form.Control
-                                as="textarea"
-                                rows={4}
-                                type="text"
-                                name="description"
-                                onChange={onFormFieldUpdate}
-                                value={description}
-                            />
-                        </Form.Group>
+                            <Form.Group className="mb-3" controlId="description">
+                                <Form.Label className={styles.Label}>Description</Form.Label>
+                                <Form.Control
+                                    as="textarea"
+                                    rows={4}
+                                    type="text"
+                                    name="description"
+                                    onChange={onFormFieldUpdate}
+                                    value={description}
+                                />
+                            </Form.Group>
 
-                        <Form.Group className="mb-3" controlId="assigned">
-                            <Form.Label className={styles.Label}>Want to assign your task?</Form.Label>
-                            <Form.Control
-                                as="select"
-                                type="arrayOf"
-                                name="assigned"
-                                onChange={onFormFieldUpdate}
-                                value={assigned}
-                            >
-                                <option disabled={true} value="">Choose a member</option>
-                                {familymembers.map((familymember) => (
-                                    <option value={familymember.id} key={familymember.id}>{familymember.name}</option>
-                                ))}
+                            <Form.Group className="mb-3" controlId="assigned">
+                                <Form.Label className={styles.Label}>Want to assign your task?</Form.Label>
+                                <Form.Control
+                                    as="select"
+                                    type="arrayOf"
+                                    name="assigned"
+                                    onChange={onFormFieldUpdate}
+                                    value={assigned}
+                                >
+                                    <option disabled={true} value="">Choose a member</option>
+                                    {familymembers.map((familymember) => (
+                                        <option value={familymember.id} key={familymember.id}>{familymember.name}</option>
+                                    ))}
 
-                            </Form.Control>
-                        </Form.Group>
-                        <Button variant="dark" type="submit">
-                            Edit Task
-                        </Button>
-                    </Form>
+                                </Form.Control>
+                            </Form.Group>
+                            <Button variant="dark" type="submit">
+                                Edit Task
+                            </Button>
+                        </Form>
+                        :
+                        <Alert variant='warning' className='text-center'>Ask your parents to create a task</Alert>
+                    }
                 </Col>
             </Row>
             <Image className={styles.BackgroundImage} src={BackgroundForm} />
