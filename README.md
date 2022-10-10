@@ -1,6 +1,9 @@
 # Family Star
 ## About
+
 ## Target Audience
+
+
 ## Owner Goals
 ## Table of Contents
 ## UX
@@ -52,12 +55,19 @@
 ### Frameworks and Libraries
 - [React Bootstrap (2.5.0)](https://react-bootstrap.github.io/)
 - [React Router (6.3.0)](https://reactrouter.com/en/main)
+- [Font Awesome](https://fontawesome.com/) - Used for adding icons to website
+- [Google Fonts](https://fonts.google.com/) - Used for fonts
 ### Databases
 ### Storage
 ### Other tools
+- [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used for debugging
 - [Compress JPEG](https://compressjpeg.com/) - Used for compress images
 - [Convertio](https://convertio.co/download/8f4ef43897af54f80228a73c98cc326cc42215/compress) - Used convert images from jpg to webp
+- [GitHub Issues](https://github.com/features/issues) - Used for project planning 
+- [Heroku](https://id.heroku.com/login) - Used to deploy app
 - [HTML Color Codes](https://html-color-codes.info/colors-from-image/) - Used for finding colors from images
+- [Invisionapp](https://www.invisionapp.com/home) - Used for wireframes
+
 ## Page Access Overview
 ## Components
 ## React Library 
@@ -72,6 +82,7 @@
 ### Database Scheme
 ## Testing
 ## Future Improvements
+### Known bugs
 ## Deployment
 ## Credits
 ### Code
