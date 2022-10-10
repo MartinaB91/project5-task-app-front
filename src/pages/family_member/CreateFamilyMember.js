@@ -11,7 +11,6 @@ import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
 import { useState, useRef, useContext } from 'react';
 import { Alert } from 'react-bootstrap';
-import { DisplayFamilyMember } from "../../components/common/DisplayFamilyMember";
 import BackgroundForm from "../../assets/images/dots.webp";
 import RabbitFace from "../../assets/images/rabbit-face-1.svg";
 
@@ -77,7 +76,6 @@ const CreateFamilyMemberForm = () => {
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header} id={styles["create-member-header"]}>Add Family Member</h1>
-                    {currentFamilyMemberObj.role == 1 ?
                         <Form onSubmit={handleFormSubmit}>
 
                             {/* <Col xs={12} className="mx-auto text-start"> */}
@@ -146,9 +144,6 @@ const CreateFamilyMemberForm = () => {
                                 <Alert variant='warning' key={idx}>{message}</Alert>
                             )}
                         </Form>
-                        :
-                        <Alert variant='warning'>Ask your parents to add a new family member</Alert>
-                    }
                 </Col>
             </Row>
             <Image className={styles.BackgroundImage} src={BackgroundForm} />
