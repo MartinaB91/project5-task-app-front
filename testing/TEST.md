@@ -34,6 +34,7 @@ During the development process, unit testing has been done to check if functiona
 ### Lighthouse reports  
 
 ### Solved bugs during development
+- [#58](https://github.com/MartinaB91/project5-task-app-front/issues/58) Family member images won't show
 
 ## Validation
 
