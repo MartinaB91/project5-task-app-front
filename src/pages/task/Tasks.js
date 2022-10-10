@@ -183,73 +183,81 @@ export const DisplayFamilyMemberTasks = () => {
   return (
     <>
       <Row> {searchSection}</Row>
-      <Row className="g-2">
-        {tasks.map((task) => {
-          let family_member = familymembersList.find(x => x.id === task.assigned)
-          return (
-            <Col key={task.id} sm={12} md={6} lg={4}>
-              <Card className="shadow-sm">
-                <Card.Header className={styles.CardTitle}>
-                  <Card.Title className="text-start" >
-                    <Row>
-                      <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown title={task.title} id={task.id} /></Col>
-                      <Col xs={8} sm={8} md={6} lg={7} className={`${styles.Button} ${styles.taskTitle} text-center`}>{task.title}</Col>
-                      <Col xs={3} sm={3} md={4} lg={4} className={`${styles.Button} text-end`}>{task.star_points}<FontAwesomeIcon className={`${styles.FontAwesomeIcon}`} icon={faStar} /></Col>
+      {tasks == "" ?
+        <p className="text-center mt-5">You haven’t created any tasks yet. Go to the navbar to create one</p>
+        :
+        <Row className="g-2">
+          {tasks.map((task) => {
+            let family_member = familymembersList.find(x => x.id === task.assigned)
+            return (
+              <Col key={task.id} sm={12} md={6} lg={4}>
+                <Card className="shadow-sm">
+                  <Card.Header className={styles.CardTitle}>
+                    <Card.Title className="text-start" >
+                      <Row>
+                        <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown title={task.title} id={task.id} /></Col>
+                        <Col xs={8} sm={8} md={6} lg={7} className={`${styles.Button} ${styles.taskTitle} text-center`}>{task.title}</Col>
+                        <Col xs={3} sm={3} md={4} lg={4} className={`${styles.Button} text-end`}>{task.star_points}<FontAwesomeIcon className={`${styles.FontAwesomeIcon}`} icon={faStar} /></Col>
+                      </Row>
+                    </Card.Title>
+                  </Card.Header>
+                  <Card.Body className={styles.CardBody}>
+                    <Card.Text className={`${styles.endDate} text-end`}>
+                      Done: {task.end_date}
+                    </Card.Text>
+                    <Card.Text className="text-center">
+                      {task.description}
+                    </Card.Text>
+                    <Row className={styles.DoneAndAssignBtnsWrapper}>
+                      <Col xs={2} md={2}>
+                        {task.assigned === null || task.assigned === "" ?
+                          <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
+                          :
+                          <>
+                            {task.assigned == currentFamilyMemberObj.id ?
+
+                              <>
+                                <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
+                                <p>{family_member.name}</p>
+                              </>
+                              :
+                              <>
+                                <button disabled value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
+                                <p>{family_member.name}</p>
+                              </>
+                            }
+                          </>
+
+                        }
+                      </Col>
+                      <Col xs={7} md={7}>
+                        <Card.Text className={`${styles.cardCategory} text-center mt-3`}>{task.category_name}</Card.Text>
+                      </Col>
+                      <Col xs={3} md={3}>
+                        {/* If task status is todo but the task is not assigned the done btn will be
+                    disabled. When btn is assigned you can mark the task as done */}
+                        {task.status === "Todo" ?
+                          <>
+                            {task.assigned === null || task.assigned === "" || task.assigned !== currentFamilyMemberObj.id ?
+                              <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
+                              :
+                              <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>}
+                          </>
+                          : <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}
+
+                      </Col>
                     </Row>
-                  </Card.Title>
-                </Card.Header>
-                <Card.Body className={styles.CardBody}>
-                  <Card.Text className={`${styles.endDate} text-end`}>
-                    Done: {task.end_date}
-                  </Card.Text>
-                  <Card.Text className="text-center">
-                    {task.description}
-                  </Card.Text>
-                  <Row className={styles.DoneAndAssignBtnsWrapper}>
-                    <Col xs={2} md={2}>
-                      {task.assigned === null || task.assigned === "" ?
-                        <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
-                        :
-                        <>
-                          {task.assigned == currentFamilyMemberObj.id ?
+                  </Card.Body>
+                </Card>
+              </Col>
+            )
+          })}
+        </Row>
 
-                            <>
-                              <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
-                              <p>{family_member.name}</p>
-                            </>
-                            :
-                            <>
-                              <button disabled value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
-                              <p>{family_member.name}</p>
-                            </>
-                          }
-                        </>
 
-                      }
-                    </Col>
-                    <Col xs={7} md={7}>
-                      <Card.Text className={`${styles.cardCategory} text-center mt-3`}>{task.category_name}</Card.Text>
-                    </Col>
-                    <Col xs={3} md={3}>
-                      {/* If task status is todo but the task is not assigned the done btn will be
-                      disabled. When btn is assigned you can mark the task as done */}
-                      {task.status === "Todo" ?
-                        <>
-                          {task.assigned === null || task.assigned === "" || task.assigned !== currentFamilyMemberObj.id ?
-                            <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
-                            :
-                            <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>}
-                        </>
-                        : <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}
 
-                    </Col>
-                  </Row>
-                </Card.Body>
-              </Card>
-            </Col>
-          )
-        })}
-      </Row>
+      }
+
     </>
   )
 }
