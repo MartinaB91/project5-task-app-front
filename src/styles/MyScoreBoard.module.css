@@ -1,11 +1,9 @@
 /* Styling for my scoreboard section */
 
 .Image {
-    height: 4rem;
-    width: 4rem;
-    margin-top: 1.7rem;
+    height: 6rem;
+    width: 6rem;
     margin-bottom: 0.4rem;
-    /* display: inline-block; */
 }
 
 .ScoreBoardNumber {
@@ -17,7 +15,7 @@
 
 .ScoreBoardText {
     margin-top: 0;
-    font-family: 'Permanent Marker', cursive;
+    font-weight: bold;
 }
 
 .FontAwesomeIcon {
@@ -31,18 +29,67 @@
     font-size: 4rem;
 }
 
+.ScoreBoardHeader {
+    margin-top: 1rem;
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    padding: 3%;
+} 
+
 /* Media queries for my scoreboard */
 
-@media screen and (min-width: 768px) {
-    .Image {
-        height: 5rem;
-        width: 5rem;
+@media screen and (max-width: 376px) {
+    .ScoreBoardNumber {
+        font-size: 2.5rem;
     }
   }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width:377px) and (max-width: 576px) {
+    .CompletedTasksWrapper {
+        margin-top: 1.5rem;
+    }
+
+    .ToDoTaskWrapper {
+        margin-top: 1.5rem;
+    }
+
+}
+
+  @media screen and (min-width:577px) and (max-width: 768px) {
+    .Image {
+        height: 5rem;
+        width: 5rem;
+        margin-top: 1rem;
+    }
+
+    .CompletedTasksWrapper {
+        margin-top: 1.5rem;
+    }
+
+    .ToDoTaskWrapper {
+        margin-top: 1.5rem;
+    }
+
+    .OngoingTaskWrapper{
+        margin-top: 1.5rem;
+    }
+  }
+
+@media screen and (min-width:769px) and (max-width: 992px) {
     .Image {
         height: 6rem;
         width: 6rem;
+    }
+
+    .CompletedTasksWrapper {
+        margin-top: 1.2rem;
+    }
+
+    .ToDoTaskWrapper {
+        margin-top: 1.2rem;
+    }
+
+    .OngoingTaskWrapper{
+        margin-top: 1.2rem;
     }
   }

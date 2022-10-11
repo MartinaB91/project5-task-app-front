@@ -48,6 +48,7 @@ export const MyScoreBoard = (props) => {
     const familyMemberInfo = currentFamilyMemberObj === null || currentFamilyMemberObj === "" ? 
         emptyFamilyMemberInfo : 
             <Row className="d-md-block shadow-sm">
+                <h2 className={styles.ScoreBoardHeader}>My Scores</h2>
                 <Col xs={5} sm={12} className="text-center">
                     <Image roundedCircle src={currentFamilyMemberObj.family_member_img} className={styles.Image} />
                     <h4 className={styles.ScoreBoardText}>{currentFamilyMemberObj.name}</h4>
