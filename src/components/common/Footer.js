@@ -13,9 +13,6 @@ const Footer = () => {
                 <li className="nav-item px-2 text-muted">
                     <Link className={styles.Link} to="#">Task Board</Link>
                 </li>
-                <li className="nav-item px-2 text-muted">
-                    <Link className={styles.Link} to="#">Admin</Link>
-                </li>
             </ul>
             <p className="text-center text-muted">© 2022 Martina Björlin</p>
         </Container>
