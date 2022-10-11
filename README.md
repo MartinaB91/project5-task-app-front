@@ -103,6 +103,15 @@ The main reason for users to revisit the website is because the task managing is
 |Search Task    | Yes     | Yes    | 
 |Filter Task	|Yes|Yes| 
 
+## React Library 
+### Structure and Code
+- With the use of react components it will be possible to reuse some of the code in the project. There is not so much reuse in this specifik project yet, however thanks to the use of components it will be possible to replace for example "DisplayFamilyMembers" with a new version without effecting other code to much. 
+- Another benefit of using the react library is that the code files are smaller and if the project would be continued it will be easier for another devloper when this structure has been used. 
+- Usage of react JSX has been of great use when creating dynamic html with variables and passing parameters. 
+### UX
+- The user experience has been improved by using react. One feature that has improved the user experience is the hooks which have made it possible to run certain code on specific events for example keeping the current family member scoreboard updated without refreshing the page. 
+- By using react bootstrap the user interface is clearly structured and fully responsive, this is something that most users expect since every day usage could be by phone, tablet and computer. 
+
 ## Components
 ### Navbar 
 - As a non-authenticated user, the navbar contains “Family Star” with link to home page and “Sign In”.  
@@ -122,15 +131,6 @@ The main reason for users to revisit the website is because the task managing is
 
 ### Task Ellipsis Buttons 
 - The ellipsis button is displayed on all tasks and when the user clicks the button it will expand and the user will be displayed with two links displayed as icons. One for edit tasks and one for delete task.  
-
-## React Library 
-### Structure and Code
-- With the use of react components it will be possible to reuse some of the code in the project. There is not so much reuse in this specifik project yet, however thanks to the use of components it will be possible to replace for example "DisplayFamilyMembers" with a new version without effecting other code to much. 
-- Another benefit of using the react library is that the code files are smaller and if the project would be continued it will be easier for another devloper when this structure has been used. 
-- Usage of react JSX has been of great use when creating dynamic html with variables and passing parameters. 
-### UX
-- The user experience has been improved by using react. One feature that has improved the user experience is the hooks which have made it possible to run certain code on specific events for example keeping the current family member scoreboard updated without refreshing the page. 
-- By using react bootstrap the user interface is clearly structured and fully responsive, this is something that most users expect since every day usage could be by phone, tablet and computer. 
 
 ## Features
 ### Home page 
@@ -216,7 +216,20 @@ The main reason for users to revisit the website is because the task managing is
 ### Database Scheme
 ## Testing
 ## Future Improvements
+The following user stories were planed but cut off due to the time frame. In the future this could be added:
+
+    - [#39](https://github.com/MartinaB91/project5-task-app-front/issues/39): Update family member
+    - [#40](https://github.com/MartinaB91/project5-task-app-front/issues/40): Delete family member
+
+### Code
+- More automatic tests before building code could have been done (TDD). 
+- Assign and Done button could haven been separate from task and made as components.
 ### Known bugs
+Because of limited time these bugs was not prioritezed since testing and validation needed to be done properly. These bugs are not critical and have little impact on the user experience: 
+
+- [#55](https://github.com/MartinaB91/project5-task-app-front/issues/55) More than one Family Stars(Leaders)
+- [#56](https://github.com/MartinaB91/project5-task-app-front/issues/56) No warning when leaving input empty. Edit task form 
+
 ## Deployment
 ## Credits
 ### Code
