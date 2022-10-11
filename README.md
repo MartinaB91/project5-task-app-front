@@ -121,7 +121,7 @@ The main reason for users to revisit the website is because the task managing is
 - When hovering the i-icon in the profile scoreboard the user will find information about what the user can: do in the navbar, find on the scoreboard and how you assign and complete a task on the task board.  This can be useful information the first time you use the app and disturbing the regular user
 
 ### Task Ellipsis Buttons 
-- The ellipsis button is displayed on all tasks and when the user clicks the button it will expand and the user will be displayed with two links displayed as icons. One for edit tasks:<img src="documentation/readme-svg/pen-to-square-regular.svg" width="15" height="15">  and one for delete tasks:<img src="documentation/readme-svg/trash-can-regular.svg" width="15" height="15"> .  
+- The ellipsis button is displayed on all tasks and when the user clicks the button it will expand and the user will be displayed with two links displayed as icons. One for edit tasks and one for delete task.  
 
 ## React Library 
 ## Features
@@ -152,7 +152,7 @@ The main reason for users to revisit the website is because the task managing is
 - All tasks are by default ordered by end date, tasks that has the closest end date is displayed first. This to make it easy for the users to see which tasks that needs to be done next.  
 
 ### Assign-button 
-- If a task is unassigned the assign-button will be displayed as <img src="documentation/readme-svg/user-plus-solid.svg" width="15" height="15">, when the task is assigned the family members profile image and name is displayed.  
+- If a task is unassigned the assign-button will be displayed as user-plus icon, when the task is assigned the family members profile image and name is displayed.  
 - A user can’t mark a task as done before the task is assigned and only the user that has assigned a task can unassign the task.  
 
 ### Done-button 
@@ -181,6 +181,14 @@ The main reason for users to revisit the website is because the task managing is
 ### Color Scheme
 ### Typography
 ### Icons 
+- Star, used in headers: <img src="documentation/readme-svg/star-solid.svg" width="15" height="15">
+- Ellipsis button: <img src="documentation/readme-svg/ellipsis-vertical-solid.svg" width="15" height="15">
+- Edit task button: <img src="documentation/readme-svg/pen-to-square-regular.svg" width="15" height="15">
+- Delete task button: <img src="documentation/readme-svg/trash-can-regular.svg" width="15" height="15">
+- Assign task button: <img src="documentation/readme-svg/user-plus-solid.svg" width="15" height="15">
+- Arrow pointing at "Add task": <img src="documentation/readme-svg/arrow-down-solid.svg" width="15" height="15">
+- No choosen family member or default image for family member: <img src="src/assets/images/rabbit-face-1.svg" width="15" height="15">
+
 ### Search bar and Filter
 ### Wireframes 
 - [**Phone**](documentation/wireframes/WIREFRAMES.md)
