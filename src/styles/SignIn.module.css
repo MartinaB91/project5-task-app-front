@@ -52,6 +52,12 @@
         margin-bottom: 1rem;
     }
 
+    .SignInButton {
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;
+    }
+
 }
 
 @media screen and (min-width:377px) and (max-width: 576px) {

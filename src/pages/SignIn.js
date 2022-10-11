@@ -92,7 +92,7 @@ const SignInForm = () => {
                         <Alert variant='warning' key={idx}>{message}</Alert>
                         )}
 
-                        <Button variant="dark" type="submit">
+                        <Button variant="dark" type="submit" className={styles.SignInButton}>
                             Sign In
                         </Button>
                         {errors.non_field_errors?.map((message, idx) =>
