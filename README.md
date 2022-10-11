@@ -187,6 +187,11 @@ The main reason for users to revisit the website is because the task managing is
 
 ## Design
 ### Color Scheme
+- The colors on this site was choosen because they go well togehter with the sites images.
+-  Task headers (#FBD1DB), Taskboard (#F9F5F2), Star icon (#D4AF37), Buttons and text (black), Done button default (lightgrey), Done button clicked (green). 
+
+<img src="documentation/other-readme-images/reademe-colors.PNG">
+
 ### Typography
 ### Icons 
 - Star, used in headers: <img src="documentation/readme-svg/star-solid.svg" width="15" height="15">
