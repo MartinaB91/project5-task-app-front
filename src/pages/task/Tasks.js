@@ -11,6 +11,8 @@ import { EllipsisDropdown } from "../../components/task/TaskEllipsisButtons";
 import Image from "react-bootstrap/Image";
 import { Form } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
+import InformationTrigger from "../../components/common/ScoreBoardInformationTrigger";
+
 
 
 export const DisplayFamilyMemberTasks = () => {
@@ -152,8 +154,9 @@ export const DisplayFamilyMemberTasks = () => {
 
   const searchSection = (
     <Form className="mt-3 mb-4" onSubmit={(event) => event.preventDefault()}>
-      <Row className="justify-content-center">
-        <Col xs={8} lg={5}>
+      <Row className="">
+        <Col xs={1} lg={3}><InformationTrigger /></Col>
+        <Col xs={7} lg={5}>
           <Form.Control
             value={query}
             onChange={(event) => setQuery(event.target.value)}

@@ -97,9 +97,7 @@ export const ProfileScoreBoard = () => {
     return (
     <>
         <Row className="justify-content-sm-center shadow-sm">
-        {/* <span className='mt-2'><InformationTrigger /></span> */}
         <Col xs={5} sm={3} className="text-center">
-        <span className={`${styles.InformationTrigger} mt-2`}><InformationTrigger /></span>
             {family_star_leader_img !== "" ?
             <Image roundedCircle src={family_star_leader_img} className={styles.Image} />
             :
