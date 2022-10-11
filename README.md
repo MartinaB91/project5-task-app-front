@@ -104,9 +104,78 @@ The main reason for users to revisit the website is because the task managing is
 
 |Filter Task	|Yes|Yes| 
 ## Components
+### Navbar 
+- As a non-authenticated user, the navbar contains “Family Star” with link to home page and “Sign In”.  
+- As an authenticated user, the navbar contains “Family Star” as above. It also contains “Task Board” and the current profile’s “Username” which is a dropdown menu. 
+- When the dropdown is expanded it contains the component display family members which will be explained in detail later together with a link to “Add Family Member”, “Add task” and a “Sign Out” button. 
+
+### Display Family Members 
+- In this component all the profile’s family members are displayed as an image and family member name.  
+- If the profile doesn’t have any family members yet, the text “You haven’t added any family members yet. Create one below” will be displayed.  
+
+### Footer 
+- As non-authenticated user, the footer contains links to “Home” page. 
+- As authenticated user, the footer contains links to “Home” page and “Task board” 
+
+### Score Board Information Trigger  
+- When hovering the i-icon in the profile scoreboard the user will find information about what the user can: do in the navbar, find on the scoreboard and how you assign and complete a task on the task board.  This can be useful information the first time you use the app and disturbing the regular user
+
+### Task Ellipsis Buttons 
+- The ellipsis button is displayed on all tasks and when the user clicks the button it will expand and the user will be displayed with two links displayed as icons. One for edit tasks and one for delete tasks.  
+
 ## React Library 
 ## Features
-<img src="documentation/readme-svg/user-plus-solid.svg" width="10" height="10">
+### Home page 
+- The home page contains a hero image with some text. The text consists of an explanation of what you can use this website for. This is meant to attract users to want to try this app. The text is followed by a sign-up link to make it easy for visitors to sign up. 
+
+### Task Board 
+
+- This page is the main page where you can reach all other pages and can be divided into four sections. The first section is the profile scoreboard, followed by the family member score board. Then the user can find a section for searching and filtering and below the task section where all tasks are displayed 
+- If there's is no tasks to display the following text will be shown “You haven’t created any tasks yet. Go to the navbar to create one” 
+
+### Profile Score Board 
+- The profile scoreboard contains information that applies to all family members.  
+- Family Star shows a profile image, nickname and points of the member with the highest number of stars. 
+- Todo, is all tasks that needs to be done but isn’t assigned yet 
+- Completed tasks, is all tasks that the family has marked as done 
+- Ongoing tasks, is all tasks that at the moment is assigned to a family member 
+
+### Family Member Score Board 
+- The family member scoreboard contains information that applies to a specific family member. By being able to see their own scores together with the scores on the profile scoreboard, the user can compare their own performance and choose tasks according on how many points needed to become the Family Star.  
+- On the top of the scoreboard the family member image and name are displayed. This will let the user know who the current family member is.  
+- Star points, how many points the member has collected.  
+- Ongoing tasks, shows how many tasks the member has ongoing 
+- Closed tasks, shows how many tasks the member has marked as done.  
+
+### Task 
+- Every task contains, ellipsis button, title, star points, end date, task description, assign-button, category and done-button.  
+- All tasks are by default ordered by end date, tasks that has the closest end date is displayed first. This to make it easy for the users to see which tasks that needs to be done next.  
+
+### Assign-button 
+- If a task is unassigned the assign-button will be displayed as <img src="documentation/readme-svg/user-plus-solid.svg" width="10" height="10">, when the task is assigned the family members profile image and name is displayed.  
+- A user can’t mark a task as done before the task is assigned and only the user that has assigned a task can unassign the task.  
+
+### Done-button 
+- A task that isn’t marked as done will have a grey button, when the task is done and the user clicks the button it will change color to green
+
+### Create Task 
+- This page contains a form for creating a task. The Parent can add a: title, category, star points, end date, description and optionally assign a family member. 
+- When the task is created the user will be redirected to the task board.  
+- If a family member that has the role “child” is trying to create a task the user will see a warning message: “Ask your parents to create a task”. 
+
+### Edit Task 
+- At this page the Parent can update almost all parts of the task, the one thing they can’t update is the tasks status (to-do or done).  
+- When the task is updated, the user will be redirected to the task board.  
+- If a family member that has the role “child” is trying to edit a task the user will see a warning message: “Ask your parents to edit the task”. 
+
+### Delete Task 
+- When the user clicks on the trash can icon displayed in the ellipsis button, they will be redirected to a delete task page and asked to confirm deletion. When the task is deleted, the user will be redirected to the task board.  
+
+### Add Family member  
+- This page contains a form for creating a family member. The family members can add a: profile image, nickname and a role.  
+- When the family member is created the user will be redirected to the task board. 
+
+
 
 ## Design
 ### Color Scheme
