@@ -23,7 +23,8 @@ const NavBar = () => {
     const handleSignOut = async () => {
         try {
             await axios.post("/dj-rest-auth/logout/");
-
+            // Remove session storage and set current user to null
+            sessionStorage.removeItem('currentFamilyMember')
             setCurrentUser(null);
             navigate("/")
         } catch (err) {
