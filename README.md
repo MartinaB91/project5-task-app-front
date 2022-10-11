@@ -1,10 +1,29 @@
 # Family Star
 ## About
+Family Star is a mix between a task board and a game that families can use to make ordinary household tasks to something fun. Parents can add tasks and family members to the family's shared task board. Depending on how challenging or how long time the task takes the parent can adapt how many star points(scores) completion of the task gives. The family member that currently has the highest amount of collected star points is the family star(leader). 
+
+Family members can pick a task to complete by assigning themselves at the task. When the task is completed, the family member marks the task as done.  The tasks progress is followed by two scoreboards, one for the family member and one for the whole family.
+In the family member scoreboard, the family member can follow their own progress as it will be updated with information about how many: star points, ongoing tasks and closed tasks the family member has. Instead of only containing information about one family member the family’s scoreboard contains information about the progress of the whole family. It contains information about: who is the family star, how many tasks there is to-do, completed tasks and ongoing tasks.
+
+Currently the site contains these categories: Cleaning, Cooking, Homework and Garden Work.
+
 
 ## Target Audience
+This website is meant to attract families that wants to find a way to motivate their children to help out at home or wants to make ordinary household tasks to something fun. 
 
+Parents that use this site would like to organize household tasks that needs to be done. They want to be able to create tasks that they can share with the rest of the family.  
+
+Children that use this site would like to choose a task to do and then mark it as done when completed. Both parents and children want to follow how the family progress with their tasks.  
+
+The main reason for users to revisit the website is because the task managing is intuitive and it’s easy to get an overview of the scores. But also, that the page has a nice and playful design and will hopefully make their lives more organized. 
 
 ## Owner Goals
+- This app should be like a mix of a task board and a game, a gamified task board.  
+- To create an app that is easy to navigate  
+- To create an app that doesn't contain any unnecessary buttons 
+- To create an account and fill your task board with tasks should be quickly done without any unnecessary steps  
+- The design should be playful with bright colors and happy icons.  
+
 ## Table of Contents
 ## UX
 ### User Stories
@@ -68,10 +87,27 @@
 - [HTML Color Codes](https://html-color-codes.info/colors-from-image/) - Used for finding colors from images
 - [Invisionapp](https://www.invisionapp.com/home) - Used for wireframes
 
-## Page Access Overview
+## Access Overview
+- There are three different roles with different access: parents, children and admin. The administrator has access to admin page but can also be a parent and because of this access all sites and functions.  The parent role is available for the admin just for testing and evaluation purposes. 
+
+|Page/functionality     | Parent | Child|  
+|------------------|---------|--------| 
+|Home              | Yes     | Yes    | 
+|Task board	      | Yes	 | Yes    | 
+|Create Task       | Yes     | No    | 
+|Edit Task         | Yes      | No   | 
+|Delete Task       | Yes     | No    | 
+|Create Family Member       | Yes      | Yes    | 
+|Assign Task       | Yes      | Yes    | 
+|Done Task          | Yes      | Yes    | 
+|Search Task    | Yes     | Yes    | 
+
+|Filter Task	|Yes|Yes| 
 ## Components
 ## React Library 
 ## Features
+<img src="documentation/readme-svg/user-plus-solid.svg" width="10" height="10">
+
 ## Design
 ### Color Scheme
 ### Typography
