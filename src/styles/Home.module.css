@@ -19,7 +19,7 @@
 }
 
 #home-header {
-    font-size: 8rem;
+    font-size: 6rem;
     font-family: 'Rock Salt', cursive;
 }
 
@@ -40,7 +40,8 @@
 /* Media queries for home page */
 @media screen and (max-width: 376px) {
     #home-header {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
 
     #home-info-text {
@@ -49,8 +50,8 @@
     }
 
     #home-text-wrapper {
-        margin-top: 25%;
-        margin-left: 15%;
+        margin-top: 29%;
+        margin-left: 12%;
     }
   }
 
@@ -87,8 +88,14 @@
 
 @media screen and (min-width:769px) and (max-width: 992px) {
     #home-header {
-        font-size: 6rem;
+        font-size: 5rem;
+        margin-top: 1rem;
     } 
+
+    #home-info-text {
+        font-size: 1rem;
+        width: 80%;
+    }
 
     #home-text-wrapper {
         margin-top: 20%;
