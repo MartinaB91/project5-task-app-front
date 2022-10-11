@@ -50,22 +50,16 @@
     font-weight: bold;
 }
 
-.InformationTrigger {
-    position: absolute;
-    left: 8%
-}
-
 /* Media queries for profile scoreboard */
 
 @media screen and (max-width: 376px) {
     .ScoreBoardNumber {
         font-size: 2.5rem;
     }
-
-    .InformationTrigger {
-        position: absolute;
+ 
+    #InformationTrigger {
         left: 5%
-    }
+    } 
 
     .CompletedTasksWrapper {
         margin-top: 2rem;
@@ -87,16 +81,11 @@
 
 }
 
-@media screen and (min-width:577px) and (max-width: 768px) {
+  @media screen and (min-width:577px) and (max-width: 768px) {
     .Image {
         height: 5rem;
         width: 5rem;
         margin-top: 1rem;
-    }
-
-    .InformationTrigger {
-        position: absolute;
-        left: 5%
     }
 
     .CompletedTasksWrapper {
@@ -110,18 +99,12 @@
     .OngoingTaskWrapper{
         margin-top: 1.5rem;
     }
-
   }
 
 @media screen and (min-width:769px) and (max-width: 992px) {
     .Image {
         height: 6rem;
         width: 6rem;
-    }
-
-    .InformationTrigger {
-        position: absolute;
-        left: 9%
     }
 
     .CompletedTasksWrapper {
