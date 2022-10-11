@@ -68,7 +68,6 @@ export const MyScoreBoard = (props) => {
 
     return (
         <>
-            {/* {familyMemberContext === null || familyMemberContext === "" ? emptyFamilyMemberInfo : familyMemberInfo} */}
             {familyMemberInfo}
         </>
     )

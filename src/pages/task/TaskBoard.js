@@ -7,8 +7,6 @@ import styles from "../../styles/TaskBoard.module.css";
 import { ProfileScoreBoard } from "../family_member/ProfileScoreBoard";
 import { axiosReq } from "../../api/axiosDefaults";
 
-
-
 const TaskBoard = () => {
     return (
         <Container className={styles.Container}>
@@ -22,7 +20,7 @@ const TaskBoard = () => {
                 <DisplayFamilyMemberTasks />
                 </Col>
                 <Col className="flex-start" id={styles["my-score-board"]} xs={{ span: 12, order: 1 }} md={{ span: 2, order: 2 }}>
-                    <MyScoreBoard  />
+                    <MyScoreBoard />
                 </Col>
             </Row>
         </Container>
