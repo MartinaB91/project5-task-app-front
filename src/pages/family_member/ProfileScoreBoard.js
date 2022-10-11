@@ -17,6 +17,7 @@ export const ProfileScoreBoard = () => {
     const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
     const { id } = useParams();
 
+
     const [profile, setProfile] = useState({});
     
     const [completedAndOngoingTasks, setCompletedAndOngoingTasks] = useState({
@@ -36,7 +37,6 @@ export const ProfileScoreBoard = () => {
     const {total_todo_tasks,} = todoTasks;
 
     useEffect(() => {
-        alert('Hej')
         const handleMount = async () => {
             await axios.get(`profiles/${currentUser["profile_id"]}`)
                 .then((response) => {
@@ -97,8 +97,9 @@ export const ProfileScoreBoard = () => {
     return (
     <>
         <Row className="justify-content-sm-center shadow-sm">
-        <span className='mt-2'><InformationTrigger /></span>
+        {/* <span className='mt-2'><InformationTrigger /></span> */}
         <Col xs={5} sm={3} className="text-center">
+        <span className={`${styles.InformationTrigger} mt-2`}><InformationTrigger /></span>
             {family_star_leader_img !== "" ?
             <Image roundedCircle src={family_star_leader_img} className={styles.Image} />
             :
@@ -114,15 +115,15 @@ export const ProfileScoreBoard = () => {
             <FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIcon} />
             </h4>
         </Col>
-        <Col xs={3} sm={3} className="text-start text-md-center">
+        <Col xs={3} sm={3} className={`${styles.ToDoTaskWrapper} text-start text-md-center`}>
             <p className={styles.ScoreBoardNumber}>{total_todo_tasks}</p>
             <h4 className={styles.ScoreBoardText}>To-Do</h4>
         </Col> 
-        <Col xs={4} sm={3}>
+        <Col xs={4} sm={3} className={styles.CompletedTasksWrapper}>
             <p className={styles.ScoreBoardNumber}>{total_completed_tasks}</p>
             <h4 className={styles.ScoreBoardText}>Completed Tasks</h4>
         </Col>
-        <Col className="d-none d-sm-block">
+        <Col className={`${styles.OngoingTaskWrapper} d-none d-sm-block`}>
             <p className={styles.ScoreBoardNumber}>{total_ongoing_tasks}</p>
             <h4 className={styles.ScoreBoardText}>Ongoing Tasks</h4>
         </Col>
