@@ -175,7 +175,15 @@ The main reason for users to revisit the website is because the task managing is
 - This page contains a form for creating a family member. The family members can add a: profile image, nickname and a role.  
 - When the family member is created the user will be redirected to the task board. 
 
+### Search Task 
+-  When the user enter text in the search field all tasks were the title or description matches the entered text will be shown.
 
+### Filter Task  
+- The tasks can be filtered in five different ways. Per default the tasks are filtered by “Todo” which means that only tasks that isn’t assigned or marked as done is shown. They are ordered by end date where the oldest tasks are displayed first. 
+- In the second filter “My task” the user can find all tasks they have assigned. 
+- “Assigned” tasks is all tasks that is assigned but not completed. 
+- “Done” tasks are all tasks that are completed. They are sorted by end date but unlike filters above the task that has the newest end date is displayed first. 
+- “All” tasks, here you can find all tasks, tasks that needs to be done, ongoing tasks(assigned) and completed tasks. Like “Done” the newest tasks are on the top.  
 
 ## Design
 ### Color Scheme
