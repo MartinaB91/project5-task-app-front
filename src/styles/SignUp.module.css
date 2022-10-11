@@ -26,12 +26,18 @@
     text-align: center;
 }
 
-
 /* Media queries for sign up form */
 @media screen and (max-width: 376px) {
     .FormWrapper {
-        top: 10;
+        top: 15%;
         left: 0%;
+    }
+
+    .SignUpButton {
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;
+        
     }
 }
 

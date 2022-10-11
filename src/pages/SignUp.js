@@ -54,7 +54,7 @@ const SignUpForm = () => {
                 <h1 className={styles.Header}>Sign Up</h1>
                     <Form onSubmit={handleFormSubmit}>
                         <Form.Group className="mb-3" controlId="username">
-                            <Form.Label>Username</Form.Label>
+                            <Form.Label >Username</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Enter username"
