@@ -5,7 +5,7 @@
 }
 
 .Headers {
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Rock Salt', cursive;
   }
 
 #family-member-score-board {
@@ -57,7 +57,6 @@
 .taskTitle {
     font-size: 1.5rem;
     font-weight: 100;
-    /* font-family: 'Permanent Marker', cursive; */
     font-weight: bold;
 }
 
