@@ -97,6 +97,7 @@ export const ProfileScoreBoard = () => {
     return (
     <>
         <Row className="justify-content-sm-center shadow-sm">
+        <h2 className={styles.ScoreBoardHeader}>Our ScoreBoard</h2>
         <Col xs={5} sm={3} className="text-center">
             {family_star_leader_img !== "" ?
             <Image roundedCircle src={family_star_leader_img} className={styles.Image} />
@@ -105,7 +106,7 @@ export const ProfileScoreBoard = () => {
             }
             <h4 className={styles.ScoreBoardTextImage}>
                 
-                <span>Family star</span>
+                <span className={styles.FamilyStarHeader}>Family star</span>
             </h4>
             <h4>
                 <span className={`${styles.FamilyStar} ${styles.FamilyStarName} mb-5`}>{family_star_leader_name}</span>
