@@ -40,7 +40,7 @@
 /* Meida queries for create member form */
 @media screen and (max-width: 376px) {
     .FormWrapper {
-        top: 12%;
+        top: 15%;
         left: 0%;
     }
 
@@ -48,6 +48,12 @@
         height: 10rem;
         width: 10rem;
         margin-left: 25%;
+    }
+
+    .CreateMemberButton{
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 5%;
     }
 
 }

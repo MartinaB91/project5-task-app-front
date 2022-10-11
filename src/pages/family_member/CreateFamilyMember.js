@@ -77,8 +77,6 @@ const CreateFamilyMemberForm = () => {
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header} id={styles["create-member-header"]}>Add Family Member</h1>
                         <Form onSubmit={handleFormSubmit}>
-
-                            {/* <Col xs={12} className="mx-auto text-start"> */}
                             <Form.Group className="mb-3">
                                 {family_member_img ? (
                                     <>
@@ -136,8 +134,7 @@ const CreateFamilyMemberForm = () => {
                                 onChange={onFormFieldUpdate}
                                 value="1"
                             />
-                            {/* </Col> */}
-                            <Button variant="dark" type="submit" className="mt-4 d-block">
+                            <Button variant="dark" type="submit" className={`${styles.CreateMemberButton} mt-4 d-block`}>
                                 Add family member
                             </Button>
                             {errors.non_field_errors?.map((message, idx) =>
