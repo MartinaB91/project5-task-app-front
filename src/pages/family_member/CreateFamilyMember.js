@@ -89,7 +89,7 @@ const CreateFamilyMemberForm = () => {
                                 ) : (
                                     <>
                                         <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={RabbitFace} />
-                                        <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Add a Photo</Form.Label>
+                                        <Form.Label htmlFor="image-upload" className={`${styles.Label}`}>Add a Photo</Form.Label>
                                     </>
                                 )}
                                 <Form.Control
@@ -103,7 +103,7 @@ const CreateFamilyMemberForm = () => {
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="nickname">
-                                <Form.Label className={`${styles.Header} ${styles.Label}`}>Nickname</Form.Label>
+                                <Form.Label className={`${styles.Label}`}>Nickname</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Enter nickname"

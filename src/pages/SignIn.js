@@ -65,7 +65,7 @@ const SignInForm = () => {
                     <Form onSubmit={handleFormSubmit}>
 
                         <Form.Group className="mb-3" controlId="username">
-                            <Form.Label className={styles.Label}>Username</Form.Label>
+                            <Form.Label>Username</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Enter username"
@@ -79,7 +79,7 @@ const SignInForm = () => {
                         )}
                  
                         <Form.Group className="mb-3" controlId="password">
-                            <Form.Label className={styles.Label}>Password</Form.Label>
+                            <Form.Label>Password</Form.Label>
                             <Form.Control
                                 type="password"
                                 placeholder="Enter password"

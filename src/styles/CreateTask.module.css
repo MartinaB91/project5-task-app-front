@@ -18,12 +18,6 @@
     text-align: center;
 }
 
-.Label {
-    font-family: 'Rock Salt', cursive;
-    font-size: 1.5rem;
-
-}
-
 .BackgroundImage {
     object-fit: cover;
     width: 100%;

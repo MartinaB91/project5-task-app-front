@@ -116,7 +116,7 @@ export const EditTask = () => {
                     {currentFamilyMemberObj.role == 1 ?
                         <Form onSubmit={handleFormSubmit}>
                             <Form.Group className="mb-3" controlId="title">
-                                <Form.Label className={styles.Label}>Title</Form.Label>
+                                <Form.Label>Title</Form.Label>
                                 <Form.Control
                                     type="text"
                                     placeholder="Enter title"
@@ -128,7 +128,7 @@ export const EditTask = () => {
                             <Row>
                                 <Col>
                                     <Form.Group className="mb-3" controlId="category">
-                                        <Form.Label className={styles.Label}>Category</Form.Label>
+                                        <Form.Label>Category</Form.Label>
                                         <Form.Control
                                             as="select"
                                             type="arrayOf"
@@ -148,7 +148,7 @@ export const EditTask = () => {
                                 </Col>
                                 <Col>
                                     <Form.Group className="mb-3" controlId="star_points">
-                                        <Form.Label className={styles.Label}>Star Points</Form.Label>
+                                        <Form.Label>Star Points</Form.Label>
                                         <Form.Control
                                             type="number"
                                             name="star_points"
@@ -160,7 +160,7 @@ export const EditTask = () => {
                             </Row>
 
                             <Form.Group className="mb-3" controlId="endDate">
-                                <Form.Label className={styles.Label}>End date</Form.Label>
+                                <Form.Label>End date</Form.Label>
                                 <Form.Control
                                     type="date"
                                     name="end_date"
@@ -170,7 +170,7 @@ export const EditTask = () => {
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="description">
-                                <Form.Label className={styles.Label}>Description</Form.Label>
+                                <Form.Label>Description</Form.Label>
                                 <Form.Control
                                     as="textarea"
                                     rows={4}
@@ -182,7 +182,7 @@ export const EditTask = () => {
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="assigned">
-                                <Form.Label className={styles.Label}>Want to assign your task?</Form.Label>
+                                <Form.Label>Want to assign your task?</Form.Label>
                                 <Form.Control
                                     as="select"
                                     type="arrayOf"
