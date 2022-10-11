@@ -13,7 +13,7 @@
 
 .Label {
     font-family: 'Rock Salt', cursive;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .SignUpLink {
@@ -53,6 +53,10 @@
         text-align: center;
     }
 
+    .Header {
+        margin-bottom: 1rem;
+    }
+
 }
 
 @media screen and (min-width:377px) and (max-width: 576px) {
@@ -65,12 +69,20 @@
         margin-top: 0.9rem;
         text-align: center;
     }
+
+    .Header {
+        margin-bottom: 1rem;
+    }
 }
 
 @media screen and (min-width:577px) and (max-width: 768px) {
     .FormWrapper {
         top: 12%;
         left: 25%;
+    }
+
+    .Header {
+        margin-bottom: 1rem;
     }
 
 }
@@ -84,5 +96,9 @@
     .SignUpText {
         margin-top: 2.2rem;
         text-align: center;
+    }
+
+    .Header {
+        margin-bottom: 2rem;
     }
 }
