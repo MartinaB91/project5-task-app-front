@@ -45,7 +45,7 @@ export const MyScoreBoard = (props) => {
         </Row>
     )
 
-    const familyMemberInfo = currentFamilyMemberObj === null || currentFamilyMemberObj === "" ? 
+    const familyMemberInfo = currentFamilyMemberObj.id == null || currentFamilyMemberObj.id === "" ? 
         emptyFamilyMemberInfo : 
             <Row className="d-md-block shadow-sm">
                 <h2 className={styles.ScoreBoardHeader}>My Scores</h2>

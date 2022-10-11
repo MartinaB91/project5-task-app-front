@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -17,12 +17,19 @@ import FormImage from "../assets/images/test-sign-in.jpg";
 import { Image } from "react-bootstrap";
 import Rabbit from "../assets/images/rabbit-2.webp";
 import { Alert } from 'react-bootstrap';
+import { CurrentFamilyMemberContext } from "../context/CurrentFamilyMemberContext";
+
 
 
 
 const SignInForm = () => {
     const setCurrentUser = useSetCurrentUser();
     useRedirect('signedIn');
+
+    const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
+
+    // Convert json to js object
+    const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
     const [signInForm, setSignInForm] = useState({
         username: "",
@@ -43,11 +50,27 @@ const SignInForm = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        const {data} = await axios.post('/dj-rest-auth/login/', signInForm)
+        await axios.post('/dj-rest-auth/login/', signInForm)
         .then((response) => {
             setCurrentUser(response.data.user);
             if (response.status === 200) {
-                navigate("/taskboard");
+                // If ther is no family member create a empty object, just to not have currentFamilyMember = null. 
+                if (currentFamilyMemberObj == null){
+                    const empty = {
+                      id: null,
+                      belongs_to_profile: "",
+                      name: "",
+                      family_member_img: "",
+                      role: "",
+                      star_points: "",
+                      ongoing_tasks: "",
+                      closed_tasks: ""
+                    };
+                  
+                    setFamilyMemberContext(JSON.stringify(empty));
+
+                  }
+                  navigate("/taskboard");
             }
         })
         .catch((e) => {
