@@ -187,7 +187,7 @@ The main reason for users to revisit the website is because the task managing is
 - Delete task button: <img src="documentation/readme-svg/trash-can-regular.svg" width="15" height="15">
 - Assign task button: <img src="documentation/readme-svg/user-plus-solid.svg" width="15" height="15">
 - Arrow pointing at "Add task": <img src="documentation/readme-svg/arrow-down-solid.svg" width="15" height="15">
-- No choosen family member or default image for family member: <img src="src/assets/images/rabbit-face-1.svg" width="15" height="15">
+- No choosen family member or default image for family member: <img src="src/assets/images/rabbit-face-1.svg" width="20" height="20">
 
 ### Search bar and Filter
 ### Wireframes 
@@ -199,7 +199,9 @@ The main reason for users to revisit the website is because the task managing is
 ## Deployment
 ## Credits
 ### Code
+- [w3schools](https://www.w3schools.com/jsref/met_storage_setitem.asp) and [LogRocket](https://blog.logrocket.com/using-localstorage-react-hooks/) and [Bits and Pieces](https://blog.bitsrc.io/5-methods-to-persisting-state-between-page-reloads-in-react-8fc9abd3fa2f) - Used as inspiration when building CurrentFamilyMemberProvider
 - [Stackoverflow - Highest value](https://stackoverflow.com/questions/36941115/return-object-with-highest-value) - Used for finding and returning family member with highest star points. 
+- [Pluralsight](https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react) - Used as inspiration for mapping out categories in create and edit task form.
 ### Content and Media
 - [Pexels](https://www.pexels.com/sv-se/) - All pictures on app are from Pexels
 ### Test
