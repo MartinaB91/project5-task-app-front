@@ -124,6 +124,14 @@ The main reason for users to revisit the website is because the task managing is
 - The ellipsis button is displayed on all tasks and when the user clicks the button it will expand and the user will be displayed with two links displayed as icons. One for edit tasks and one for delete task.  
 
 ## React Library 
+### Structure and Code
+- With the use of react components it will be possible to reuse some of the code in the project. There is not so much reuse in this specifik project yet, however thanks to the use of components it will be possible to replace for example "DisplayFamilyMembers" with a new version without effecting other code to much. 
+- Another benefit of using the react library is that the code files are smaller and if the project would be continued it will be easier for another devloper when this structure has been used. 
+- Usage of react JSX has been of great use when creating dynamic html with variables and passing parameters. 
+### UX
+- The user experience has been improved by using react. One feature that has improved the user experience is the hooks which have made it possible to run certain code on specific events for example keeping the current family member scoreboard updated without refreshing the page. 
+- By using react bootstrap the user interface is clearly structured and fully responsive, this is something that most users expect since every day usage could be by phone, tablet and computer. 
+
 ## Features
 ### Home page 
 - The home page contains a hero image with some text. The text consists of an explanation of what you can use this website for. This is meant to attract users to want to try this app. The text is followed by a sign-up link to make it easy for visitors to sign up. 
