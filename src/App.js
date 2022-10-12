@@ -12,6 +12,7 @@ import CreateFamilyMemberForm from './pages/family_member/CreateFamilyMember';
 import { CreateTask } from './pages/task/CreateTask';
 import { EditTask } from './pages/task/EditTask';
 import { DeleteTask } from './pages/task/DeleteTask';
+import NotFound from "./components/common/NotFound";
 
 
 const  App = () => {
@@ -29,6 +30,8 @@ const  App = () => {
           <Route exact path="/addtask" element={<CreateTask />}/>
           <Route exact path="/tasks/:id/edit" element={<EditTask />}/>
           <Route exact path="/tasks/:id/:title/delete" element={<DeleteTask />}/>
+          <Route exact path="/pagenotfound" element={<NotFound />}/>
+
 
           
         </Routes>

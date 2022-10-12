@@ -1,0 +1,14 @@
+.Container {
+    margin-top: 7rem;
+    text-align: center;
+}
+
+.Image {
+    height: 10rem;
+    width: 10rem;
+    margin-bottom: 2rem;
+}
+
+.NotFoundText {
+    font-weight: bold;
+}
