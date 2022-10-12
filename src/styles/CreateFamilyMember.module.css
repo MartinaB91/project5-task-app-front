@@ -37,6 +37,11 @@
     font-size: 1rem;
 }
 
+.NotAutenticatedUserContainer {
+    margin-top: 10rem;
+    text-align: center;
+}
+
 /* Meida queries for create member form */
 @media screen and (max-width: 376px) {
     .FormWrapper {

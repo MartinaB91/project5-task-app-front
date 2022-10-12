@@ -7,15 +7,18 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import { Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
 import { useState, useRef, useContext } from 'react';
 import { Alert } from 'react-bootstrap';
 import BackgroundForm from "../../assets/images/dots.webp";
 import RabbitFace from "../../assets/images/rabbit-face-1.svg";
+import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
 
 
 const CreateFamilyMemberForm = () => {
+    const currentUser = useCurrentUser();
     const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
@@ -72,7 +75,15 @@ const CreateFamilyMemberForm = () => {
 
     
     return (
-        <Container fluid className={styles.Container}>
+        <>
+        {currentUser == null || currentUser === "" ? (
+            <Container fluid className={styles.NotAutenticatedUserContainer}>
+                <p>You need to sign in before adding a family member</p>
+                <Link to="/signin">Sign In</Link>
+            </Container>
+        ): 
+        (
+            <Container fluid className={styles.Container}>
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header} id={styles["create-member-header"]}>Add Family Member</h1>
@@ -145,6 +156,9 @@ const CreateFamilyMemberForm = () => {
             </Row>
             <Image className={styles.BackgroundImage} src={BackgroundForm} />
         </Container>
+        )}
+        
+        </>
     )
 }
 export default CreateFamilyMemberForm;
