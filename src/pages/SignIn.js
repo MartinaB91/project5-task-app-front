@@ -18,8 +18,7 @@ import { Image } from "react-bootstrap";
 import Rabbit from "../assets/images/rabbit-2.webp";
 import { Alert } from 'react-bootstrap';
 import { CurrentFamilyMemberContext } from "../context/CurrentFamilyMemberContext";
-
-
+import { setTokenTimestamp } from "../utils/utils";
 
 
 const SignInForm = () => {
@@ -53,6 +52,7 @@ const SignInForm = () => {
         await axios.post('/dj-rest-auth/login/', signInForm)
         .then((response) => {
             setCurrentUser(response.data.user);
+            setTokenTimestamp(response.data);
             if (response.status === 200) {
                 // If ther is no family member create a empty object, just to not have currentFamilyMember = null. 
                 if (currentFamilyMemberObj == null){
