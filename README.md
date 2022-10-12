@@ -215,11 +215,12 @@ The main reason for users to revisit the website is because the task managing is
 - [**Phone**](documentation/wireframes/WIREFRAMES.md)
 ### Database Scheme
 ## Testing
+Read more about test and validation [here](/testing/TEST.md)
 ## Future Improvements
-The following user stories were planed but cut off due to the time frame. In the future this could be added:
+The following user stories was started (code for back-end is done) but not finished. This beacuse other tasks had higher prioritization and the time for this project was running out. In the future this could be added to the front-end:
 
-    - [#39](https://github.com/MartinaB91/project5-task-app-front/issues/39): Update family member
-    - [#40](https://github.com/MartinaB91/project5-task-app-front/issues/40): Delete family member
+- [#39](https://github.com/MartinaB91/project5-task-app-front/issues/39): Update family member
+- [#40](https://github.com/MartinaB91/project5-task-app-front/issues/40): Delete family member
 
 ### Code
 - More automatic tests before building code could have been done (TDD). 
@@ -227,15 +228,17 @@ The following user stories were planed but cut off due to the time frame. In the
 ### Known bugs
 Because of limited time these bugs was not prioritezed since testing and validation needed to be done properly. These bugs are not critical and have little impact on the user experience: 
 
-- [#55](https://github.com/MartinaB91/project5-task-app-front/issues/55) More than one Family Stars(Leaders)
-- [#56](https://github.com/MartinaB91/project5-task-app-front/issues/56) No warning when leaving input empty. Edit task form 
+- [#55](https://github.com/MartinaB91/project5-task-app-front/issues/55) - More than one Family Stars(Leaders)
+- [#56](https://github.com/MartinaB91/project5-task-app-front/issues/56) - No warning when leaving input empty. Edit task form 
 
 ## Deployment
 ## Credits
 ### Code
-- [w3schools](https://www.w3schools.com/jsref/met_storage_setitem.asp) and [LogRocket](https://blog.logrocket.com/using-localstorage-react-hooks/) and [Bits and Pieces](https://blog.bitsrc.io/5-methods-to-persisting-state-between-page-reloads-in-react-8fc9abd3fa2f) - Used as inspiration when building CurrentFamilyMemberProvider
+- [Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Storage/)and [Bits and Pieces](https://blog.bitsrc.io/5-methods-to-persisting-state-between-page-reloads-in-react-8fc9abd3fa2f) - Used as inspiration when building CurrentFamilyMemberProvider
 - [Stackoverflow - Highest value](https://stackoverflow.com/questions/36941115/return-object-with-highest-value) - Used for finding and returning family member with highest star points. 
 - [Pluralsight](https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react) - Used as inspiration for mapping out categories in create and edit task form.
 ### Content and Media
 - [Pexels](https://www.pexels.com/sv-se/) - All pictures on app are from Pexels
+- [SVG Repo](https://www.svgrepo.com/) - Used for default and 404 page icons
 ### Test
+
