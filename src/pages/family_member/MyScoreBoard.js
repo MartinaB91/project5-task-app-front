@@ -9,6 +9,7 @@ import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberCon
 import styles from "../../styles/MyScoreBoard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFaceSmile, faStar } from '@fortawesome/free-solid-svg-icons'
+import RabbitFace  from "../../assets/images/rabbit-face-1.svg"
 
 
 export const MyScoreBoard = (props) => {
@@ -39,9 +40,9 @@ export const MyScoreBoard = (props) => {
 
 
     const emptyFamilyMemberInfo = (
-        <Row className="d-md-block">
-        <FontAwesomeIcon className={`${styles.FontAwesomeIconSmiley} mt-3`} icon={faFaceSmile} />
-        <p className={`${styles.ScoreBoardText} text-center`}>You haven't choosen a family member yet. Please Select one in the navbar</p>
+        <Row className="d-md-block text-center">
+        <Image src={RabbitFace} className={`${styles.RabbitFace} mt-3`} />
+        <p className={`${styles.ScoreBoardText}`}>You haven't choosen a family member yet. Please Select one in the navbar</p>
         </Row>
     )
 

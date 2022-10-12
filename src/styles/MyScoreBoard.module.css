@@ -23,10 +23,11 @@
     padding-left: 0.5rem;
 }
 
-.FontAwesomeIconSmiley {
-    color: #D4AF37;
+.RabbitFace {
     padding-left: 0.5rem;
     font-size: 4rem;
+    height: 7.5rem;
+    width: 7.5rem;
 }
 
 .ScoreBoardHeader {
