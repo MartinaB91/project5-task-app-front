@@ -40,9 +40,9 @@ export const MyScoreBoard = (props) => {
 
 
     const emptyFamilyMemberInfo = (
-        <Row className="d-md-block text-center">
+        <Row className="d-md-block justify-content-center">
         <Image src={RabbitFace} className={`${styles.RabbitFace} mt-3`} />
-        <p className={`${styles.ScoreBoardText}`}>You haven't choosen a family member yet. Please Select one in the navbar</p>
+        <p className={`${styles.ScoreBoardText} text-center`}>You haven't choosen a family member yet. Please Select one in the navbar</p>
         </Row>
     )
 
@@ -60,11 +60,11 @@ export const MyScoreBoard = (props) => {
                 </Col>
                 <Col xs={4} sm={12} className="text-center">
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.ongoing_tasks}</p>
-                    <h4 className={styles.ScoreBoardText}>Ongoing Tasks</h4>
+                    <h4 className={styles.ScoreBoardText}>Ongoing</h4>
                 </Col>
                 <Col className="d-none d-sm-block text-center">
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.closed_tasks}</p>
-                    <h4 className={`${styles.ScoreBoardText} mb-5`}>Closed Tasks</h4>
+                    <h4 className={`${styles.ScoreBoardText} mb-5`}>Closed</h4>
                 </Col>
             </Row> ;
 
