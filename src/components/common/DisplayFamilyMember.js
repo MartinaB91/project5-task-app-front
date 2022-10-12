@@ -57,7 +57,7 @@ export const DisplayFamilyMember = () => {
           })}
         </Row>
       }
-      <Link to="/addfamilymember" className={styles.Link}>Add Family Member<FontAwesomeIcon icon={faUserPlus} /></Link>
+      <Link to="/addfamilymember" className={styles.Link}>Add Family Member<FontAwesomeIcon icon={faUserPlus} className={styles.AddMemberIcon}/></Link>
     </>
   )
 }
