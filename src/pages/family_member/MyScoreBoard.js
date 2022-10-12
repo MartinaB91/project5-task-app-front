@@ -23,17 +23,21 @@ export const MyScoreBoard = (props) => {
 
     useEffect(() => {
         const handleMount = async () => {
-            try {
-                const [{ data: familymember }] = await Promise.all([
-                    axiosReq.get(`/familymembers/members/${currentFamilyMemberObj.id}`),
-                ]);
-                setFamilyMember({ results: [familymember] });
-                console.log(familymember);
-
-            } catch (error) {
-                console.log(error);
+            if (currentFamilyMemberObj?.id != null) {
+                try {
+                    const [{ data: familymember }] = await Promise.all([
+                        axiosReq.get(`/familymembers/members/${currentFamilyMemberObj.id}`),
+                    ]);
+                    setFamilyMember({ results: [familymember] });
+                    console.log(familymember);
+    
+                } catch (error) {
+                    console.log(error);
+    
+                }
 
             }
+            
         };
         handleMount();
     }, [currentFamilyMemberObj.id]);
