@@ -64,11 +64,11 @@
     }
 
     .CompletedTasksWrapper {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
 
     .ToDoTaskWrapper {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
 
     .Image {
@@ -78,11 +78,11 @@
 
 @media screen and (min-width:377px) and (max-width: 576px) {
     .CompletedTasksWrapper {
-        margin-top: 1.5rem;
+        margin-top: 0.4rem;
     }
 
     .ToDoTaskWrapper {
-        margin-top: 1.5rem;
+        margin-top: 0.4rem;
     }
 
 }
