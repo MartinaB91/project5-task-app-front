@@ -212,7 +212,7 @@ export const CreateTask = () => {
                             )}
                         </Form>
                         :
-                        <Alert variant='warning' className='mt-5'>Ask your parents to create a task</Alert>
+                        <Alert variant='warning' className='mt-5 text-center'>Ask your parents to create a task</Alert>
                     }
                 </Col>
             </Row>

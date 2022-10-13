@@ -202,7 +202,7 @@ export const EditTask = () => {
                             </Button>
                         </Form>
                         :
-                        <Alert variant='warning' className='text-center'>Ask your parents to edit task</Alert>
+                        <Alert variant='warning' className='text-center mt-5'>Ask your parents to edit task</Alert>
                     }
                 </Col>
             </Row>
