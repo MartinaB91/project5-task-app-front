@@ -21,7 +21,7 @@ export const ProfileScoreBoard = () => {
     const [profile, setProfile] = useState({});
 
     const [completedAndOngoingTasks, setCompletedAndOngoingTasks] = useState({
-        family_star_leader_name: "No leader yet",
+        family_star_leader_name: "",
         family_star_leader_points: 0,
         total_completed_tasks: 0,
         total_ongoing_tasks: 0,
@@ -122,11 +122,11 @@ export const ProfileScoreBoard = () => {
                 </Col>
                 <Col xs={4} sm={3} className={styles.CompletedTasksWrapper}>
                     <p className={styles.ScoreBoardNumber}>{total_completed_tasks}</p>
-                    <h4 className={styles.ScoreBoardText}>Completed Tasks</h4>
+                    <h4 className={styles.ScoreBoardText}>Closed</h4>
                 </Col>
                 <Col className={`${styles.OngoingTaskWrapper} d-none d-sm-block`}>
                     <p className={styles.ScoreBoardNumber}>{total_ongoing_tasks}</p>
-                    <h4 className={styles.ScoreBoardText}>Ongoing Tasks</h4>
+                    <h4 className={styles.ScoreBoardText}>Ongoing</h4>
                 </Col>
             </Row>
         </>
