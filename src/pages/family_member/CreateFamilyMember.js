@@ -15,6 +15,7 @@ import { Alert } from 'react-bootstrap';
 import BackgroundForm from "../../assets/images/dots.webp";
 import RabbitFace from "../../assets/images/rabbit-face-1.svg";
 import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
+import MessageUnauthenticatedUser from "../../components/common/MessageUnauthenticatedUser";
 
 
 const CreateFamilyMemberForm = () => {
@@ -77,13 +78,10 @@ const CreateFamilyMemberForm = () => {
     return (
         <>
         {currentUser == null || currentUser === "" ? (
-            <Container fluid className={styles.NotAutenticatedUserContainer}>
-                <p>You need to sign in before adding a family member</p>
-                <Link to="/signin">Sign In</Link>
-            </Container>
+            <MessageUnauthenticatedUser message="You need to sign in before adding a family member"/>
         ): 
         (
-            <Container fluid className={styles.Container}>
+            <Container fluid className={styles.Container} >
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header} id={styles["create-member-header"]}>Add Family Member</h1>
