@@ -106,18 +106,28 @@
     text-align: center;
 }
 
-/* Media queries for profile scoreboard */
+/* Media queries for profile and my scoreboard */
 @media screen and (max-width: 376px) {
     #family-member-score-board {
         border-radius: 0;
         
     }
-  }
 
-/* Media queries for my scoreboard */
-@media screen and (max-width: 376px) {
     #my-score-board {
         border-radius: 0;
         
     }
+  }
+
+@media screen and (min-width: 378px) and (max-width: 576px) {
+    #family-member-score-board {
+        border-radius: 0;
+        
+    }
+
+    #my-score-board {
+        border-radius: 0;
+        
+    }
+
   }
