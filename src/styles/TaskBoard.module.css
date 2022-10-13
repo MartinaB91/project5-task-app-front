@@ -80,6 +80,10 @@
     background-color: white;
 }
 
+.AssignedName {
+    margin-left: 1rem;
+}
+
 .checkMarkDone:hover {
     color: darkgreen;
 }
