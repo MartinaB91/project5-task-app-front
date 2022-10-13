@@ -8,7 +8,7 @@ import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import styles from "../../styles/MyScoreBoard.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFaceSmile, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 import RabbitFace  from "../../assets/images/rabbit-face-1.svg"
 
 
