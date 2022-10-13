@@ -101,6 +101,15 @@
     margin-left: 1.5rem;
 }
 
+.HiddenRabbitLoader {
+    height: 4rem;
+    width: 4rem;
+}
+
+.LoaderWrapper {
+    justify-content: center;
+}
+
 
 /* Media queries for profile and my scoreboard */
 @media screen and (max-width: 376px) {

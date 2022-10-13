@@ -13,6 +13,7 @@ import { Form } from "react-bootstrap";
 import { axiosReq } from "../../api/axiosDefaults";
 import InformationTrigger from "../../components/common/ScoreBoardInformationTrigger";
 import Loader from "../../components/common/Loader";
+import HiddenRabbit from "../../assets/images/hidden-rabbit.svg"
 
 
 
@@ -196,7 +197,10 @@ export const DisplayFamilyMemberTasks = () => {
         <>
           {tasks == "" || tasks == [] ? (
             <>
-              <p className="text-center mt-5">You haven’t created any tasks yet. Go to the navbar to create one</p>
+            <Row className="justify-content-center">
+            <Image className={`${styles.HiddenRabbitLoader} mt-4`} src={HiddenRabbit}></Image>
+            <p className="text-center">Oops there is nothing here... </p>
+            </Row>
             </>
           ) : (
             <>
