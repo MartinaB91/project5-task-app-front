@@ -1,0 +1,10 @@
+/* Styling for loader */
+
+.LoaderWrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+#Spinner {
+    color: #FBD1DB;
+}
