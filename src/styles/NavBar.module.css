@@ -22,7 +22,7 @@
 }
 
 .Menu {
-    /* text-align: center; */
+    text-align: center;
     /* width: 100vh; */
     border: none;
     border-radius: 0;
@@ -32,3 +32,6 @@
     font-family: 'Rock Salt', cursive;
   }
 
+.AddTaskIcon {
+    margin-left: 2%;
+}
