@@ -62,7 +62,7 @@ export const MyScoreBoard = (props) => {
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.star_points}</p>
                     <h4 className={styles.ScoreBoardText}>Star Points<FontAwesomeIcon icon={faStar} className={styles.FontAwesomeIcon} /></h4>
                 </Col>
-                <Col xs={4} sm={12} className="text-center">
+                <Col xs={4} sm={12} className={`${styles.OngoingTaskWrapper} text-center`}>
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.ongoing_tasks}</p>
                     <h4 className={styles.ScoreBoardText}>Ongoing</h4>
                 </Col>
