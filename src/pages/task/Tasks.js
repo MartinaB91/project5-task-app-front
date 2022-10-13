@@ -227,7 +227,7 @@ export const DisplayFamilyMemberTasks = () => {
                             {task.description}
                           </Card.Text>
                           <Row className={styles.DoneAndAssignBtnsWrapper}>
-                            <Col xs={2} md={2}>
+                            <Col xs={4} md={2}>
                               {task.assigned === null || task.assigned === "" ?
                                 <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
                                 :
@@ -236,19 +236,19 @@ export const DisplayFamilyMemberTasks = () => {
 
                                     <>
                                       <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
-                                      <p>{family_member.name}</p>
+                                      <p className={styles.AssignedName}>{family_member.name}</p>
                                     </>
                                     :
                                     <>
                                       <button disabled value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
-                                      <p>{family_member.name}</p>
+                                      <p className={styles.AssignedName}>{family_member.name}</p>
                                     </>
                                   }
                                 </>
 
                               }
                             </Col>
-                            <Col xs={7} md={7}>
+                            <Col xs={5} md={7}>
                               <Card.Text className={`${styles.cardCategory} text-center mt-3`}>{task.category_name}</Card.Text>
                             </Col>
                             <Col xs={3} md={3}>
