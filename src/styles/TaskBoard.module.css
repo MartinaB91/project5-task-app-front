@@ -101,10 +101,6 @@
     margin-left: 1.5rem;
 }
 
-.NotAutenticatedUserContainer {
-    margin-top: 10rem;
-    text-align: center;
-}
 
 /* Media queries for profile and my scoreboard */
 @media screen and (max-width: 376px) {

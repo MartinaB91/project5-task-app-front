@@ -5,17 +5,14 @@ import { DisplayFamilyMemberTasks } from "../task/Tasks";
 import styles from "../../styles/TaskBoard.module.css";
 import { ProfileScoreBoard } from "../family_member/ProfileScoreBoard";
 import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
-import { Link } from "react-router-dom";
+import MessageUnauthenticatedUser from "../../components/common/MessageUnauthenticatedUser";
 
 const TaskBoard = () => {
     const currentUser = useCurrentUser();
     return (
         <>
             {currentUser == null || currentUser === "" ? (
-                <Container fluid className={styles.NotAutenticatedUserContainer}>
-                    <p>You need to sign in before viewing the taskboard</p>
-                    <Link to="/signin">Sign In</Link>
-                </Container>
+                <MessageUnauthenticatedUser message="You need to sign in before viewing the taskboard"/>
             ) : (
                 <Container className={styles.Container}>
                     <Row>
