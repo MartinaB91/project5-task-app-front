@@ -1,0 +1,12 @@
+/* Styles for messages unautenticated  */
+
+.Container {
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.RabbitFace {
+    padding-left: 0.5rem;
+    height: 7.5rem;
+    width: 7.5rem;
+}
