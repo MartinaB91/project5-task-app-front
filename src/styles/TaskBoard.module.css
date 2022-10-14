@@ -114,6 +114,10 @@
     justify-content: center;
 }
 
+.AssignButtonWrapper {
+    padding-left: 8%;
+}
+
 
 /* Media queries for profile and my scoreboard */
 @media screen and (max-width: 376px) {

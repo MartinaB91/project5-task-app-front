@@ -197,7 +197,7 @@ export const DisplayFamilyMemberTasks = () => {
         <>
           {tasks == "" || tasks == [] ? (
             <>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center text-center">
             <Image className={`${styles.HiddenRabbitLoader} mt-4`} src={HiddenRabbit}></Image>
             <p className="text-center">Oops there is nothing here... </p>
             </Row>
@@ -227,7 +227,7 @@ export const DisplayFamilyMemberTasks = () => {
                             {task.description}
                           </Card.Text>
                           <Row className={styles.DoneAndAssignBtnsWrapper}>
-                            <Col xs={4} md={2}>
+                            <Col xs={4} md={4}>
                               {task.assigned === null || task.assigned === "" ?
                                 <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
                                 :
@@ -248,10 +248,10 @@ export const DisplayFamilyMemberTasks = () => {
 
                               }
                             </Col>
-                            <Col xs={5} md={7}>
-                              <Card.Text className={`${styles.cardCategory} text-center mt-3`}>{task.category_name}</Card.Text>
+                            <Col xs={4} md={4}>
+                              <Card.Text className={`${styles.cardCategory} text-start mt-4`}>{task.category_name}</Card.Text>
                             </Col>
-                            <Col xs={3} md={3}>
+                            <Col xs={4} md={4} className={styles.AssignButtonWrapper}>
                               {/* If task status is todo but the task is not assigned the done btn will be
                     disabled. When btn is assigned you can mark the task as done */}
                               {task.status === "Todo" ?
