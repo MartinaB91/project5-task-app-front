@@ -26,7 +26,7 @@ const CreateFamilyMemberForm = () => {
     const [createFamilyMemberForm, setCreateFamilyMemberForm] = useState({
         family_member_img: "",
         name: "",
-        role: "",
+        role: 0,
 
     });
 
