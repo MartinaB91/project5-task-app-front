@@ -20,7 +20,8 @@
 
 .FontAwesomeIcon {
     color: #D4AF37;
-    padding-left: 0.5rem;
+    /* padding-left: 0.5rem;  */
+    font-size: 2rem;
 }
 
 .RabbitFace {
@@ -43,8 +44,8 @@
         font-size: 2.5rem;
     }
 
-    .OngoingTaskWrapper {
-        margin-top: 1.9rem;
+    .FamilyInfoWrapper {
+        margin-bottom: 1rem;
     }
   }
 

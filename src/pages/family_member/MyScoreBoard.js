@@ -54,13 +54,13 @@ export const MyScoreBoard = (props) => {
         emptyFamilyMemberInfo : 
             <Row className="d-md-block shadow-sm">
                 <h2 className={styles.ScoreBoardHeader}>My Scores</h2>
-                <Col xs={5} sm={12} className="text-center">
+                <Col xs={5} sm={12} className={`${styles.FamilyInfoWrapper} text-center`}>
                     <Image roundedCircle src={currentFamilyMemberObj.family_member_img} className={styles.Image} />
                     <h4 className={styles.ScoreBoardText}>{currentFamilyMemberObj.name}</h4>
                 </Col>
                 <Col xs={3} sm={12} className="text-center">
                     <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.star_points}</p>
-                    <h4 className={styles.ScoreBoardText}>Stars<FontAwesomeIcon icon={faStar} className={`${styles.FontAwesomeIcon} d-none d-sm-block`}/></h4>
+                    <h4 className={styles.ScoreBoardText}>Stars</h4>
 
                    
                 </Col>
