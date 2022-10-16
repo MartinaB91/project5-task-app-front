@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Image } from 'react-bootstrap';
 import Rabbit3 from "../assets/images/rabbit-5.webp";
-
+import { axiosReq } from '../api/axiosDefaults';
 
 const SignUpForm = () => {
     const [signUpForm, setSignUpForm] = useState({
@@ -33,7 +33,7 @@ const SignUpForm = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        axios.post('/dj-rest-auth/registration/', signUpForm)
+        axiosReq.post('/dj-rest-auth/registration/', signUpForm)
         .then((response) => {
             if (response.status === 201) {
                 navigate("/signin");
