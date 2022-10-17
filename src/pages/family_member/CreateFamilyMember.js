@@ -57,8 +57,10 @@ const CreateFamilyMemberForm = () => {
 
         formData.append("name", name);
         formData.append("role", role);
-        formData.append("family_member_img", imageInput.current.files[0]);
-
+        if (imageInput.current.files[0] !== undefined ) {
+            formData.append("family_member_img", imageInput.current.files[0]);
+        };
+        
         await axios.post('familymembers/members/', formData)
             .then((response) => {
                 if (response.status === 201) {
