@@ -117,7 +117,7 @@ const SignUpForm = () => {
                     </Form>
                 </Col>
             </Row>
-            <Image className={styles.BackgroundImage} src={Rabbit3} />
+            <Image className={styles.BackgroundImage} src={Rabbit3} alt="Standing rabbit with party hat"/>
         </Container>
     )
 }
