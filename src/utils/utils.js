@@ -8,7 +8,7 @@ export const setTokenTimestamp = (data) => {
 
 export const shouldRefreshToken = () => {
   // If sign out, timestamp is null and should not be refreshed
-  if (localStorage.getItem("refreshTokenTimestamp") == null || localStorage.getItem("refreshTokenTimestamp") == "null") {
+  if (localStorage.getItem("refreshTokenTimestamp") === null || localStorage.getItem("refreshTokenTimestamp") === "null") {
     return false;
   }
   return !!localStorage.getItem("refreshTokenTimestamp");
