@@ -7,7 +7,7 @@ export const setTokenTimestamp = (data) => {
 };
 
 export const shouldRefreshToken = () => {
-  if (localStorage.getItem("refreshTokenTimestamp") == null) {
+  if (localStorage.getItem("refreshTokenTimestamp") == null || localStorage.getItem("refreshTokenTimestamp") == "null") {
     alert("Den är null");
     return false;
   }
