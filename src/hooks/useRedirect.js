@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import {shouldRefreshToken} from "../utils/utils";
 
 export const useRedirect = (signInStatus) => {
   const navigate = useNavigate();
@@ -8,7 +9,9 @@ export const useRedirect = (signInStatus) => {
   useEffect(() => {
     const handleMount = async () => {
       try {
-        await axios.post("/dj-rest-auth/token/refresh/");
+        if (shouldRefreshToken()) {
+          await axios.post("/dj-rest-auth/token/refresh/");
+        }
         if (signInStatus === "signedIn") {
           navigate("");
         }
