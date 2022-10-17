@@ -48,6 +48,8 @@ export const EditTask = () => {
             }
         };
         handleMount();
+        // React Hook useEffect has a missing dependency: 'creator'. Either include it or remove the dependency array
+        // We don't wan't useEffect to triggers every time 'creator'(currentFamilyMemberObj.id) changes only use value. 
     }, [navigate, id]);
 
     const onFormFieldUpdate = (e) => {

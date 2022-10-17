@@ -92,6 +92,8 @@ export const ProfileScoreBoard = () => {
         handleTotalTodoTasks();
         handleScoreBoard();
         handleMount();
+        // React Hook useEffect has a missing dependency: 'currentUser'. Either include it or remove the dependency array
+        // We don't wan't useEffect to triggers every time currentUser changes only check if we have a current user
     }, [id, familyMemberContext]);
 
 
