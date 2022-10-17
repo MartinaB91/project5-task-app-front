@@ -24,10 +24,11 @@ const NavBar = () => {
 
     const handleSignOut = async () => {
         try {
+            localStorage.setItem("refreshTokenTimestamp", null);
+
             await axiosReq.post("/dj-rest-auth/logout/");
             // Remove session storage and set current user to null
             sessionStorage.removeItem('currentFamilyMember')
-            localStorage.setItem("refreshTokenTimestamp", null);
             setCurrentUser(null);
             navigate("/")
         } catch (err) {
