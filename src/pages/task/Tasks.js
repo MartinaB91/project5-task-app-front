@@ -50,7 +50,7 @@ export const DisplayFamilyMemberTasks = () => {
 
   useEffect(() => {
     const handleMount = async () => {
-      if (filter == "no_selected_value" && query == undefined) {
+      if (filter === "no_selected_value" && query === undefined) {
         await axios.get("taskboard/tasks")
           .then((response) => {
             console.log(response);
@@ -110,7 +110,7 @@ export const DisplayFamilyMemberTasks = () => {
         const tasksAsArray = [];
         for (let task of tasks) {
           // Find the task we are updating in the tasks-state/list
-          if (task.id == taskId) {
+          if (task.id === taskId) {
             if (task.assigned === currentFamilyMemberObj.id) {
               task.assigned = null;
               currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
@@ -137,14 +137,14 @@ export const DisplayFamilyMemberTasks = () => {
         const tasksAsArray = [];
         for (let task of tasks) {
           // Find the task we are updating in the tasks-state/list
-          if (task.id == taskId) {
+          if (task.id === taskId) {
             task.status === 'Done' ? task.status = 'Todo' : task.status = 'Done';
           }
           tasksAsArray.push(task);
         }
         setTasks(tasksAsArray);
 
-        if (response["data"].status == "Todo") {
+        if (response["data"].status === "Todo") {
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points - response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks - 1;
           currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
@@ -195,7 +195,7 @@ export const DisplayFamilyMemberTasks = () => {
       <Row> {searchSection}</Row>
       {hasLoaded ? (
         <>
-          {tasks == "" || tasks == [] ? (
+          {tasks === "" || tasks === [] ? (
             <>
             <Row className="justify-content-center text-center">
             <Image className={`${styles.HiddenRabbitLoader} mt-4`} src={HiddenRabbit}></Image>
@@ -232,7 +232,7 @@ export const DisplayFamilyMemberTasks = () => {
                                 <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
                                 :
                                 <>
-                                  {task.assigned == currentFamilyMemberObj.id ?
+                                  {task.assigned === currentFamilyMemberObj.id ?
 
                                     <>
                                       <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
