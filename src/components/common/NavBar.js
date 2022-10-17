@@ -13,6 +13,7 @@ import { Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefaults";
 
 
 const NavBar = () => {
@@ -22,7 +23,7 @@ const NavBar = () => {
 
     const handleSignOut = async () => {
         try {
-            await axios.post("/dj-rest-auth/logout/");
+            await axiosReq.post("/dj-rest-auth/logout/");
             // Remove session storage and set current user to null
             sessionStorage.removeItem('currentFamilyMember')
             setCurrentUser(null);
