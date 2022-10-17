@@ -27,7 +27,7 @@ const NavBar = () => {
             await axiosReq.post("/dj-rest-auth/logout/");
             // Remove session storage and set current user to null
             sessionStorage.removeItem('currentFamilyMember')
-            removeTokenTimestamp()
+            removeTokenTimestamp();
             setCurrentUser(null);
             navigate("/")
         } catch (err) {
