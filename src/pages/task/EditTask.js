@@ -115,7 +115,7 @@ export const EditTask = () => {
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header}>Edit Task</h1>
-                    {currentFamilyMemberObj.role === 1 ?
+                    {currentFamilyMemberObj.role === 1 && assigned === null ?
                         <Form onSubmit={handleFormSubmit}>
                             <Form.Group className="mb-3" controlId="title">
                                 <Form.Label>Title</Form.Label>
@@ -204,8 +204,12 @@ export const EditTask = () => {
                             </Button>
                         </Form>
                         :
-                        <Alert variant='warning' className='text-center mt-5'>Ask your parents to edit task</Alert>
-                    }
+                        <>
+                            {currentFamilyMemberObj.role === 0 ?
+                                <Alert variant='warning' className='text-center mt-5'>Ask your parents to edit task</Alert>
+                                :
+                                <Alert variant='warning' className='text-center mt-5'>You can't edit an assigned task</Alert>}
+                        </>}
                 </Col>
             </Row>
             <Image className={styles.BackgroundImage} src={BackgroundForm} />
