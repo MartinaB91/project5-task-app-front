@@ -32,7 +32,7 @@ export const DeleteTask = () => {
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} mx-auto`}>
                     <h4 className={styles.DeleteHeader}>Want to delete task {title}?</h4>
-                    {currentFamilyMemberObj.role == 1 ?
+                    {currentFamilyMemberObj.role === 1 ?
                         <Button className={`${styles.DeleteButton} mt-2`} variant="dark" onClick={handleDelete}>Delete</Button>
                         :
                         <Alert variant='warning' className='text-center mt-5'>Ask your parents to delete task</Alert>
