@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import SignUpForm from "../pages/SignUp";
 import Rabbit from "../assets/images/rabbit-5.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const HomePage = () => {
     return (
@@ -23,7 +23,7 @@ const HomePage = () => {
 
                 </div>
             </div>
-            <img id={styles["home-img"]} src={Rabbit} alt="throphy" />
+            <img id={styles["home-img"]} src={Rabbit} alt="rabbit with hat" />
         </Container>
     )
 }
