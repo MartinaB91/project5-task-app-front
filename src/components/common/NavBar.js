@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
+import { removeTokenTimestamp } from "../../utils/utils";
 
 
 const NavBar = () => {
@@ -26,7 +27,7 @@ const NavBar = () => {
             await axiosReq.post("/dj-rest-auth/logout/");
             // Remove session storage and set current user to null
             sessionStorage.removeItem('currentFamilyMember')
-            localStorage.removeItem("refreshTokenTimestamp");
+            removeTokenTimestamp()
             setCurrentUser(null);
             navigate("/")
         } catch (err) {
