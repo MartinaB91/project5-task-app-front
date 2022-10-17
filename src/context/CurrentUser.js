@@ -1,8 +1,8 @@
 import { createContext, useContext, useEffect, useState, useMemo } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {axiosReq, axiosRes } from "../api/axiosDefaults";
-import { removeTokenTimestamp, shouldRefreshToken} from "../utils/utils";
+import { axiosReq, axiosRes } from "../api/axiosDefaults";
+import { removeTokenTimestamp, shouldRefreshToken } from "../utils/utils";
 
 export const CurrentUserContext = createContext();
 export const SetCurrentUserContext = createContext();
@@ -13,16 +13,15 @@ export const useSetCurrentUser = () => useContext(SetCurrentUserContext);
 export const CurrentUserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
-  
+
 
   const handleMount = async () => {
     try {
+      // If-statement needed for not getting user when signed out performed
       if (shouldRefreshToken()) {
-
-      const { data } = await axiosReq.get("dj-rest-auth/user/");
-
-      setCurrentUser(data);
-    }
+        const { data } = await axiosReq.get("dj-rest-auth/user/");
+        setCurrentUser(data);
+      }
 
     } catch (error) {
       console.log(error); // TODO: Remove before prod
@@ -38,8 +37,6 @@ export const CurrentUserProvider = ({ children }) => {
       async (config) => {
         if (shouldRefreshToken()) {
           try {
-            alert("currentUser row 37" + shouldRefreshToken()); 
-
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
             setCurrentUser((prevCurrentUser) => {
@@ -63,8 +60,6 @@ export const CurrentUserProvider = ({ children }) => {
       (response) => response,
       async (err) => {
         if (err.response?.status === 401 && shouldRefreshToken()) {
-          alert("currentUser row 60" + shouldRefreshToken()); 
-
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
@@ -83,11 +78,11 @@ export const CurrentUserProvider = ({ children }) => {
     );
   }, [navigate]);
 
-    return (
-      <CurrentUserContext.Provider value={currentUser}>
-        <SetCurrentUserContext.Provider value={setCurrentUser}>
-          {children}
-        </SetCurrentUserContext.Provider>
-      </CurrentUserContext.Provider>
-    );
-  };
+  return (
+    <CurrentUserContext.Provider value={currentUser}>
+      <SetCurrentUserContext.Provider value={setCurrentUser}>
+        {children}
+      </SetCurrentUserContext.Provider>
+    </CurrentUserContext.Provider>
+  );
+};
