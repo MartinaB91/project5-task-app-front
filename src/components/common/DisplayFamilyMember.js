@@ -1,10 +1,9 @@
 import axios from 'axios';
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Image } from "react-bootstrap";
 import styles from "../../styles/DisplayFamilyMember.module.css"
-import Dropdown from 'react-bootstrap/esm/Dropdown';
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faArrowDown } from '@fortawesome/free-solid-svg-icons';
@@ -38,7 +37,7 @@ export const DisplayFamilyMember = () => {
   return (
     <>
       <h4 className='mb-4 mt-2 text-center'>Choose a family member</h4>
-      {familymembers == "" ?
+      {familymembers === "" ?
         <>
           <p className='text-center mt-2'>You haven’t added any family members yet.</p>
           <p className='text-center mb-5'>Create one below <FontAwesomeIcon icon={faArrowDown} /></p>
