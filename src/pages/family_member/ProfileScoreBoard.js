@@ -80,7 +80,7 @@ export const ProfileScoreBoard = () => {
                     // "Convert" json to array
                     let todo = 0;
                     for (let resp of response.data) {
-                        if (resp.assigned === null && resp.status == 'Todo') {
+                        if (resp.assigned === null && resp.status === 'Todo') {
                             todo += 1
                         }
                     }
