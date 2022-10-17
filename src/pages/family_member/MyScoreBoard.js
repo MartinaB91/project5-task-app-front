@@ -3,18 +3,15 @@ import { useParams } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import { useState, useContext } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import styles from "../../styles/MyScoreBoard.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from '@fortawesome/free-solid-svg-icons'
-import RabbitFace  from "../../assets/images/rabbit-face-1.svg"
+import RabbitFace  from "../../assets/images/rabbit-face-1.svg";
 
 
 export const MyScoreBoard = (props) => {
     const currentUser = useCurrentUser();
-    const { id } = useParams();
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
     // Convert json to js object
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
