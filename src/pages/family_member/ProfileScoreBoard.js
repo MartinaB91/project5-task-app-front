@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { useCurrentUser, setCurrentUser, CurrentUserContext } from "../../context/CurrentUser";
+import { useCurrentUser } from "../../context/CurrentUser";
 import { useParams } from "react-router-dom";
 import { useState } from 'react';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
@@ -10,7 +10,6 @@ import styles from "../../styles/ProfileScoreBoard.module.css";
 import Default from "../../assets/images/rabbit-face-1.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import InformationTrigger from "../../components/common/ScoreBoardInformationTrigger";
 
 export const ProfileScoreBoard = () => {
     const currentUser = useCurrentUser();
@@ -81,7 +80,7 @@ export const ProfileScoreBoard = () => {
                     // "Convert" json to array
                     let todo = 0;
                     for (let resp of response.data) {
-                        if (resp.assigned == null && resp.status == 'Todo') {
+                        if (resp.assigned === null && resp.status == 'Todo') {
                             todo += 1
                         }
                     }
