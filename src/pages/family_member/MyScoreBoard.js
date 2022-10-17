@@ -1,17 +1,14 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import { useState, useContext } from "react";
 import { axiosReq } from "../../api/axiosDefaults";
 import { Row, Col } from "react-bootstrap";
-import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import styles from "../../styles/MyScoreBoard.module.css";
 import RabbitFace  from "../../assets/images/rabbit-face-1.svg";
 
 
 export const MyScoreBoard = (props) => {
-    const currentUser = useCurrentUser();
     const [familyMemberContext] = useContext(CurrentFamilyMemberContext);
     // Convert json to js object
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
