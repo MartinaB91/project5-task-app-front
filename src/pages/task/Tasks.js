@@ -197,7 +197,7 @@ export const DisplayFamilyMemberTasks = () => {
           {tasks == "" || tasks == [] ? (
             <>
             <Row className="justify-content-center text-center">
-            <Image className={`${styles.HiddenRabbitLoader} mt-4`} src={HiddenRabbit}></Image>
+            <Image className={`${styles.HiddenRabbitLoader} mt-4`} src={HiddenRabbit} alt="hidden rabbit"></Image>
             <p className="text-center">Oops there is nothing here... </p>
             </Row>
             </>
@@ -228,7 +228,7 @@ export const DisplayFamilyMemberTasks = () => {
                           <Row className={styles.DoneAndAssignBtnsWrapper}>
                             <Col xs={4} md={4}>
                               {task.assigned === null || task.assigned === "" ?
-                                <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
+                                <Button onClick={handleAssign} value={task.id} className="text-start" variant="link" aria-label="assign button"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
                                 :
                                 <>
                                   
@@ -236,12 +236,12 @@ export const DisplayFamilyMemberTasks = () => {
                                   {task.assigned == currentFamilyMemberObj.id ?
 
                                     <>
-                                      <button onClick={handleAssign} value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
+                                      <button onClick={handleAssign} value={task.id} className={styles.AssignButton} aria-label="unassign button"><Image roundedCircle src={family_member.family_member_img} className={styles.Image} aria-label="family member image unassigned"/></button>
                                       <p className={styles.AssignedName}>{family_member.name}</p>
                                     </>
                                     :
                                     <>
-                                      <button disabled value={task.id} className={styles.AssignButton}><Image roundedCircle src={family_member.family_member_img} className={styles.Image} /></button>
+                                      <button disabled value={task.id} className={styles.AssignButton} aria-label="unassign disabled button"><Image roundedCircle src={family_member.family_member_img} className={styles.Image} aria-label="family member image unassigned disabled"/></button>
                                       <p className={styles.AssignedName}>{family_member.name}</p>
                                     </>
                                   }
@@ -258,11 +258,11 @@ export const DisplayFamilyMemberTasks = () => {
                               {task.status === "Todo" ?
                                 <>
                                   {task.assigned === null || task.assigned === "" || task.assigned !== currentFamilyMemberObj.id ?
-                                    <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
+                                    <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn" aria-label="done button disabled"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
                                     :
-                                    <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>}
+                                    <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn" aria-label="done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>}
                                 </>
-                                : <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}
+                                : <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}
 
                             </Col>
                           </Row>
