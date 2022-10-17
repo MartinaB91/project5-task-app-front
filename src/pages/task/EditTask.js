@@ -113,7 +113,7 @@ export const EditTask = () => {
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} text-start`}>
                     <h1 className={styles.Header}>Edit Task</h1>
-                    {currentFamilyMemberObj.role == 1 ?
+                    {currentFamilyMemberObj.role === 1 ?
                         <Form onSubmit={handleFormSubmit}>
                             <Form.Group className="mb-3" controlId="title">
                                 <Form.Label>Title</Form.Label>
