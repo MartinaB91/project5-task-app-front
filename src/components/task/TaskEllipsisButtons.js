@@ -16,7 +16,7 @@ const EllipsisButton = React.forwardRef(({ onClick }, ref) => (
     />
   ));
 
-  export const EllipsisDropdown = ({ id, title }) => {
+  export const EllipsisDropdown = ({ id, title, assigned }) => {
     const navigate = useNavigate();
 
     return (
@@ -37,7 +37,7 @@ const EllipsisButton = React.forwardRef(({ onClick }, ref) => (
           </Dropdown.Item>
           <Dropdown.Item
             className={styles.DropdownItem}
-            onClick={ () => navigate(`/tasks/${id}/${title}/delete`)}
+            onClick={ () => navigate(`/tasks/${id}/${title}/${assigned}/delete`)}
             aria-label="delete"
           >
             <FontAwesomeIcon icon={faTrashCan} />

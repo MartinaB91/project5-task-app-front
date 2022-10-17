@@ -29,7 +29,7 @@ const  App = () => {
           <Route exact path="/addfamilymember" element={<CreateFamilyMemberForm />} />
           <Route exact path="/addtask" element={<CreateTask />}/>
           <Route exact path="/tasks/:id/edit" element={<EditTask />}/>
-          <Route exact path="/tasks/:id/:title/delete" element={<DeleteTask />}/>
+          <Route exact path="/tasks/:id/:title/:assigned/delete" element={<DeleteTask />}/>
           <Route exact path="/pagenotfound" element={<NotFound />}/>
 
 
