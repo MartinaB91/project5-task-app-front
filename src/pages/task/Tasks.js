@@ -14,7 +14,6 @@ import Loader from "../../components/common/Loader";
 import HiddenRabbit from "../../assets/images/hidden-rabbit.svg"
 
 
-
 export const DisplayFamilyMemberTasks = () => {
 
   const [tasks, setTasks] = useState([])
@@ -136,6 +135,7 @@ export const DisplayFamilyMemberTasks = () => {
         const tasksAsArray = [];
         for (let task of tasks) {
           // Find the task we are updating in the tasks-state/list
+          // Warning, one is string one is int. Two equal sign comparsion should be safe. 
           if (task.id == taskId) {
             task.status === 'Done' ? task.status = 'Todo' : task.status = 'Done';
           }
@@ -231,6 +231,8 @@ export const DisplayFamilyMemberTasks = () => {
                                 <Button onClick={handleAssign} value={task.id} className="text-start" variant="link"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
                                 :
                                 <>
+                                  
+                                  {/* Warning, one is string one is int. Two equal sign comparsion should be safe. */} 
                                   {task.assigned == currentFamilyMemberObj.id ?
 
                                     <>
