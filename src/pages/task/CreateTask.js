@@ -81,7 +81,7 @@ export const CreateTask = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        const { data } = axios.post('taskboard/tasks/', createTaskForm)
+        axios.post('taskboard/tasks/', createTaskForm)
             .then((response) => {
                 if (response.status === 201) {
                     navigate('/taskboard');
@@ -98,7 +98,7 @@ export const CreateTask = () => {
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} mx-auto text-start`}>
                     <h1 className={styles.Header}>Add Task</h1>
-                    {currentFamilyMemberObj.role == 1 ?
+                    {currentFamilyMemberObj.role === 1 ?
                         <Form onSubmit={handleFormSubmit}>
 
                             <Form.Group className="mb-3" controlId="title">
