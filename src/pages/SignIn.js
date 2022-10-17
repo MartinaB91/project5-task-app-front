@@ -124,7 +124,7 @@ const SignInForm = () => {
                     <p className={styles.SignUpText}>Don't have an account yet?<Link to="/signup" className={styles.SignUpLink} onClick={SignUpForm}>Sign Up</Link></p>
                 </Col>
             </Row>
-            <Image className={styles.BackgroundImage} src={Rabbit} />
+            <Image className={styles.BackgroundImage} src={Rabbit} alt="Rabbit with party hat" />
         </Container>
     )
 }
