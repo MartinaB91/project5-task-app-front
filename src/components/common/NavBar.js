@@ -1,6 +1,5 @@
 import React from "react";
-import axios from 'axios';
-import { Navbar, NavDropdown, Container, Nav, Alert, Row, Col, Button } from "react-bootstrap";
+import { Navbar, Container, Nav,} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "../../styles/NavBar.module.css";
 import {
@@ -14,7 +13,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
-import { removeTokenTimestamp } from "../../utils/utils";
 
 
 const NavBar = () => {
