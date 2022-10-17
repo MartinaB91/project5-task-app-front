@@ -108,7 +108,8 @@ export const DisplayFamilyMemberTasks = () => {
         const tasksAsArray = [];
         for (let task of tasks) {
           // Find the task we are updating in the tasks-state/list
-          if (task.id === taskId) {
+          // Warning, one is string one is int. Two equal sign comparsion should be safe. 
+          if (task.id == taskId) {
             if (task.assigned === currentFamilyMemberObj.id) {
               task.assigned = null;
               currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
