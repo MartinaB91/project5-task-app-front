@@ -17,9 +17,13 @@ export const CurrentUserProvider = ({ children }) => {
 
   const handleMount = async () => {
     try {
+      if (shouldRefreshToken()) {
+
       const { data } = await axiosReq.get("dj-rest-auth/user/");
 
       setCurrentUser(data);
+    }
+
     } catch (error) {
       console.log(error); // TODO: Remove before prod
     }
