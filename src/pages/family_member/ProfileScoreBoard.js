@@ -103,9 +103,9 @@ export const ProfileScoreBoard = () => {
                 <h2 className={styles.ScoreBoardHeader}>Our ScoreBoard</h2>
                 <Col xs={5} sm={3} className="text-center">
                     {family_star_leader_img !== "" ?
-                        <Image roundedCircle src={family_star_leader_img} className={styles.Image} />
+                        <Image roundedCircle src={family_star_leader_img} className={styles.Image} aria-label="family star leader image" />
                         :
-                        <Image roundedCircle src={Default} className={styles.Image} />
+                        <Image roundedCircle src={Default} className={styles.Image} aria-label="default rabbit face image" />
                     }
                     <h4 className={styles.ScoreBoardTextImage}>
 
