@@ -1,6 +1,5 @@
 import React from "react";
 import axios from 'axios';
-import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import Container from "react-bootstrap/Container";
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
@@ -9,18 +8,16 @@ import Button from 'react-bootstrap/Button';
 import { Image } from "react-bootstrap";
 import styles from '../../styles/CreateFamilyMember.module.css';
 import { useNavigate } from "react-router-dom";
-import { useState, useRef, useContext } from 'react';
+import { useState, useRef } from 'react';
 import { Alert } from 'react-bootstrap';
 import BackgroundForm from "../../assets/images/dots.webp";
 import RabbitFace from "../../assets/images/rabbit-face-1.svg";
-import { useCurrentUser, setCurrentUser } from "../../context/CurrentUser";
+import { useCurrentUser } from "../../context/CurrentUser";
 import MessageUnauthenticatedUser from "../../components/common/MessageUnauthenticatedUser";
 
 
 const CreateFamilyMemberForm = () => {
     const currentUser = useCurrentUser();
-    const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
-    const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
     const [createFamilyMemberForm, setCreateFamilyMemberForm] = useState({
         family_member_img: "",
