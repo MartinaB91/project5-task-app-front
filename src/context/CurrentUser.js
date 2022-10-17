@@ -34,6 +34,8 @@ export const CurrentUserProvider = ({ children }) => {
       async (config) => {
         if (shouldRefreshToken()) {
           try {
+            alert("currentUser row 37" + shouldRefreshToken()); 
+
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {
             setCurrentUser((prevCurrentUser) => {
@@ -57,6 +59,8 @@ export const CurrentUserProvider = ({ children }) => {
       (response) => response,
       async (err) => {
         if (err.response?.status === 401 && shouldRefreshToken()) {
+          alert("currentUser row 60" + shouldRefreshToken()); 
+
           try {
             await axios.post("/dj-rest-auth/token/refresh/");
           } catch (err) {

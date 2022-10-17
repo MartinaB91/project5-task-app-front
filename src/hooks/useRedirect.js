@@ -10,6 +10,7 @@ export const useRedirect = (signInStatus) => {
     const handleMount = async () => {
       try {
         if (shouldRefreshToken()) {
+          alert("useRedirect" + shouldRefreshToken()); 
           await axios.post("/dj-rest-auth/token/refresh/");
         }
         if (signInStatus === "signedIn") {
