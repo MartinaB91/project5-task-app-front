@@ -194,7 +194,7 @@ export const DisplayFamilyMemberTasks = () => {
       <Row> {searchSection}</Row>
       {hasLoaded ? (
         <>
-          {tasks === "" || tasks === [] ? (
+          {tasks == "" || tasks == [] ? (
             <>
             <Row className="justify-content-center text-center">
             <Image className={`${styles.HiddenRabbitLoader} mt-4`} src={HiddenRabbit}></Image>
@@ -205,7 +205,7 @@ export const DisplayFamilyMemberTasks = () => {
             <>
               <Row className="g-2">
                 {tasks.map((task) => {
-                  let family_member = familymembersList.find(x => x.id === task.assigned)
+                  let family_member = familymembersList.find(x => x.id == task.assigned)
                   return (
                     <Col key={task.id} sm={12} md={6} lg={4}>
                       <Card className="shadow-sm">
@@ -284,15 +284,7 @@ export const DisplayFamilyMemberTasks = () => {
           <Row>
             <Loader spinner />
           </Row>
-
-
         </>)}
-
-
-
-
-
-
     </>
   )
 }
