@@ -291,7 +291,7 @@ export const DisplayFamilyMemberTasks = () => {
             </>)}
         </>
        ) : (
-        <p className="text-center mt-4"> Choose a family member before filtering tasks</p>
+        <p className="text-center mt-4"> Choose a family member before filtering or searching tasks</p>
       )} 
     </>
   )
