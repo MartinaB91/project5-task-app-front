@@ -25,6 +25,52 @@ The main reason for users to revisit the website is because the task managing is
 - The design should be playful with bright colors and happy icons.  
 
 ## Table of Contents
+- [UX](#design)
+    - [User stories](#user-stories)
+- [Technologies used](#technologies-used)
+    - [Languages](#languages)
+    - [Frameworks and libraries](#frameworks-and-libraries)
+    - [Other tools](#other-tools)
+- [Access Overview](#access-overview)
+- [React Library](#react-library)
+    - [Structure and Code](#structure-and-code)
+    - [UX](#ux)
+- [Components](#components)
+    - [Navbar](#navbar)
+    - [Loader](#loader)
+    - [Display Family Members](#display-family-members)
+    - [Footer](#footer)
+	- [Score Board Information Trigger](#score-board-information-trigger)
+	- [Task Ellipsis Buttons ](#task-ellipsis-buttons)
+- [Features](#features)
+    - [Home page](#home-page)
+    - [Task Board](#task-board)
+    - [Profile Score Board](#profile-score-board)
+    - [Family Member Score Board](#family-member-score-board)
+    - [Task](#task)
+    - [Assign button](#assign-button)
+    - [Done Button](#done-button)
+    - [Create Task](#create-task)
+    - [Edit Task](#edit-task)
+    - [Delete Task](#delete-task)
+    - [Add Family member](#add-family-member)
+	- [Search Task](#search-task)
+	- [Filter Task](#filter-task)
+- [Design](#design)
+    - [Color Scheme](#color-scheme)
+    - [Typography](#Typography)
+	- [Icons](#icons)
+	- [Wireframes](#wireframes)
+- [Testing](#testing)
+- [Future Improvements](#future-improvements)
+    - [Code](#code)
+    - [Known bugs](#known-bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
+	- [Code](#code)
+    - [Content and Media](#content-and-media)
+	- [Test](#test)
+
 ## UX
 ### User Stories
 [#11](https://github.com/MartinaB91/project5-task-app-front/issues/11) Epic: Registration, authentication and navigation
@@ -78,7 +124,6 @@ The main reason for users to revisit the website is because the task managing is
 - [React Router (6.3.0)](https://reactrouter.com/en/main)
 - [Font Awesome](https://fontawesome.com/) - Used for adding icons to website
 - [Google Fonts](https://fonts.google.com/) - Used for fonts
-### Databases
 ### Other tools
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used for debugging
 - [Compress JPEG](https://compressjpeg.com/) - Used for compress images
@@ -166,11 +211,11 @@ The user experience has been improved by using react.
 - Every task contains, ellipsis button, title, star points, end date, task description, assign-button, category and done-button.  
 - All tasks are by default ordered by end date, tasks that has the closest end date is displayed first. This to make it easy for the users to see which tasks that needs to be done next.  
 
-### Assign-button 
+### Assign Button 
 - If a task is unassigned the assign-button will be displayed as user-plus icon, when the task is assigned the family members profile image and name is displayed.  
 - A user can’t mark a task as done before the task is assigned and only the user that has assigned a task can unassign the task.  
 
-### Done-button 
+### Done Button 
 - A task that isn’t marked as done will have a grey button, when the task is done and the user clicks the button it will change color to green
 
 ### Create Task 
@@ -217,10 +262,8 @@ The user experience has been improved by using react.
 - Arrow pointing at "Add task": <img src="documentation/readme-svg/arrow-down-solid.svg" width="15" height="15">
 - No choosen family member or default image for family member: <img src="src/assets/images/rabbit-face-1.svg" width="20" height="20">
 
-### Search bar and Filter
 ### Wireframes 
 - [**Phone**](documentation/wireframes/WIREFRAMES.md)
-### Database Scheme
 ## Testing
 Read more about test and validation [here](/testing/TEST.md)
 ## Future Improvements
