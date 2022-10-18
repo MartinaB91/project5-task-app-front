@@ -1,8 +1,8 @@
 /* Styling for family member scoreboard */
 
 .Image {
-    height: 6rem;
-    width: 6rem;
+    height: 5rem;
+    width: 5rem;
     margin-bottom: 0.2rem;
 }
 
@@ -73,6 +73,8 @@
 
     .Image {
         margin-top: 0.5rem;
+        height: 4rem;
+        width: 4rem;
     }
   }
 
@@ -85,12 +87,18 @@
         margin-top: 0.4rem;
     }
 
+    
+    .Image {
+        height: 4rem;
+        width: 4rem;
+    }
+
 }
 
   @media screen and (min-width:577px) and (max-width: 768px) {
     .Image {
-        height: 5rem;
-        width: 5rem;
+        height: 4rem;
+        width: 4rem;
         margin-top: 1rem;
     }
 
@@ -108,11 +116,6 @@
   }
 
 @media screen and (min-width:769px) and (max-width: 992px) {
-    .Image {
-        height: 6rem;
-        width: 6rem;
-    }
-
     .CompletedTasksWrapper {
         margin-top: 1.2rem;
     }
