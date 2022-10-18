@@ -13,7 +13,7 @@
 
 <img src="documentation/wireframes/wireframe_phone_add_member.PNG" width="80%">
 
-<img src="documentation/wireframes/wireframe_phone_add_member.PNG" width="80%">
+<img src="/workspace/project5-task-app-front/documentation/wireframes/wireframe_phone_add_member.PNG" width="80%">
 
 ## Tablet
 ## Desktop 
