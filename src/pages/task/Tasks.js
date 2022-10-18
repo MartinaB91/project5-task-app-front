@@ -166,7 +166,7 @@ export const DisplayFamilyMemberTasks = () => {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             type="text"
-            placeholder="Search for tasks"
+            placeholder="Search tasks by title or description"
           ></Form.Control>
         </Col>
 
