@@ -10,7 +10,8 @@
 
 #family-member-score-board {
     background: #FBD1DB;
-    background-image: url("../assets/images/rabbit-2.webp");
+    /* background-image: url("../assets/images/rabbit-2.webp"); */
+    background-image: url("../assets/images/profile_scoreboard.webp");
     background-size: cover;
     border-radius: 0.5rem;
     
