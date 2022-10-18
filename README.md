@@ -5,7 +5,7 @@ Family Star is a mix between a task board and a game that families can use to ma
 Family members can pick a task to complete by assigning themselves at the task. When the task is completed, the family member marks the task as done.  The tasks progress is followed by two scoreboards, one for the family member and one for the whole family.
 In the family member scoreboard, the family member can follow their own progress as it will be updated with information about how many: star points, ongoing tasks and closed tasks the family member has. Instead of only containing information about one family member the family’s scoreboard contains information about the progress of the whole family. It contains information about: who is the family star, how many tasks there is to-do, completed tasks and ongoing tasks.
 
-Currently the site contains these categories: Cleaning, Cooking, Homework and Garden Work.
+Currently the site contains these categories: Cleaning, Cooking, Homework and Garden.
 
 
 ## Target Audience
@@ -64,6 +64,8 @@ The main reason for users to revisit the website is because the task managing is
 - [#13](https://github.com/MartinaB91/project5-task-app-front/issues/13) As a Family member I want to filter tasks so that I can view tasks that has a specific status.
 - [#14](https://github.com/MartinaB91/project5-task-app-front/issues/14) As a Family member I want to view tasks sorted on due date so that I can see the tasks with the closest due-date first and prioritize my task selection.
 
+[#48](https://github.com/MartinaB91/project5-task-app-front/issues/48) Epic: General UI/UX behaviours
+- [#49](https://github.com/MartinaB91/project5-task-app-front/issues/49) As a User I want to get feedback for every action I initiate so that I can know that my action is processed.
 
 ## Technologies Used
 ### Languages
@@ -77,11 +79,11 @@ The main reason for users to revisit the website is because the task managing is
 - [Font Awesome](https://fontawesome.com/) - Used for adding icons to website
 - [Google Fonts](https://fonts.google.com/) - Used for fonts
 ### Databases
-### Storage
 ### Other tools
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Used for debugging
 - [Compress JPEG](https://compressjpeg.com/) - Used for compress images
 - [Convertio](https://convertio.co/download/8f4ef43897af54f80228a73c98cc326cc42215/compress) - Used convert images from jpg to webp
+- [Favicon](https://favicon.io/favicon-converter/) - Used for convert img to favicon
 - [GitHub Issues](https://github.com/features/issues) - Used for project planning 
 - [Heroku](https://id.heroku.com/login) - Used to deploy app
 - [HTML Color Codes](https://html-color-codes.info/colors-from-image/) - Used for finding colors from images
@@ -109,7 +111,9 @@ The main reason for users to revisit the website is because the task managing is
 - Another benefit of using the react library is that the code files are smaller and if the project would be continued it will be easier for another devloper when this structure has been used. 
 - Usage of react JSX has been of great use when creating dynamic html with variables and passing parameters. 
 ### UX
-- The user experience has been improved by using react. One feature that has improved the user experience is the hooks which have made it possible to run certain code on specific events for example keeping the current family member scoreboard updated without refreshing the page. 
+The user experience has been improved by using react. 
+- One feature that has improved the user experience is the hooks which have made it possible to run certain code on specific events for example keeping the current family member scoreboard updated without refreshing the page. 
+- Another feature that has improved the user experience is the react spinner which made it possible to easy show the user that the content, in this project tasks are loading. 
 - By using react bootstrap the user interface is clearly structured and fully responsive, this is something that most users expect since every day usage could be by phone, tablet and computer. 
 
 ## Components
@@ -117,6 +121,9 @@ The main reason for users to revisit the website is because the task managing is
 - As a non-authenticated user, the navbar contains “Family Star” with link to home page and “Sign In”.  
 - As an authenticated user, the navbar contains “Family Star” as above. It also contains “Task Board” and the current profile’s “Username” which is a dropdown menu. 
 - When the dropdown is expanded it contains the component display family members which will be explained in detail later together with a link to “Add Family Member”, “Add task” and a “Sign Out” button. 
+
+### Loader
+- When tasks are loading a spinner icon and a text "Loading" is shown.
 
 ### Display Family Members 
 - In this component all the profile’s family members are displayed as an image and family member name.  
