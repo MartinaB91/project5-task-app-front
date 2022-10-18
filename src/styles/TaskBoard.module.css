@@ -14,7 +14,6 @@
     background-image: url("../assets/images/profile_scoreboard.webp");
     background-size: cover;
     border-radius: 0.5rem;
-    
 }
 
 #my-score-board {
@@ -123,25 +122,20 @@
 /* Media queries for profile and my scoreboard */
 @media screen and (max-width: 376px) {
     #family-member-score-board {
-        border-radius: 0;
-        
+        border-radius: 0; 
     }
 
     #my-score-board {
-        border-radius: 0;
-        
+        border-radius: 0; 
     }
   }
 
 @media screen and (min-width: 378px) and (max-width: 576px) {
     #family-member-score-board {
-        border-radius: 0;
-        
+        border-radius: 0; 
     }
 
     #my-score-board {
         border-radius: 0;
-        
     }
-
   }

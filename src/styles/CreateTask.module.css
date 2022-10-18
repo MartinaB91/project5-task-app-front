@@ -1,6 +1,5 @@
 /* Styles for create task form */
 
-
 .Container {
     position: relative;
     margin: 0;
@@ -36,7 +35,6 @@
         width: 10rem;
         margin-left: 25%;
     }
-
 }
 
 @media screen and (min-width:377px) and (max-width: 576px) {
