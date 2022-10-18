@@ -191,102 +191,108 @@ export const DisplayFamilyMemberTasks = () => {
   return (
     <>
       <Row> {searchSection}</Row>
-      {hasLoaded ? (
+      { currentFamilyMemberObj?.id !== null ? (
         <>
-          {tasks == "" || tasks == [] ? (
+          {hasLoaded ? (
             <>
-              <Row className="justify-content-center text-center">
-                <Image className={`${styles.HiddenRabbitLoader} mt-4`} src={HiddenRabbit} alt="hidden rabbit"></Image>
-                <p className="text-center">Oops there is nothing here... </p>
-              </Row>
+              {tasks == "" || tasks == [] ? (
+                <>
+                  <Row className="justify-content-center text-center">
+                    <Image className={`${styles.HiddenRabbitLoader} mt-4`} src={HiddenRabbit} alt="hidden rabbit"></Image>
+                    <p className="text-center">Oops there is nothing here... </p>
+                  </Row>
+                </>
+              ) : (
+                <>
+                  <Row className="g-2">
+                    {tasks.map((task) => {
+                      let family_member = familymembersList.find(x => x.id == task.assigned)
+                      return (
+                        <Col key={task.id} sm={12} md={6} lg={4}>
+                          <Card className="shadow-sm">
+                            <Card.Header className={styles.CardTitle}>
+                              <Card.Title className="text-start" >
+                                <Row>
+                                  <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown title={task.title} id={task.id} assigned={task.assigned} /></Col>
+                                  <Col xs={8} sm={8} md={6} lg={7} className={`${styles.Button} ${styles.taskTitle} text-center`}>{task.title}</Col>
+                                  <Col xs={3} sm={3} md={4} lg={4} className={`${styles.Button} text-end`}>{task.star_points}<FontAwesomeIcon className={`${styles.FontAwesomeIcon}`} icon={faStar} /></Col>
+                                </Row>
+                              </Card.Title>
+                            </Card.Header>
+                            <Card.Body className={styles.CardBody}>
+                              <Card.Text className={`${styles.endDate} text-end`}>
+                                Done: {task.end_date}
+                              </Card.Text>
+                              <Card.Text className="text-center">
+                                {task.description}
+                              </Card.Text>
+                              <Row className={styles.DoneAndAssignBtnsWrapper}>
+                                <Col xs={4} md={4}>
+                                  {task.assigned === null || task.assigned === "" ?
+                                    <Button onClick={handleAssign} value={task.id} className="text-start" variant="link" aria-label="assign button"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
+                                    :
+                                    <>
+
+                                      {/* Warning, one is string one is int. Two equal sign comparsion should be safe. */}
+                                      {task.assigned == currentFamilyMemberObj.id && task.status == "Todo" ?
+
+                                        <>
+                                          <button onClick={handleAssign} value={task.id} className={styles.AssignButton} aria-label="unassign button"><Image roundedCircle src={family_member.family_member_img} className={styles.Image} aria-label="family member image unassigned" /></button>
+                                          <p className={styles.AssignedName}>{family_member.name}</p>
+                                        </>
+                                        :
+                                        <>
+                                          <button disabled value={task.id} className={styles.AssignButton} aria-label="unassign disabled button"><Image roundedCircle src={family_member.family_member_img} className={styles.Image} aria-label="family member image unassigned disabled" /></button>
+                                          <p className={styles.AssignedName}>{family_member.name}</p>
+                                        </>
+                                      }
+                                    </>
+
+                                  }
+                                </Col>
+                                <Col xs={4} md={4}>
+                                  <Card.Text className={`${styles.cardCategory} text-start mt-4`}>{task.category_name}</Card.Text>
+                                </Col>
+                                <Col xs={4} md={4} className={styles.AssignButtonWrapper}>
+                                  {/* If task status is todo but the task is not assigned the done btn will be
+                    disabled. When btn is assigned you can mark the task as done */}
+                                  {task.status === "Todo" ?
+                                    <>
+                                      {task.assigned == null || task.assigned == "" || task.assigned !== currentFamilyMemberObj.id ?
+                                        <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn" aria-label="done button disabled"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
+                                        :
+                                        <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn" aria-label="done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>}
+                                    </>
+                                    : // Task is done 
+                                    <>
+                                      {task.assigned === currentFamilyMemberObj.id ?
+                                        <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>
+                                        :
+                                        <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}
+                                    </>
+                                  }
+
+                                </Col>
+                              </Row>
+                            </Card.Body>
+                          </Card>
+                        </Col>
+                      )
+                    })}
+
+                  </Row>
+                </>)}
             </>
           ) : (
             <>
-              <Row className="g-2">
-                {tasks.map((task) => {
-                  let family_member = familymembersList.find(x => x.id == task.assigned)
-                  return (
-                    <Col key={task.id} sm={12} md={6} lg={4}>
-                      <Card className="shadow-sm">
-                        <Card.Header className={styles.CardTitle}>
-                          <Card.Title className="text-start" >
-                            <Row>
-                              <Col xs={1} sm={1} md={2} lg={1}>< EllipsisDropdown title={task.title} id={task.id} assigned={task.assigned} /></Col>
-                              <Col xs={8} sm={8} md={6} lg={7} className={`${styles.Button} ${styles.taskTitle} text-center`}>{task.title}</Col>
-                              <Col xs={3} sm={3} md={4} lg={4} className={`${styles.Button} text-end`}>{task.star_points}<FontAwesomeIcon className={`${styles.FontAwesomeIcon}`} icon={faStar} /></Col>
-                            </Row>
-                          </Card.Title>
-                        </Card.Header>
-                        <Card.Body className={styles.CardBody}>
-                          <Card.Text className={`${styles.endDate} text-end`}>
-                            Done: {task.end_date}
-                          </Card.Text>
-                          <Card.Text className="text-center">
-                            {task.description}
-                          </Card.Text>
-                          <Row className={styles.DoneAndAssignBtnsWrapper}>
-                            <Col xs={4} md={4}>
-                              {task.assigned === null || task.assigned === "" ?
-                                <Button onClick={handleAssign} value={task.id} className="text-start" variant="link" aria-label="assign button"><FontAwesomeIcon icon={faUserPlus} className={`${styles.userPlus} fa-2x btn`} /></Button>
-                                :
-                                <>
-
-                                  {/* Warning, one is string one is int. Two equal sign comparsion should be safe. */}
-                                  {task.assigned == currentFamilyMemberObj.id && task.status == "Todo" ?
-
-                                    <>
-                                      <button onClick={handleAssign} value={task.id} className={styles.AssignButton} aria-label="unassign button"><Image roundedCircle src={family_member.family_member_img} className={styles.Image} aria-label="family member image unassigned" /></button>
-                                      <p className={styles.AssignedName}>{family_member.name}</p>
-                                    </>
-                                    :
-                                    <>
-                                      <button disabled value={task.id} className={styles.AssignButton} aria-label="unassign disabled button"><Image roundedCircle src={family_member.family_member_img} className={styles.Image} aria-label="family member image unassigned disabled" /></button>
-                                      <p className={styles.AssignedName}>{family_member.name}</p>
-                                    </>
-                                  }
-                                </>
-
-                              }
-                            </Col>
-                            <Col xs={4} md={4}>
-                              <Card.Text className={`${styles.cardCategory} text-start mt-4`}>{task.category_name}</Card.Text>
-                            </Col>
-                            <Col xs={4} md={4} className={styles.AssignButtonWrapper}>
-                              {/* If task status is todo but the task is not assigned the done btn will be
-                    disabled. When btn is assigned you can mark the task as done */}
-                              {task.status === "Todo" ?
-                                <>
-                                  {task.assigned == null || task.assigned == "" || task.assigned !== currentFamilyMemberObj.id ?
-                                    <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn" aria-label="done button disabled"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
-                                    :
-                                    <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn" aria-label="done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>}
-                                </>
-                                : // Task is done 
-                                <>
-                                  {task.assigned === currentFamilyMemberObj.id ?
-                                    <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>
-                                    :
-                                    <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}
-                                </>
-                              }
-
-                            </Col>
-                          </Row>
-                        </Card.Body>
-                      </Card>
-                    </Col>
-                  )
-                })}
-
+              <Row>
+                <Loader spinner message="Loading" />
               </Row>
             </>)}
         </>
       ) : (
-        <>
-          <Row>
-            <Loader spinner />
-          </Row>
-        </>)}
+        <p className="text-center"> Choose a family member before filtering tasks</p>
+      )}
     </>
   )
 }
