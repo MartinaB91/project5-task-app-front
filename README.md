@@ -1,6 +1,7 @@
 # Family Star
 
 <img src="documentation/other-readme-images/mockup.PNG">
+<img src="/workspace/project5-task-app-front/documentation/other-readme-images/mockup.PNG">
 
 View the site [here](https://project5-task-app-front.herokuapp.com/)
 
