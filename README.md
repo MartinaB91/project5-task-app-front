@@ -1,4 +1,9 @@
 # Family Star
+
+<img src="documentation/other-readme-images/mockup.PNG">
+
+View the site [here](https://project5-task-app-front.herokuapp.com/)
+
 ## About
 Family Star is a mix between a task board and a game that families can use to make ordinary household tasks to something fun. Parents can add tasks and family members to the family's shared task board. Depending on how challenging or how long time the task takes the parent can adapt how many star points(scores) completion of the task gives. The family member that currently has the highest amount of collected star points is the family star(leader). 
 
@@ -133,6 +138,7 @@ The main reason for users to revisit the website is because the task managing is
 - [Heroku](https://id.heroku.com/login) - Used to deploy app
 - [HTML Color Codes](https://html-color-codes.info/colors-from-image/) - Used for finding colors from images
 - [Invisionapp](https://www.invisionapp.com/home) - Used for wireframes
+- [Techsini](https://techsini.com/multi-mockup/index.php) - Used for creating multi responsive mockup image
 
 ## Access Overview
 - There are three different roles with different access: parents, children and admin. The administrator has access to admin page but can also be a parent and because of this access all sites and functions.  The parent role is available for the admin just for testing and evaluation purposes. 
@@ -253,6 +259,14 @@ The user experience has been improved by using react.
 <img src="documentation/other-readme-images/reademe-colors.PNG">
 
 ### Typography
+- The font used for h1 and h2 headers is Rock Salt with fallback cursive. 
+
+<img src="documentation/other-readme-images/readme_font_rock_salt.PNG">
+
+- The font used for all other text is Noto Sans with fallback sans-serif. 
+
+<img src="documentation/other-readme-images/readme_font_noto_sans.PNG">
+
 ### Icons 
 - Star, used in headers: <img src="documentation/readme-svg/star-solid.svg" width="15" height="15">
 - Ellipsis button: <img src="documentation/readme-svg/ellipsis-vertical-solid.svg" width="15" height="15">
@@ -261,6 +275,7 @@ The user experience has been improved by using react.
 - Assign task button: <img src="documentation/readme-svg/user-plus-solid.svg" width="15" height="15">
 - Arrow pointing at "Add task": <img src="documentation/readme-svg/arrow-down-solid.svg" width="15" height="15">
 - No choosen family member or default image for family member: <img src="src/assets/images/rabbit-face-1.svg" width="20" height="20">
+- No tasks found <img src="src/assets/images/hidden-rabbit.svg" width="20" height="20">
 
 ### Wireframes 
 - [**Phone**](documentation/wireframes/WIREFRAMES.md)
