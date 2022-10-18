@@ -39,7 +39,7 @@ export const MyScoreBoard = (props) => {
 
     const emptyFamilyMemberInfo = (
         <Row className="d-md-block justify-content-center">
-        <Image src={RabbitFace} className={`${styles.RabbitFace} mt-3`} />
+        <Image src={RabbitFace} className={`${styles.RabbitFace} mt-3`} aria-label="default image rabbit face" />
         <p className={`${styles.ScoreBoardText} text-center`}>You haven't choosen a family member yet. Please Select one in the navbar</p>
         </Row>
     )
@@ -49,7 +49,7 @@ export const MyScoreBoard = (props) => {
             <Row className="d-md-block shadow-sm">
                 <h2 className={styles.ScoreBoardHeader}>My Scores</h2>
                 <Col xs={5} sm={12} className={`${styles.FamilyInfoWrapper} text-center`}>
-                    <Image roundedCircle src={currentFamilyMemberObj.family_member_img} className={styles.Image}  />
+                    <Image roundedCircle src={currentFamilyMemberObj.family_member_img} className={styles.Image} aria-label="current family member image" />
                     <h4 className={styles.ScoreBoardText}>{currentFamilyMemberObj.name}</h4>
                 </Col>
                 <Col xs={3} sm={12} className="text-center">
