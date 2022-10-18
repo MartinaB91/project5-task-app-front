@@ -156,6 +156,8 @@ export const EditTask = () => {
                                             name="star_points"
                                             onChange={onFormFieldUpdate}
                                             value={star_points}
+                                            min={1}
+                                            max={20}
                                         />
                                     </Form.Group>
                                 </Col>

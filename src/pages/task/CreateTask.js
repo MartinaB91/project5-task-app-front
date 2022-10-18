@@ -148,6 +148,9 @@ export const CreateTask = () => {
                                             name="star_points"
                                             onChange={onFormFieldUpdate}
                                             value={star_points}
+                                            placeholder="Enter a number between 1-20"
+                                            min={1}
+                                            max={20}
                                         />
                                     </Form.Group>
                                     {errors.star_points?.map((message, idx) =>
@@ -176,6 +179,7 @@ export const CreateTask = () => {
                                     rows={4}
                                     type="text"
                                     name="description"
+                                    placeholder="Describe what needs to be done"
                                     onChange={onFormFieldUpdate}
                                     value={description}
                                 />
