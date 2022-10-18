@@ -87,13 +87,13 @@ const CreateFamilyMemberForm = () => {
                             <Form.Group className="mb-3">
                                 {family_member_img ? (
                                     <>
-                                        <Image roundedCircle className={`${styles.Image} mb-4 d-block`} src={family_member_img} />
+                                        <Image roundedCircle className={`${styles.Image} mb-4 d-block`} src={family_member_img} aria-label="family member profile image" />
                                         <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Change Photo</Form.Label>
                                     </>
 
                                 ) : (
                                     <>
-                                        <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={RabbitFace} />
+                                        <Image roundedCircle className={`${styles.Image} mb-4 justify-content-center d-block`} src={RabbitFace} aria-label="default family member profile image"/>
                                         <Form.Label htmlFor="image-upload" className={`${styles.Label}`}>Add a Photo</Form.Label>
                                     </>
                                 )}
@@ -150,7 +150,7 @@ const CreateFamilyMemberForm = () => {
                         </Form>
                 </Col>
             </Row>
-            <Image className={styles.BackgroundImage} src={BackgroundForm} />
+            <Image className={styles.BackgroundImage} src={BackgroundForm} aria-label="background colorful dots" />
         </Container>
         )}
         
