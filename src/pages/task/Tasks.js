@@ -290,9 +290,9 @@ export const DisplayFamilyMemberTasks = () => {
               </Row>
             </>)}
         </>
-      ) : (
-        <p className="text-center"> Choose a family member before filtering tasks</p>
-      )}
+       ) : (
+        <p className="text-center mt-4"> Choose a family member before filtering tasks</p>
+      )} 
     </>
   )
 }
