@@ -24,7 +24,7 @@ const HomePage = () => {
             </div>
             <img id={styles["home-img"]} src={Rabbit} alt="rabbit with hat" />
         </Container>
-    )
-}
+    );
+};
 
 export default HomePage;

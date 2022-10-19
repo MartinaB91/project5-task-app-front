@@ -46,34 +46,33 @@ const SignInForm = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         await axios.post('/dj-rest-auth/login/', signInForm)
-        .then((response) => {
-            setCurrentUser(response.data.user);
-            setTokenTimestamp(response.data);
-            if (response.status === 200) {
-                // If ther is no family member create a empty object, just to not have currentFamilyMember = null. 
-                if (currentFamilyMemberObj == null){
-                    const empty = {
-                      id: null,
-                      belongs_to_profile: "",
-                      name: "",
-                      family_member_img: "",
-                      role: "",
-                      star_points: "",
-                      ongoing_tasks: "",
-                      closed_tasks: ""
-                    };
-                  
-                    setFamilyMemberContext(JSON.stringify(empty));
+            .then((response) => {
+                setCurrentUser(response.data.user);
+                setTokenTimestamp(response.data);
+                if (response.status === 200) {
+                    // If ther is no family member create a empty object, just to not have currentFamilyMember = null. 
+                    if (currentFamilyMemberObj == null) {
+                        const empty = {
+                            id: null,
+                            belongs_to_profile: "",
+                            name: "",
+                            family_member_img: "",
+                            role: "",
+                            star_points: "",
+                            ongoing_tasks: "",
+                            closed_tasks: ""
+                        };
 
-                  }
-                  navigate("/taskboard");
-            }
-        })
-        .catch((e) => {
-            console.log(e);
-            setError(e.response?.data);
-        });
-            
+                        setFamilyMemberContext(JSON.stringify(empty));
+                    }
+                    navigate("/taskboard");
+                }
+            })
+            .catch((e) => {
+                console.log(e);
+                setError(e.response?.data);
+            });
+
     };
 
     return (
@@ -82,7 +81,6 @@ const SignInForm = () => {
                 <Col xs={12} sm={6} lg={4} className={`${styles.FormWrapper} mx-auto text-start`}>
                     <h1 className={styles.Header}>Sign In</h1>
                     <Form onSubmit={handleFormSubmit}>
-
                         <Form.Group className="mb-3" controlId="username">
                             <Form.Label>Username</Form.Label>
                             <Form.Control
@@ -94,9 +92,9 @@ const SignInForm = () => {
                             />
                         </Form.Group>
                         {errors.username?.map((message, idx) =>
-                        <Alert variant='warning' key={idx}>{message}</Alert>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
                         )}
-                 
+
                         <Form.Group className="mb-3" controlId="password">
                             <Form.Label>Password</Form.Label>
                             <Form.Control
@@ -108,14 +106,14 @@ const SignInForm = () => {
                             />
                         </Form.Group>
                         {errors.password?.map((message, idx) =>
-                        <Alert variant='warning' key={idx}>{message}</Alert>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
                         )}
 
                         <Button variant="dark" type="submit" className={styles.SignInButton}>
                             Sign In
                         </Button>
                         {errors.non_field_errors?.map((message, idx) =>
-                        <Alert variant='warning' key={idx}>{message}</Alert>
+                            <Alert variant='warning' key={idx}>{message}</Alert>
                         )}
                     </Form>
                     <p className={styles.SignUpText}>Don't have an account yet?<Link to="/signup" className={styles.SignUpLink} onClick={SignUpForm}>Sign Up</Link></p>
@@ -123,7 +121,7 @@ const SignInForm = () => {
             </Row>
             <Image className={styles.BackgroundImage} src={Rabbit} alt="Rabbit with party hat" />
         </Container>
-    )
-}
+    );
+};
 
 export default SignInForm;
