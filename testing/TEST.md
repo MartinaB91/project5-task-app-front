@@ -8,8 +8,8 @@
     - [Exploratory tests](#exploratory-tests)
     - [Usability testing](#usability-testing)
     - [Automatic tests](#automatic-tests)
-    - [Lighthouse reports](#lighthouse-reports)
-    - [Solved bugs during development](#solved-bugs-during-development)
+- [Lighthouse reports](#lighthouse-reports)
+- [Solved bugs during development](#solved-bugs-during-development)
 - [Validation](#validation)
 
 ## Introduction 
@@ -97,10 +97,50 @@ Test results [here](/testing/TEST_RECORDS.md)
 
 ### Usability testing
 
+No formal has been conducted but informal test were the user has freely used the app and given feedback has been made. 
 
 ### Automatic tests
 
-### Lighthouse reports  
+No automatic front end tests has been done. 
+
+## Lighthouse reports  
+
+Overall the scores are very good. But as expected the taskboard has a lower performance score. There is probably some optimizations that could be done regarding API calls to back-end and states that is updated when not needed. 
+
+### Sign Up
+
+<img src="../testing/lighthouse_reports/lighthouse_sign_up.jpg">
+
+### Sign In
+
+<img src="../testing/lighthouse_reports/lighthouse_sign_in.jpg">
+
+### Home 
+
+<img src="../testing/lighthouse_reports/lighthouse_home.PNG">
+
+### Task Board
+
+<img src="../testing/lighthouse_reports/lighthouse_taskboard.jpg">
+
+### Add Family Member
+
+<img src="../testing/lighthouse_reports/lighthouse_add_family_member.PNG">
+
+### Add Task
+
+<img src="../testing/lighthouse_reports/lighthouse_add_task.png">
+
+### Edit Task
+
+<img src="../testing/lighthouse_reports/lighthouse_edit_task.jpg">
+
+### Delete Task
+
+<img src="../testing/lighthouse_reports/lighthouse_delete_task.jpg">
+
+
+
 
 ## Solved bugs during development
 - [#65](https://github.com/MartinaB91/project5-task-app-front/issues/65) Can't add family member, first time user
@@ -116,7 +156,7 @@ All CSS has been validated using [W3C](https://validator.w3.org/) without errors
 
 npm build warnings:
 
-<img src="../testing/validation/warnings_front_end.PNG" widht=50%>
+<img src="../testing/validation/warnings_front_end.PNG">
 
 "is assigned a value but never used":
 One reason for some of these warnings is that a imported context state is used but the set state is not used or only the set state is used. 
