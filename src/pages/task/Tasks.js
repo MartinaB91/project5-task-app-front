@@ -3,12 +3,15 @@ import { faUserPlus, faStar, faCircleCheck } from '@fortawesome/free-solid-svg-i
 import axios from "axios";
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import { Col, Card, Button, Row } from "react-bootstrap";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import styles from "../../styles/TaskBoard.module.css";
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 import { EllipsisDropdown } from "../../components/task/TaskEllipsisButtons";
 import Image from "react-bootstrap/Image";
-import { Form } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
 import InformationTrigger from "../../components/common/ScoreBoardInformationTrigger";
 import Loader from "../../components/common/Loader";
 import HiddenRabbit from "../../assets/images/hidden-rabbit.svg"

@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import styles from "../styles/Home.module.css";
 import SignUpForm from "../pages/SignUp";
@@ -20,7 +20,6 @@ const HomePage = () => {
                         is the Family Star.
                     </p>
                     <p>Ready to try a new way of family teamwork?<Link to="/signup" onClick={SignUpForm} className={styles.LinkSignUp}> Get started</Link></p>
-
                 </div>
             </div>
             <img id={styles["home-img"]} src={Rabbit} alt="rabbit with hat" />
