@@ -1,12 +1,13 @@
 import styles from '../styles/SignUp.module.css';
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { Container, Alert } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Image } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image';
 import Rabbit3 from "../assets/images/rabbit-5.webp";
 import { axiosReq } from '../api/axiosDefaults';
 

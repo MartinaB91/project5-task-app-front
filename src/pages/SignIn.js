@@ -4,18 +4,15 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-
 import { Link, useNavigate } from "react-router-dom";
-
 import Container from 'react-bootstrap/Container';
 import SignUpForm from "./SignUp";
-
 import { useSetCurrentUser } from "../context/CurrentUser";
 import { useRedirect } from "../hooks/useRedirect";
 import styles from "../styles/SignIn.module.css";
-import { Image } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 import Rabbit from "../assets/images/rabbit-2.webp";
-import { Alert } from 'react-bootstrap';
+import Alert from 'react-bootstrap/Alert';
 import { CurrentFamilyMemberContext } from "../context/CurrentFamilyMemberContext";
 import { setTokenTimestamp } from "../utils/utils";
 
