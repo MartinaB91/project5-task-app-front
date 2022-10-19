@@ -18,7 +18,6 @@ export const DisplayFamilyMember = () => {
   const handleFamilyMembers = async () => {
     await axios.get("familymembers/members/")
       .then((response) => {
-        console.log(response);
         // "Convert" json to array
         let responseAsArray = [];
         for (let resp of response.data) {
@@ -27,7 +26,7 @@ export const DisplayFamilyMember = () => {
 
         setFamilymembers(responseAsArray);
       })
-      .catch((e) => console.log(e));
+      .catch((e));
   };
 
   useEffect(() => {
@@ -56,7 +55,9 @@ export const DisplayFamilyMember = () => {
           })}
         </Row>
       }
-      <Link to="/addfamilymember" className={styles.Link}>Add Family Member<FontAwesomeIcon icon={faUserPlus} className={styles.AddMemberIcon} /></Link>
+      <Link to="/addfamilymember" className={styles.Link}>Add Family Member
+        <FontAwesomeIcon icon={faUserPlus} className={styles.AddMemberIcon} />
+      </Link>
     </>
   )
 };
