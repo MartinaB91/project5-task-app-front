@@ -2,7 +2,8 @@ import React from 'react';
 import RabbitFace from "../../assets/images/rabbit-face-1.svg";
 import styles from "../../styles/MessageUnauthenticatedUser.module.css";
 import Image from "react-bootstrap/Image";
-import { Container, Row } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 const MessageUnauthenticatedUser = ({ message }) => {
     return (
