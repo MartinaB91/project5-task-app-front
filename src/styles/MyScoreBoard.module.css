@@ -20,12 +20,10 @@
 
 .FontAwesomeIcon {
     color: #D4AF37;
-    /* padding-left: 0.5rem;  */
     font-size: 2rem;
 }
 
 .RabbitFace {
-    padding-left: 0.5rem;
     height: 7.5rem;
     width: 7.5rem;
 }
@@ -85,6 +83,10 @@
     .OngoingTaskWrapper{
         margin-top: 1.5rem;
     }
+
+    .RabbitFace {
+        padding-right: 0.9rem;
+    }
   }
 
 @media screen and (min-width:769px) and (max-width: 992px) {
@@ -98,5 +100,9 @@
 
     .OngoingTaskWrapper{
         margin-top: 1.2rem;
+    }
+
+    .RabbitFace {
+        padding-right: 0.9rem;
     }
   }
