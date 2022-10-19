@@ -39,21 +39,13 @@ export const DisplayFamilyMemberTasks = () => {
           }
 
           setFamilymembersList(responseAsArray);
-
-          // Update scores of current familymember
-          for (let familyMember in familymembersList){
-              if (familyMember.id == currentFamilyMemberObj?.id){
-                currentFamilyMemberObj.ongoing_tasks = familyMember.ongoing_tasks;
-              }
-          }
-
         })
         .catch(
           // Implement error handling in future version
         );
     };
     handleFamilyMembersList();
-  }, [currentFamilyMemberObj?.id]);
+  }, []);
 
   useEffect(() => {
     const handleMount = async () => {
