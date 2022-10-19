@@ -140,10 +140,10 @@
     }
   }
 
-  @media screen and (min-width:769px) and (max-width: 992px) {
+  /* @media screen and (min-width:769px) and (max-width: 992px) {
     .cardCategory {
         font-weight: bold;
         margin-left: 1rem;
     }
-  }
+  } */
 

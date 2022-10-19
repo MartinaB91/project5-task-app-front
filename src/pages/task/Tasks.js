@@ -255,11 +255,11 @@ export const DisplayFamilyMemberTasks = () => {
                                   }
                                 </Col>
                                 <Col xs={4} md={4} lg={4} xl={4}>
-                                  <Card.Text className={`${styles.cardCategory} text-start mt-5`}>{task.category_name}</Card.Text>
+                                  <Card.Text className={`${styles.cardCategory} text-start mt-4`}>{task.category_name}</Card.Text>
                                 </Col>
                                 <Col xs={4} md={4} lg={4} xl={4} className={styles.AssignButtonWrapper}>
                                   {/* If task status is todo but the task is not assigned the done btn will be
-                    disabled. When btn is assigned you can mark the task as done */}
+                                      disabled. When btn is assigned you can mark the task as done */}
                                   {task.status === "Todo" ?
                                     <>
                                       {task.assigned == null || task.assigned == "" || task.assigned !== currentFamilyMemberObj?.id ?
