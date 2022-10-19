@@ -33,7 +33,7 @@ export const DeleteTask = () => {
         <Container fluid className={styles.Container}>
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} mx-auto`}>
-                    <h4 className={styles.DeleteHeader}>Want to delete task {title}?</h4>
+                    <h4 className={`${styles.DeleteHeader} text-center`}>Want to delete task {title}?</h4>
                     {currentFamilyMemberObj !== null && currentFamilyMemberObj.id !== null ? (
                         <>
                             {currentFamilyMemberObj.role === 1 && assigned ==="null" ?
@@ -54,7 +54,7 @@ export const DeleteTask = () => {
                     }
                 </Col>
             </Row>
-            <Image className={styles.BackgroundImage} src={Rabbit} />
+            <Image className={styles.BackgroundImage} src={Rabbit} aria-label="Background standing rabbit with hat"/>
         </Container>
     );
 };

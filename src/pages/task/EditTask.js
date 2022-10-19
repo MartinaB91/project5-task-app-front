@@ -215,7 +215,7 @@ export const EditTask = () => {
                         </>}
                 </Col>
             </Row>
-            <Image className={styles.BackgroundImage} src={BackgroundForm} />
+            <Image className={styles.BackgroundImage} src={BackgroundForm} aria-label="background colorful dots" />
         </Container>
     );
 };
