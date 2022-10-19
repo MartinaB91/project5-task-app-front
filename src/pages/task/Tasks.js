@@ -25,7 +25,6 @@ export const DisplayFamilyMemberTasks = () => {
   const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
   const currentFamilyMemberObj = JSON.parse(familyMemberContext);
   const [familymembersList, setFamilymembersList] = useState([]);
-  const [error, setError] = useState({});
   const [query, setQuery] = useState();
   const [filter, setFilter] = useState('no_selected_value');
   const [hasLoaded, setHasLoaded] = useState(false);
