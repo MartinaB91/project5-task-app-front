@@ -1,8 +1,9 @@
 import axios from 'axios';
-import { Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Image } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
 import styles from "../../styles/DisplayFamilyMember.module.css"
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
