@@ -34,9 +34,9 @@ export const MyScoreBoard = (props) => {
                 <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.star_points}</p>
                 <h4 className={styles.ScoreBoardText}>Stars</h4>
             </Col>
-            <Col className="d-none d-sm-block text-center">
+            <Col className="text-center">
                 <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.closed_tasks}</p>
-                <h4 className={`${styles.ScoreBoardText} mb-5`}>Closed</h4>
+                <h4 className={`${styles.ScoreBoardText} mb-1`}>Closed</h4>
             </Col>
         </Row>
     return (
