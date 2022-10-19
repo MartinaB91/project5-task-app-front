@@ -148,7 +148,7 @@ export const CreateTask = () => {
                                                     name="star_points"
                                                     onChange={onFormFieldUpdate}
                                                     value={star_points}
-                                                    placeholder="Enter a number between 1-20"
+                                                    placeholder="1-20"
                                                     min={1}
                                                     max={20}
                                                 />
