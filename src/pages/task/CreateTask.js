@@ -58,7 +58,6 @@ export const CreateTask = () => {
             .catch((e) => console.log(e));
     };
 
-
     const handleFamilyMembers = async () => {
         // Gets all family member you can assign your task to
         await axios.get("familymembers/members/")
@@ -70,8 +69,8 @@ export const CreateTask = () => {
                 for (let resp of response.data) {
                     responseAsArray.push(resp);
                 }
-                setFamilymember(responseAsArray);
 
+                setFamilymember(responseAsArray);
             })
             .catch((e) => console.log(e));
     };
@@ -104,7 +103,6 @@ export const CreateTask = () => {
                         <>
                             {currentFamilyMemberObj?.role === 1 ?
                                 <Form onSubmit={handleFormSubmit}>
-
                                     <Form.Group className="mb-3" controlId="title">
                                         <Form.Label>Title</Form.Label>
                                         <Form.Control
@@ -143,7 +141,6 @@ export const CreateTask = () => {
                                                 <Alert variant='warning' key={idx}>{message}</Alert>
                                             )}
                                         </Col>
-
                                         <Col>
                                             <Form.Group className="mb-3" controlId="star_points">
                                                 <Form.Label>Star Points</Form.Label>
@@ -162,7 +159,6 @@ export const CreateTask = () => {
                                             )}
                                         </Col>
                                     </Row>
-
                                     <Form.Group className="mb-3" controlId="endDate">
                                         <Form.Label>End date</Form.Label>
                                         <Form.Control
@@ -175,7 +171,6 @@ export const CreateTask = () => {
                                     {errors.end_date?.map((message, idx) =>
                                         <Alert variant='warning' key={idx}>{message}</Alert>
                                     )}
-
                                     <Form.Group className="mb-3" controlId="description">
                                         <Form.Label>Description</Form.Label>
                                         <Form.Control
@@ -191,7 +186,6 @@ export const CreateTask = () => {
                                     {errors.description?.map((message, idx) =>
                                         <Alert variant='warning' key={idx}>{message}</Alert>
                                     )}
-
 
                                     <Form.Group className="mb-3" controlId="assigned">
                                         <Form.Label>Want to assign your task?</Form.Label>
@@ -230,5 +224,5 @@ export const CreateTask = () => {
             </Row>
             <Image className={styles.BackgroundImage} src={BackgroundForm} />
         </Container>
-    )
-}
+    );
+};

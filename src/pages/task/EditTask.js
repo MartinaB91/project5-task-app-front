@@ -218,6 +218,5 @@ export const EditTask = () => {
             </Row>
             <Image className={styles.BackgroundImage} src={BackgroundForm} />
         </Container>
-
-    )
-}
+    );
+};

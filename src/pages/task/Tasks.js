@@ -14,12 +14,12 @@ import Image from "react-bootstrap/Image";
 import Form from "react-bootstrap/Form";
 import InformationTrigger from "../../components/common/ScoreBoardInformationTrigger";
 import Loader from "../../components/common/Loader";
-import HiddenRabbit from "../../assets/images/hidden-rabbit.svg"
+import HiddenRabbit from "../../assets/images/hidden-rabbit.svg";
 
 
 export const DisplayFamilyMemberTasks = () => {
 
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState([]);
 
   // Todo: Use when assigning by click on user +
   const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
@@ -86,13 +86,13 @@ export const DisplayFamilyMemberTasks = () => {
           })
           .catch((e) => console.log(e));
       }
-    }
+    };
 
     setHasLoaded(false);
     handleMount();
     const timer = setTimeout(() => {
       fetchTasks();
-    }, 1000)
+    }, 1000);
 
     return () => {
       clearTimeout(timer);
@@ -297,6 +297,6 @@ export const DisplayFamilyMemberTasks = () => {
         <p className="text-center mt-4"> Choose a family member before filtering or searching tasks</p>
       )} 
     </>
-  )
-}
+  );
+};
 

@@ -56,5 +56,5 @@ export const DeleteTask = () => {
             </Row>
             <Image className={styles.BackgroundImage} src={Rabbit} />
         </Container>
-    )
-}
+    );
+};
