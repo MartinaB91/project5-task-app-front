@@ -313,6 +313,7 @@ This project is deployed to Heroku. Below the steps taken to deploy is described
 4. On the "Deploy"-tab select deployment method "GitHub"
 5. Enter the project name: project5-task-app-front and click on the button "Connect"
 6. Scroll down to manual deploy and click on button "Deploy Branch" to deploy the latest version. 
+
 ## Credits
 ### Code
 - [Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Storage/) and [Bits and Pieces](https://blog.bitsrc.io/5-methods-to-persisting-state-between-page-reloads-in-react-8fc9abd3fa2f) - Used as inspiration when building CurrentFamilyMemberProvider
@@ -321,5 +322,8 @@ This project is deployed to Heroku. Below the steps taken to deploy is described
 ### Content and Media
 - [Pexels](https://www.pexels.com/sv-se/) - All pictures on app are from Pexels
 - [SVG Repo](https://www.svgrepo.com/) - Used for default and 404 page icons
-### Test
+### Test and validation
+- [W3C](https://validator.w3.org/) - Used for validate css
+- [JSHint](https://jshint.com/) - Used for validate JS
+
 
