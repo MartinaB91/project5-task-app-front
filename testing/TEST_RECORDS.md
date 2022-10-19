@@ -18,6 +18,60 @@ On this page you can find documentation from the test process and find out the r
 
 ### Responsiveness tests
 
+|Test Record 4 | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-10-19|||
+|**Enviroment:**| Production (Heroku)|||
+|**Test Object:**| Family Star app|||
+|**Version:**|ID f89913bb-ea79-4d40-b4f3-36232a3e4543||||
+|**Browser**|Chrome Version 106.0.5249.119 |||
+|**Test id:**|[#45](https://github.com/MartinaB91/project5-task-app-front/issues/45)|||
+|**Size**|**Result**|**Bug id:**|**Comments**:|
+|<375px|Pass|||
+|<575px|Pass|||
+|<768px|Pass|||
+|<992px|Pass|||
+|<1200px|Pass|||
+|>1400px|Pass|||
+|>1600px|Pass|||
+
+|Test Record 5 | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-10-19|||
+|**Enviroment:**| Production (Heroku)|||
+|**Test Object:**| Family Star app|||
+|**Version:**|ID f89913bb-ea79-4d40-b4f3-36232a3e4543||||
+|**Browser**|Firefox Version 104.0.1 |||
+|**Test id:**|[#45](https://github.com/MartinaB91/project5-task-app-front/issues/45)|||
+|**Size**|**Result**|**Bug id:**|**Comments**:|
+|<375px|Pass|||
+|<575px|Pass|||
+|<768px|Pass|||
+|<992px|Pass|||
+|<1200px|Pass|||
+|>1400px|Pass|||
+|>1600px|Pass|||
+
+|Test Record 6 | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-10-19|||
+|**Enviroment:**| Production (Heroku)|||
+|**Test Object:**| Family Star app|||
+|**Version:**|ID f89913bb-ea79-4d40-b4f3-36232a3e4543||||
+|**Browser**| Opera 12.15 |||
+|**Test id:**|[#45](https://github.com/MartinaB91/project5-task-app-front/issues/45)|||
+|**Size**|**Result**|**Bug id:**|**Comments**:|
+|<375px|Pass|||
+|<575px|Pass|||
+|<768px|Pass|||
+|<992px|Pass|||
+|<1200px|Pass|||
+|>1400px|Pass|||
+|>1600px|Pass|||
+
 ### Exploartory tests
 
 |Test Record X  | |||
@@ -66,8 +120,13 @@ On this page you can find documentation from the test process and find out the r
 |**Test Object:**| Family Star app|||
 |**Version:**|Development||||
 |**Goal:**|Try to reach pages you don’t have access to as when not signed-in.||||
-|**Test id:**||**Bug id:**|**Comments**:|
-|[#66](https://github.com/MartinaB91/project5-task-app-front/issues/66)||[#67](https://github.com/MartinaB91/project5-task-app-front/issues/67)|High. Possible security risk|
+|**Test id:**|[#66](https://github.com/MartinaB91/project5-task-app-front/issues/66)|||
+|**Page:**|**Result**|**Bug id:**|**Comments**:|
+|/taskboard |Fail|||
+|/addfamilymember|Fail|[#67](https://github.com/MartinaB91/project5-task-app-front/issues/67)|High. Possible security risk|
+|/addtask |Fail|||
+|/tasks/74/edit  |Fail|||
+|/tasks/74/Test title 22/delete  |Fail|||
 
 ### Usability testing
 
