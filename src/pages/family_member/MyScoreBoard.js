@@ -34,10 +34,6 @@ export const MyScoreBoard = (props) => {
                 <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.star_points}</p>
                 <h4 className={styles.ScoreBoardText}>Stars</h4>
             </Col>
-            <Col xs={4} sm={12} className={`${styles.OngoingTaskWrapper} text-center`}>
-                <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.ongoing_tasks}</p>
-                <h4 className={styles.ScoreBoardText}>Ongoing</h4>
-            </Col>
             <Col className="d-none d-sm-block text-center">
                 <p className={styles.ScoreBoardNumber}>{currentFamilyMemberObj.closed_tasks}</p>
                 <h4 className={`${styles.ScoreBoardText} mb-5`}>Closed</h4>

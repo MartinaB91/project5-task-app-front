@@ -109,10 +109,8 @@ export const DisplayFamilyMemberTasks = () => {
           if (task.id == taskId) {
             if (task.assigned == currentFamilyMemberObj.id) {
               task.assigned = null;
-              currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
             } else {
               task.assigned = currentFamilyMemberObj.id;
-              currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
             }
           }
           tasksAsArray.push(task);
@@ -146,11 +144,9 @@ export const DisplayFamilyMemberTasks = () => {
         if (response["data"].status === "Todo") {
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points - response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks - 1;
-          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
         } else {
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points + response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks + 1;
-          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
         }
 
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
