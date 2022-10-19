@@ -11,8 +11,8 @@ import {
 import SignInForm from "../../pages/SignIn";
 import { DisplayFamilyMember } from "../common/DisplayFamilyMember";
 import Dropdown from "react-bootstrap/Dropdown";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 import { axiosReq } from "../../api/axiosDefaults";
 
@@ -28,9 +28,9 @@ const NavBar = () => {
 
             await axiosReq.post("/dj-rest-auth/logout/");
             // Remove session storage and set current user to null
-            sessionStorage.removeItem('currentFamilyMember')
+            sessionStorage.removeItem('currentFamilyMember');
             setCurrentUser(null);
-            navigate("/")
+            navigate("/");
         } catch (err) {
             console.log(err);
         }
@@ -38,7 +38,6 @@ const NavBar = () => {
 
     const buttonForSignedInUser = (
         <>
-
             <Dropdown align="end" className={styles.Test}>
                 <Dropdown.Toggle variant="link" className={styles.Link}>
                     {getCurrentUser?.username}
@@ -52,14 +51,12 @@ const NavBar = () => {
                     <Dropdown.Item href="/" className={styles.Link} onClick={handleSignOut}>Sign Out</Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
-
         </>
     );
 
     const buttonForNotSignedInUser = (
         <Link to="/signin" className={`${styles.Link} p-3`} onClick={SignInForm}>Sign In</Link>
     );
-
     return (
         <Navbar className={styles.NavBar} fixed="top">
             <Container fluid className={styles.Container}>
@@ -75,10 +72,7 @@ const NavBar = () => {
                 </Navbar.Collapse>
             </Container>
         </Navbar>
-
-    )
-
-
+    );
 };
 
 export default NavBar;

@@ -14,9 +14,9 @@ const MessageUnauthenticatedUser = ({ message }) => {
             </Row>
         </Container>
     )
-}
+};
 
-export default MessageUnauthenticatedUser
+export default MessageUnauthenticatedUser;
 
 
 

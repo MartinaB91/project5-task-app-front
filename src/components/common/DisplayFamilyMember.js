@@ -4,16 +4,15 @@ import Col from "react-bootstrap/Col";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Image from "react-bootstrap/Image";
-import styles from "../../styles/DisplayFamilyMember.module.css"
+import styles from "../../styles/DisplayFamilyMember.module.css";
 import { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
 
 export const DisplayFamilyMember = () => {
-
   const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
-  const [familymembers, setFamilymembers] = useState([])
+  const [familymembers, setFamilymembers] = useState([]);
   const navigate = useNavigate();
 
   const handleFamilyMembers = async () => {
@@ -57,7 +56,7 @@ export const DisplayFamilyMember = () => {
           })}
         </Row>
       }
-      <Link to="/addfamilymember" className={styles.Link}>Add Family Member<FontAwesomeIcon icon={faUserPlus} className={styles.AddMemberIcon}/></Link>
+      <Link to="/addfamilymember" className={styles.Link}>Add Family Member<FontAwesomeIcon icon={faUserPlus} className={styles.AddMemberIcon} /></Link>
     </>
   )
-}
+};
