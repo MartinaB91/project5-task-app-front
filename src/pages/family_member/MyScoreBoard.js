@@ -13,24 +13,24 @@ export const MyScoreBoard = (props) => {
     // Convert json to js object
     const currentFamilyMemberObj = JSON.parse(familyMemberContext);
 
-    const [familymember, setFamilyMember] = useState({ results: [] });
+    // const [familymember, setFamilyMember] = useState({ results: [] });
 
-    useEffect(() => {
-        const handleMount = async () => {
-            if (currentFamilyMemberObj?.id != null) {
-                try {
-                    const [{ data: familymember }] = await Promise.all([
-                        axiosReq.get(`/familymembers/members/${currentFamilyMemberObj.id}`),
-                    ]);
-                    setFamilyMember({ results: [familymember] });
+    // useEffect(() => {
+    //     const handleMount = async () => {
+    //         if (currentFamilyMemberObj?.id != null) {
+    //             try {
+    //                 const [{ data: familymember }] = await Promise.all([
+    //                     axiosReq.get(`/familymembers/members/${currentFamilyMemberObj.id}`),
+    //                 ]);
+    //                 setFamilyMember({ results: [familymember] });
 
-                } catch (error) {
-                    // Implement error handling in future version
-                }
-            }
-        };
-        handleMount();
-    }, [currentFamilyMemberObj?.id]);
+    //             } catch (error) {
+    //                 // Implement error handling in future version
+    //             }
+    //         }
+    //     };
+    //     handleMount();
+    // }, [currentFamilyMemberObj?.id]);
 
     const emptyFamilyMemberInfo = (
         <Row className="d-md-block justify-content-center">
