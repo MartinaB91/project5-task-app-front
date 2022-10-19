@@ -65,7 +65,7 @@ export const ProfileScoreBoard = () => {
                     // https://stackoverflow.com/questions/36941115/return-object-with-highest-value
                     // Finds the the highest star points and then find the object that belongs to the highest score. 
                     // Todo: Handle if family members have the same star points
-                    const findHighestStarPoints = Math.max(...starPointsArray.map(x => x.star_points))
+                    const findHighestStarPoints = Math.max(...starPointsArray.map(x => x.star_points));
                     var familyMemberWithHighestStarPoints = starPointsArray.find(starPointsArray => starPointsArray.star_points === findHighestStarPoints);
 
                     setCompletedAndOngoingTasks({ "total_completed_tasks": completed, "total_ongoing_tasks": ongoing, "family_star_leader_name": familyMemberWithHighestStarPoints.name, "family_star_leader_points": familyMemberWithHighestStarPoints.star_points, "family_star_leader_img": familyMemberWithHighestStarPoints.family_member_img });
@@ -82,7 +82,7 @@ export const ProfileScoreBoard = () => {
                     let todo = 0;
                     for (let resp of response.data) {
                         if (resp.assigned === null && resp.status === 'Todo') {
-                            todo += 1
+                            todo += 1;
                         }
                     }
                     setTodoTasks({ "total_todo_tasks": todo });
@@ -132,5 +132,5 @@ export const ProfileScoreBoard = () => {
                 </Col>
             </Row>
         </>
-    )
-}
+    );
+};
