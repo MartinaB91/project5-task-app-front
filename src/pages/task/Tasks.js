@@ -21,7 +21,6 @@ export const DisplayFamilyMemberTasks = () => {
 
   const [tasks, setTasks] = useState([]);
 
-  // Todo: Use when assigning by click on user +
   const [familyMemberContext, setFamilyMemberContext] = useContext(CurrentFamilyMemberContext);
   const currentFamilyMemberObj = JSON.parse(familyMemberContext);
   const [familymembersList, setFamilymembersList] = useState([]);
@@ -102,7 +101,6 @@ export const DisplayFamilyMemberTasks = () => {
     const taskId = e.currentTarget.value;
     axios.patch(`taskboard/tasks/${taskId}/assign`, { "assigned": currentFamilyMemberObj.id })
       .then((response) => {
-        // TODO: make the patch return statusCode so we only change state when patch i succesful
         const tasksAsArray = [];
         for (let task of tasks) {
           // Find the task we are updating in the tasks-state/list
