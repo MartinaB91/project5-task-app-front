@@ -68,7 +68,7 @@ export const ProfileScoreBoard = () => {
                     const findHighestStarPoints = Math.max(...starPointsArray.map(x => x.star_points));
                     var familyMemberWithHighestStarPoints = starPointsArray.find(starPointsArray => starPointsArray.star_points === findHighestStarPoints);
 
-                    if (familyMemberWithHighestStarPoints === null) {
+                    if (Object.keys(familyMemberWithHighestStarPoints).length === 0) {
                         setCompletedAndOngoingTasks({ "total_completed_tasks": completed, "total_ongoing_tasks": ongoing, "family_star_leader_name": "No leader", "family_star_leader_points": 0, "family_star_leader_img": ""});
                     } else {
                         setCompletedAndOngoingTasks({ "total_completed_tasks": completed, "total_ongoing_tasks": ongoing, "family_star_leader_name": familyMemberWithHighestStarPoints.name, "family_star_leader_points": familyMemberWithHighestStarPoints.star_points, "family_star_leader_img": familyMemberWithHighestStarPoints.family_member_img });
