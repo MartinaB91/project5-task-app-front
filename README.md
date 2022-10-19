@@ -8,7 +8,7 @@ View the site [here](https://project5-task-app-front.herokuapp.com/)
 Family Star is a mix between a task board and a game that families can use to make ordinary household tasks to something fun. Parents can add tasks and family members to the family's shared task board. Depending on how challenging or how long time the task takes the parent can adapt how many star points(scores) completion of the task gives. The family member that currently has the highest amount of collected star points is the family star(leader). 
 
 Family members can pick a task to complete by assigning themselves at the task. When the task is completed, the family member marks the task as done.  The tasks progress is followed by two scoreboards, one for the family member and one for the whole family.
-In the family member scoreboard, the family member can follow their own progress as it will be updated with information about how many: star points, ongoing tasks and closed tasks the family member has. Instead of only containing information about one family member the family’s scoreboard contains information about the progress of the whole family. It contains information about: who is the family star, how many tasks there is to-do, completed tasks and ongoing tasks.
+In the family member scoreboard, the family member can follow their own progress as it will be updated with information about how many: star points and closed tasks the family member has. Instead of only containing information about one family member the family’s scoreboard contains information about the progress of the whole family. It contains information about: who is the family star, how many tasks there is to-do, completed tasks and ongoing tasks.
 
 Currently the site contains these categories: Cleaning, Cooking, Homework and Garden.
 
@@ -70,6 +70,7 @@ The main reason for users to revisit the website is because the task managing is
 - [Future Improvements](#future-improvements)
     - [Code](#code)
     - [Known bugs](#known-bugs)
+    - [Design decision based on test results](#design-decision-based-on-test-results)
 - [Deployment](#deployment)
     -[Heroku deployment](#heroku-deployment)
 - [Credits](#credits)
@@ -197,7 +198,7 @@ The user experience has been improved by using react.
 
 ### Task Board 
 
-- This page is the main page where you can reach all other pages and can be divided into four sections. The first section is the profile scoreboard, followed by the family member score board. Then the user can find a section for searching and filtering and below the task section where all tasks are displayed 
+- This page is the main page where you can reach all other pages and the page divided into four sections. The first section is the profile scoreboard, followed by the family member score board. Then the user can find a section for searching and filtering and below the task section where all tasks are displayed 
 - If there's is no tasks to display the following text will be shown “You haven’t created any tasks yet. Go to the navbar to create one” 
 
 ### Profile Score Board 
@@ -211,7 +212,6 @@ The user experience has been improved by using react.
 - The family member scoreboard contains information that applies to a specific family member. By being able to see their own scores together with the scores on the profile scoreboard, the user can compare their own performance and choose tasks according on how many points needed to become the Family Star.  
 - On the top of the scoreboard the family member image and name are displayed. This will let the user know who the current family member is.  
 - Star points, how many points the member has collected.  
-- Ongoing tasks, shows how many tasks the member has ongoing 
 - Closed tasks, shows how many tasks the member has marked as done.  
 
 ### Task 
@@ -223,7 +223,7 @@ The user experience has been improved by using react.
 - A user can’t mark a task as done before the task is assigned and only the user that has assigned a task can unassign the task.  
 
 ### Done Button 
-- A task that isn’t marked as done will have a grey button, when the task is done and the user clicks the button it will change color to green
+- A task that isn’t marked as done will have a grey button, when the task is done and the user clicks the button it will change color to green. 
 
 ### Create Task 
 - This page contains a form for creating a task. The Parent can add a: title, category, star points, end date, description and optionally assign a family member. 
@@ -234,9 +234,12 @@ The user experience has been improved by using react.
 - At this page the Parent can update almost all parts of the task, the one thing they can’t update is the tasks status (to-do or done).  
 - When the task is updated, the user will be redirected to the task board.  
 - If a family member that has the role “child” is trying to edit a task the user will see a warning message: “Ask your parents to edit the task”. 
+- If a task already is assigned it is not possible to edit and the user will see a warning message: "You can't edit an assigned task".
 
 ### Delete Task 
 - When the user clicks on the trash can icon displayed in the ellipsis button, they will be redirected to a delete task page and asked to confirm deletion. When the task is deleted, the user will be redirected to the task board.  
+- If a task already is assigned it is not possible to delete and the user will see a warning message: "You can't delete an assigned task".
+
 
 ### Add Family member  
 - This page contains a form for creating a family member. The family members can add a: profile image, nickname and a role.  
@@ -290,13 +293,21 @@ The following user stories was started (code for back-end is done) but not finis
 - [#40](https://github.com/MartinaB91/project5-task-app-front/issues/40): Delete family member
 
 ### Code
-- More automatic tests before building code could have been done (TDD). 
+- More automatic backend tests before building code could have been done (TDD). 
 - Assign and Done button could haven been separate from task and made as components.
 ### Known bugs
 Because of limited time these bugs was not prioritezed since testing and validation needed to be done properly. These bugs are not critical and have little impact on the user experience: 
 
 - [#55](https://github.com/MartinaB91/project5-task-app-front/issues/55) - More than one Family Stars(Leaders)
 - [#56](https://github.com/MartinaB91/project5-task-app-front/issues/56) - No warning when leaving input empty. Edit task form 
+- [#99](https://github.com/MartinaB91/project5-task-app-front/issues/99) - Alert pushes form outside element
+- [#101](https://github.com/MartinaB91/project5-task-app-front/issues/101) - Forms not centered 576px
+
+
+### Design decision based on test results
+- In the final tests a bug that was thought to be fixed earlier in the process was found again. Ongoing tasks count in My Scoreboard was possible to get unwanted behaviour from if not using the most common operations. For example if a user claims a task, set it to done, undo it and then set it to done again and then change family member. When doing this the scores could be off by one. 
+
+Because it's late in the project and that users that have tested/seen the application has had a hard time figuring out why the values on ongoing tasks is not the same in the both scoreboards presented it was an easy decision to remove this feature. 
 
 ## Deployment
 ### Local deployment
