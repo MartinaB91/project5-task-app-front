@@ -39,13 +39,13 @@ export const DisplayFamilyMemberTasks = () => {
           }
 
           setFamilymembersList(responseAsArray);
-          
-          // Update scores of current familymember
-          for (let familyMember in familymembersList){
-              if (familyMember.id == currentFamilyMemberObj?.id){
-                currentFamilyMemberObj.ongoing_tasks = familyMember.ongoing_tasks;
-              }
-          }
+
+          // // Update scores of current familymember
+          // for (let familyMember in familymembersList){
+          //     if (familyMember.id == currentFamilyMemberObj?.id){
+          //       currentFamilyMemberObj.ongoing_tasks = familyMember.ongoing_tasks;
+          //     }
+          // }
 
         })
         .catch(
@@ -53,7 +53,7 @@ export const DisplayFamilyMemberTasks = () => {
         );
     };
     handleFamilyMembersList();
-  }, []);
+  }, [CurrentFamilyMemberObj?.id]);
 
   useEffect(() => {
     const handleMount = async () => {
