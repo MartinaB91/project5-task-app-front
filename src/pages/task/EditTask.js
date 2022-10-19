@@ -1,10 +1,12 @@
 import axios from 'axios';
 import { useState, useEffect, useContext } from 'react';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Form, Row, Col } from 'react-bootstrap';
-import { Image } from "react-bootstrap";
-import { Alert } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Image from "react-bootstrap/Image";
+import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 import styles from '../../styles/CreateTask.module.css';
 import { CurrentFamilyMemberContext } from "../../context/CurrentFamilyMemberContext";
