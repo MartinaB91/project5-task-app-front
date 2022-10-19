@@ -59,7 +59,7 @@ const CreateFamilyMemberForm = () => {
         formData.append("role", role);
         if (imageInput.current.files[0] !== undefined ) {
             formData.append("family_member_img", imageInput.current.files[0]);
-        };
+        }
         
         await axios.post('familymembers/members/', formData)
             .then((response) => {
@@ -72,7 +72,6 @@ const CreateFamilyMemberForm = () => {
             });
     };
 
-    
     return (
         <>
         {currentUser == null || currentUser === "" ? (
@@ -153,8 +152,8 @@ const CreateFamilyMemberForm = () => {
             <Image className={styles.BackgroundImage} src={BackgroundForm} aria-label="background colorful dots" />
         </Container>
         )}
-        
         </>
-    )
-}
+    );
+};
+
 export default CreateFamilyMemberForm;
