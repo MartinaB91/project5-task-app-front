@@ -24,6 +24,7 @@
 
 .DeleteButton {
     width: 30%;
+    margin-left: 35%;
 }
 
 /* Media queries for delete task form */
