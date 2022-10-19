@@ -1,5 +1,7 @@
 import React from "react";
-import { Navbar, Container, Nav,} from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import styles from "../../styles/NavBar.module.css";
 import {
@@ -8,7 +10,7 @@ import {
 } from "../../context/CurrentUser";
 import SignInForm from "../../pages/SignIn";
 import { DisplayFamilyMember } from "../common/DisplayFamilyMember";
-import { Dropdown } from "react-bootstrap";
+import Dropdown from "react-bootstrap/Dropdown";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
