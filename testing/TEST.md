@@ -78,20 +78,21 @@ During the development process, unit testing has been done to check if functiona
 |Test: Filter tasks, All|[#96](https://github.com/MartinaB91/project5-task-app-front/issues/96)|
 |Test: Sort task, Todo|[#97](https://github.com/MartinaB91/project5-task-app-front/issues/97)|
 
-
-|Tests for Epic [#37](https://github.com/MartinaB91/project5-task-app-front/issues/37) Ability to CRUD family members||
-| ----------- | ----------- |
-|**Test name** |**Test id:** |
-|| | 
-|| |
-|| |
-
-
+Test results [here](/testing/TEST_RECORDS.md)
 
 ### Responsiveness tests
 
+- [#45]https://github.com/MartinaB91/project5-task-app-front/issues/45
+
+Test results [here](/testing/TEST_RECORDS.md)
 
 ### Exploratory tests 
+
+- [#57](https://github.com/MartinaB91/project5-task-app-front/issues/57)
+- [#59](https://github.com/MartinaB91/project5-task-app-front/issues/59)
+- [#66](https://github.com/MartinaB91/project5-task-app-front/issues/66)
+
+Test results [here](/testing/TEST_RECORDS.md)
 
 
 ### Usability testing
@@ -103,13 +104,45 @@ During the development process, unit testing has been done to check if functiona
 
 ## Solved bugs during development
 - [#65](https://github.com/MartinaB91/project5-task-app-front/issues/65) Can't add family member, first time user
+- [#98](https://github.com/MartinaB91/project5-task-app-front/issues/98) Spinner keeps loading, My tasks
 
 ## Validation
 
-### Html
-
 ### CSS
 
+All CSS has been validated using [W3C](https://validator.w3.org/) without errors or warning.
+
 ### JavaScript
+
+npm build warnings:
+
+<img src="../testing/validation/warnings_front_end.PNG" widht=50%>
+
+"is assigned a value but never used":
+One reason for some of these warnings is that a imported context state is used but the set state is not used or only the set state is used. 
+
+The other reason is that error handling is only partially implemented. Therefore it is left as is since it will be easier to implement it fully in a new version.
+
+"React Hook useEffect has missing dependency":
+
+This is known and has the intentional functionality. For example we don't wan't the useEffect to trigger every time currentUser changes only check if we have a current user.
+
+"Expected '===" and instead saw '==':
+
+This warning could have been fixed by setting the values at all times to the same type. However this is not done. For example some times a number can be a string and other times an integer. Changing this should be quite simple, unfortunately this was discovered late in the project and other more important matters has been prioritized. 
+
+All JavaScript code has also been validated using [JSHint](https://jshint.com/). The following warnings were found:
+
+ProfileScoreBoard.js:
+
+<img src="../testing/validation/validation_js_profile_scoreboard.PNG" widht=50%>
+
+- Tasks.js:
+
+<img src="../testing/validation/validation_tasks_1.PNG" widht=50%>
+
+These warnings are ignored since the functionality is as expected and changing this late on in the project could possibly have some side effects. 
+
+
 
 
