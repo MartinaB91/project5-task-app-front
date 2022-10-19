@@ -11,7 +11,7 @@ const Footer = () => {
                     <Link className={styles.Link} to="/">Home</Link>
                 </li>
                 <li className="nav-item px-2 text-muted">
-                    <Link className={styles.Link} to="#">Task Board</Link>
+                    <Link className={styles.Link} to="/taskboard">Task Board</Link>
                 </li>
             </ul>
             <p className="text-center text-muted">© 2022 Martina Björlin</p>
