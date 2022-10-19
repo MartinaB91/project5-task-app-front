@@ -87,7 +87,7 @@ const CreateFamilyMemberForm = () => {
                                 {family_member_img ? (
                                     <>
                                         <Image roundedCircle className={`${styles.Image} mb-4 d-block`} src={family_member_img} aria-label="family member profile image" />
-                                        <Form.Label htmlFor="image-upload" className={`${styles.Header} ${styles.Label}`}>Change Photo</Form.Label>
+                                        <Form.Label htmlFor="image-upload" className={`${styles.Label}`}>Change Photo</Form.Label>
                                     </>
 
                                 ) : (
