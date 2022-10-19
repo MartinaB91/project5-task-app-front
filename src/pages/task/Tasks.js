@@ -41,8 +41,8 @@ export const DisplayFamilyMemberTasks = () => {
           setFamilymembersList(responseAsArray);
         })
         .catch(
-          // Implement error handling in future version
-        );
+        // Implement error handling in future version
+      );
     };
     handleFamilyMembersList();
   }, []);
@@ -62,8 +62,8 @@ export const DisplayFamilyMemberTasks = () => {
             setHasLoaded(true);
           })
           .catch(
-            // Implement error handling in future version
-          );
+          // Implement error handling in future version
+        );
       }
     };
 
@@ -80,8 +80,8 @@ export const DisplayFamilyMemberTasks = () => {
             setHasLoaded(true);
           })
           .catch(
-            // Implement error handling in future version
-          );
+          // Implement error handling in future version
+        );
       }
     };
 
@@ -109,8 +109,10 @@ export const DisplayFamilyMemberTasks = () => {
           if (task.id == taskId) {
             if (task.assigned == currentFamilyMemberObj.id) {
               task.assigned = null;
+              currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
             } else {
               task.assigned = currentFamilyMemberObj.id;
+              currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
             }
           }
           tasksAsArray.push(task);
@@ -120,8 +122,8 @@ export const DisplayFamilyMemberTasks = () => {
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
       })
       .catch(
-        // Implement error handling in future version
-      );
+      // Implement error handling in future version
+    );
   };
 
   const handleTaskDone = async (e) => {
@@ -144,16 +146,18 @@ export const DisplayFamilyMemberTasks = () => {
         if (response["data"].status === "Todo") {
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points - response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks - 1;
+          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
         } else {
           currentFamilyMemberObj.star_points = currentFamilyMemberObj.star_points + response["data"].star_points;
           currentFamilyMemberObj.closed_tasks = currentFamilyMemberObj.closed_tasks + 1;
+          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
         }
 
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
       })
       .catch(
-        // Implement error handling in future version
-      );
+      // Implement error handling in future version
+    );
   };
 
   const searchSection = (
@@ -190,7 +194,7 @@ export const DisplayFamilyMemberTasks = () => {
   return (
     <>
       <Row> {searchSection}</Row>
-      { currentFamilyMemberObj !== null && currentFamilyMemberObj.id !== null ? (
+      {currentFamilyMemberObj !== null && currentFamilyMemberObj.id !== null ? (
         <>
           {hasLoaded ? (
             <>
@@ -264,13 +268,9 @@ export const DisplayFamilyMemberTasks = () => {
                                     </>
                                     : // Task is done 
                                     <>
-                                      {task.assigned === currentFamilyMemberObj?.id ?
-                                        <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end mt-2" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>
-                                        :
-                                        <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end mt-2" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}
+                                      <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end mt-2" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>
                                     </>
                                   }
-
                                 </Col>
                               </Row>
                             </Card.Body>
@@ -289,9 +289,9 @@ export const DisplayFamilyMemberTasks = () => {
               </Row>
             </>)}
         </>
-       ) : (
+      ) : (
         <p className="text-center mt-4"> Choose a family member before filtering or searching tasks</p>
-      )} 
+      )}
     </>
   );
 };
