@@ -102,7 +102,6 @@ export const DisplayFamilyMemberTasks = () => {
     axios.patch(`taskboard/tasks/${taskId}/assign`, { "assigned": currentFamilyMemberObj.id })
       .then((response) => {
         const tasksAsArray = [];
-        let isAssign = false;
         for (let task of tasks) {
           // Find the task we are updating in the tasks-state/list
           // Warning, one is string one is int. Two equal sign comparsion should be safe. 
@@ -110,23 +109,14 @@ export const DisplayFamilyMemberTasks = () => {
             if (task.assigned == currentFamilyMemberObj.id) {
               task.assigned = null;
               currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
-              isAssign = false;
             } else {
               task.assigned = currentFamilyMemberObj.id;
               currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
-              isAssign = true;
             }
           }
           tasksAsArray.push(task);
         }
 
-        if (isAssign){
-          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks + 1;
-
-        }else{
-          currentFamilyMemberObj.ongoing_tasks = currentFamilyMemberObj.ongoing_tasks - 1;
-        }
-        
         setTasks(tasksAsArray);
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
       })
