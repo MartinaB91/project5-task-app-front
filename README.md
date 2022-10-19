@@ -1,7 +1,6 @@
 # Family Star
 
 <img src="documentation/other-readme-images/mockup.PNG">
-<img src="/workspace/project5-task-app-front/documentation/other-readme-images/mockup.PNG">
 
 View the site [here](https://project5-task-app-front.herokuapp.com/)
 
@@ -72,6 +71,7 @@ The main reason for users to revisit the website is because the task managing is
     - [Code](#code)
     - [Known bugs](#known-bugs)
 - [Deployment](#deployment)
+    -[Heroku deployment](#heroku-deployment)
 - [Credits](#credits)
 	- [Code](#code)
     - [Content and Media](#content-and-media)
@@ -280,6 +280,7 @@ The user experience has been improved by using react.
 
 ### Wireframes 
 - [**Phone**](documentation/wireframes/WIREFRAMES.md)
+- [**Desktop**](documentation/wireframes/WIREFRAMES.md)
 ## Testing
 Read more about test and validation [here](/testing/TEST.md)
 ## Future Improvements
@@ -298,9 +299,23 @@ Because of limited time these bugs was not prioritezed since testing and validat
 - [#56](https://github.com/MartinaB91/project5-task-app-front/issues/56) - No warning when leaving input empty. Edit task form 
 
 ## Deployment
+### Local deployment
+1. Log into your GitHub account and locate this project.
+2. Create your local workspace and clone the project to your folder by using CLI command “git clone https://github.com/MartinaB91/project5-task-app-front.git”.
+3. Start app by CLI command "npm start".
+
+### Heroku deployment
+This project is deployed to Heroku. Below the steps taken to deploy is described.
+
+1. Create an Heroku account or sign into your account.
+2. Create a new app by choosing option “Create new app”, located at the centre of dashboard (or if you’re not a new user it’s found when expanding “New” in the top right corner).
+3. Give your app a name, choose a region and click “Create”.
+4. On the "Deploy"-tab select deployment method "GitHub"
+5. Enter the project name: project5-task-app-front and click on the button "Connect"
+6. Scroll down to manual deploy and click on button "Deploy Branch" to deploy the latest version. 
 ## Credits
 ### Code
-- [Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Storage/)and [Bits and Pieces](https://blog.bitsrc.io/5-methods-to-persisting-state-between-page-reloads-in-react-8fc9abd3fa2f) - Used as inspiration when building CurrentFamilyMemberProvider
+- [Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Storage/) and [Bits and Pieces](https://blog.bitsrc.io/5-methods-to-persisting-state-between-page-reloads-in-react-8fc9abd3fa2f) - Used as inspiration when building CurrentFamilyMemberProvider
 - [Stackoverflow - Highest value](https://stackoverflow.com/questions/36941115/return-object-with-highest-value) - Used for finding and returning family member with highest star points. 
 - [Pluralsight](https://www.pluralsight.com/guides/how-to-get-selected-value-from-a-mapped-select-input-in-react) - Used as inspiration for mapping out categories in create and edit task form.
 ### Content and Media
