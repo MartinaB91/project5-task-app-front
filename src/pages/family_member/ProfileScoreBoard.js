@@ -44,15 +44,15 @@ export const ProfileScoreBoard = () => {
                         // Set profile to Data
                         setProfile(response["data"]);
                     })
-                    .catch((e) => console.log(e));
+                    .catch(
+                        // Implement error handling in future version
+                    );
             }
         };
 
         const handleScoreBoard = async () => {
             await axios.get("familymembers/members/")
                 .then((response) => {
-                    console.log(response);
-
                     let completed = 0;
                     let ongoing = 0;
                     let starPointsArray = [];
@@ -70,14 +70,14 @@ export const ProfileScoreBoard = () => {
 
                     setCompletedAndOngoingTasks({ "total_completed_tasks": completed, "total_ongoing_tasks": ongoing, "family_star_leader_name": familyMemberWithHighestStarPoints.name, "family_star_leader_points": familyMemberWithHighestStarPoints.star_points, "family_star_leader_img": familyMemberWithHighestStarPoints.family_member_img });
                 })
-                .catch((e) => console.log(e));
+                .catch(
+                    // Implement error handling in future version
+                );
         };
 
         const handleTotalTodoTasks = async () => {
             await axios.get("taskboard/tasks")
                 .then((response) => {
-                    console.log(response);
-
                     // "Convert" json to array
                     let todo = 0;
                     for (let resp of response.data) {
@@ -87,7 +87,9 @@ export const ProfileScoreBoard = () => {
                     }
                     setTodoTasks({ "total_todo_tasks": todo });
                 })
-                .catch((e) => console.log(e));
+                .catch(
+                    // Implement error handling in future version
+                );
         };
 
         handleTotalTodoTasks();

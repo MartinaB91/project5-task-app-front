@@ -44,9 +44,8 @@ export const EditTask = () => {
                 const { title, category_name, end_date, description, star_points, assigned, belongs_to_profile } = data;
                 belongs_to_profile ? setCreateTaskForm({ title, category_name, end_date, description, star_points, assigned, creator, id }) : navigate('/taskboard');
 
-            } catch (error) {
-                console.log(error);
-
+            } catch {
+                // Implement error handling in future version
             }
         };
         handleMount();
@@ -65,8 +64,6 @@ export const EditTask = () => {
         // Gets all categories options
         await axios.get("category/categories/")
             .then((response) => {
-                console.log(response);
-
                 // "Convert" json to array
                 let responseAsArray = [];
                 for (let resp of response.data) {
@@ -75,7 +72,9 @@ export const EditTask = () => {
 
                 setCategories(responseAsArray);
             })
-            .catch((e) => console.log(e));
+            .catch(
+                // Implement error handling in future version
+            );
     };
 
 
@@ -83,8 +82,6 @@ export const EditTask = () => {
         // Gets all family member you can assign your task to
         await axios.get("familymembers/members/")
             .then((response) => {
-                console.log(response);
-
                 // "Convert" json to array
                 let responseAsArray = [];
                 for (let resp of response.data) {
@@ -93,7 +90,9 @@ export const EditTask = () => {
                 setFamilymember(responseAsArray);
 
             })
-            .catch((e) => console.log(e));
+            .catch(
+                // Implement error handling in future version
+            );
     };
 
     useEffect(() => {

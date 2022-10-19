@@ -23,10 +23,9 @@ export const MyScoreBoard = (props) => {
                         axiosReq.get(`/familymembers/members/${currentFamilyMemberObj.id}`),
                     ]);
                     setFamilyMember({ results: [familymember] });
-                    console.log(familymember);
 
                 } catch (error) {
-                    console.log(error);
+                    // Implement error handling in future version
                 }
             }
         };

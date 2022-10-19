@@ -40,7 +40,6 @@ const SignUpForm = () => {
             }
         })
         .catch((e) => {
-            console.log(e);
             setError(e.response?.data);
         });
         

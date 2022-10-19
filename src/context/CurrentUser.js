@@ -24,7 +24,7 @@ export const CurrentUserProvider = ({ children }) => {
       }
 
     } catch (error) {
-      console.log(error); // TODO: Remove before prod
+      // Implement error handling in future version
     }
   };
 

@@ -45,8 +45,6 @@ export const CreateTask = () => {
         // Gets all categories options
         await axios.get("category/categories/")
             .then((response) => {
-                console.log(response);
-
                 // "Convert" json to array
                 let responseAsArray = [];
                 for (let resp of response.data) {
@@ -55,15 +53,15 @@ export const CreateTask = () => {
 
                 setCategories(responseAsArray);
             })
-            .catch((e) => console.log(e));
+            .catch(
+                // Implement error handling in future version
+            );
     };
 
     const handleFamilyMembers = async () => {
         // Gets all family member you can assign your task to
         await axios.get("familymembers/members/")
             .then((response) => {
-                console.log(response);
-
                 // "Convert" json to array
                 let responseAsArray = [];
                 for (let resp of response.data) {
@@ -72,7 +70,9 @@ export const CreateTask = () => {
 
                 setFamilymember(responseAsArray);
             })
-            .catch((e) => console.log(e));
+            .catch(
+                // Implement error handling in future version
+            );
     };
 
     useEffect(() => {
@@ -89,7 +89,6 @@ export const CreateTask = () => {
                 }
             })
             .catch((e) => {
-                console.log(e);
                 setError(e.response?.data);
             });
     };

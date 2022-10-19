@@ -34,8 +34,6 @@ export const DisplayFamilyMemberTasks = () => {
     const handleFamilyMembersList = async () => {
       await axios.get("familymembers/members/")
         .then((response) => {
-          console.log(response);
-
           // "Convert" json to array
           let responseAsArray = [];
           for (let resp of response.data) {
@@ -43,7 +41,9 @@ export const DisplayFamilyMemberTasks = () => {
           }
           setFamilymembersList(responseAsArray);
         })
-        .catch((e) => console.log(e));
+        .catch(
+          // Implement error handling in future version
+        );
     };
     handleFamilyMembersList();
   }, []);
@@ -53,8 +53,6 @@ export const DisplayFamilyMemberTasks = () => {
       if (filter === "no_selected_value" && query === undefined) {
         await axios.get("taskboard/tasks")
           .then((response) => {
-            console.log(response);
-
             // "Convert" json to array
             let tasksAsArray = [];
             for (let resp of response.data) {
@@ -64,18 +62,16 @@ export const DisplayFamilyMemberTasks = () => {
             setTasks(tasksAsArray);
             setHasLoaded(true);
           })
-          .catch((e) => console.log(e));
-
+          .catch(
+            // Implement error handling in future version
+          );
       }
-
     };
 
     const fetchTasks = async () => {
       if (filter !== "no_selected_value" || query !== undefined) {
         await axios.get(`taskboard/tasks/?filter=${filter}&search=${query}&family_member_id=${currentFamilyMemberObj?.id}`)
           .then((response) => {
-            console.log(response);
-
             // "Convert" json to array
             let tasksAsArray = [];
             for (let resp of response.data) {
@@ -84,7 +80,9 @@ export const DisplayFamilyMemberTasks = () => {
             setTasks(tasksAsArray);
             setHasLoaded(true);
           })
-          .catch((e) => console.log(e));
+          .catch(
+            // Implement error handling in future version
+          );
       }
     };
 
@@ -125,7 +123,9 @@ export const DisplayFamilyMemberTasks = () => {
         setTasks(tasksAsArray);
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
       })
-      .catch((e) => console.log(e));
+      .catch(
+        // Implement error handling in future version
+      );
   };
 
   const handleTaskDone = async (e) => {
@@ -157,7 +157,9 @@ export const DisplayFamilyMemberTasks = () => {
 
         setFamilyMemberContext(JSON.stringify(currentFamilyMemberObj));
       })
-      .catch((e) => console.log(e));
+      .catch(
+        // Implement error handling in future version
+      );
   };
 
   const searchSection = (

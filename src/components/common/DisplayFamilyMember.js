@@ -26,7 +26,9 @@ export const DisplayFamilyMember = () => {
 
         setFamilymembers(responseAsArray);
       })
-      .catch((e));
+      .catch(
+        // Implement error handling in future version
+      );
   };
 
   useEffect(() => {
