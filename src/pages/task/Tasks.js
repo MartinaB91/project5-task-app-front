@@ -69,7 +69,7 @@ export const DisplayFamilyMemberTasks = () => {
 
     const fetchTasks = async () => {
       if (filter !== "no_selected_value" || query !== undefined) {
-        await axios.get(`taskboard/tasks/?filter=${filter}&search=${query}&family_member_id=${currentFamilyMemberObj.id}`)
+        await axios.get(`taskboard/tasks/?filter=${filter}&search=${query}&family_member_id=${currentFamilyMemberObj?.id}`)
           .then((response) => {
             console.log(response);
 
@@ -95,7 +95,7 @@ export const DisplayFamilyMemberTasks = () => {
       clearTimeout(timer);
     };
 
-  }, [query, filter, currentFamilyMemberObj.id]);
+  }, [query, filter, currentFamilyMemberObj?.id]);
 
   const handleAssign = async (e) => {
     e.preventDefault();
@@ -191,7 +191,7 @@ export const DisplayFamilyMemberTasks = () => {
   return (
     <>
       <Row> {searchSection}</Row>
-      { currentFamilyMemberObj?.id !== null ? (
+      { currentFamilyMemberObj !== null && currentFamilyMemberObj.id !== null ? (
         <>
           {hasLoaded ? (
             <>
@@ -234,7 +234,7 @@ export const DisplayFamilyMemberTasks = () => {
                                     <>
 
                                       {/* Warning, one is string one is int. Two equal sign comparsion should be safe. */}
-                                      {task.assigned == currentFamilyMemberObj.id && task.status == "Todo" ?
+                                      {task.assigned == currentFamilyMemberObj?.id && task.status == "Todo" ?
 
                                         <>
                                           <button onClick={handleAssign} value={task.id} className={styles.AssignButton} aria-label="unassign button"><Image roundedCircle src={family_member.family_member_img} className={styles.Image} aria-label="family member image unassigned" /></button>
@@ -258,14 +258,14 @@ export const DisplayFamilyMemberTasks = () => {
                     disabled. When btn is assigned you can mark the task as done */}
                                   {task.status === "Todo" ?
                                     <>
-                                      {task.assigned == null || task.assigned == "" || task.assigned !== currentFamilyMemberObj.id ?
+                                      {task.assigned == null || task.assigned == "" || task.assigned !== currentFamilyMemberObj?.id ?
                                         <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn" aria-label="done button disabled"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>
                                         :
                                         <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end btn" aria-label="done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMark} fa-2x btn`} /></Button>}
                                     </>
                                     : // Task is done 
                                     <>
-                                      {task.assigned === currentFamilyMemberObj.id ?
+                                      {task.assigned === currentFamilyMemberObj?.id ?
                                         <Button variant="link" onClick={handleTaskDone} value={task.id} className="text-end" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>
                                         :
                                         <Button disabled variant="link" onClick={handleTaskDone} value={task.id} className="text-end" aria-label="undo done button"><FontAwesomeIcon icon={faCircleCheck} size="lg" className={`${styles.checkMarkDone} fa-2x text-end btn`} /></Button>}

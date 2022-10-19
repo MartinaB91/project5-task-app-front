@@ -34,7 +34,7 @@ export const MyScoreBoard = (props) => {
             
         };
         handleMount();
-    }, [currentFamilyMemberObj.id]);
+    }, [currentFamilyMemberObj?.id]);
 
 
     const emptyFamilyMemberInfo = (
@@ -44,7 +44,7 @@ export const MyScoreBoard = (props) => {
         </Row>
     )
 
-    const familyMemberInfo = currentFamilyMemberObj.id == null || currentFamilyMemberObj.id === "" ? 
+    const familyMemberInfo = currentFamilyMemberObj?.id == null || currentFamilyMemberObj?.id === "" ? 
         emptyFamilyMemberInfo : 
             <Row className="d-md-block shadow-sm">
                 <h2 className={styles.ScoreBoardHeader}>My Scores</h2>

@@ -23,7 +23,7 @@ export const EditTask = () => {
         description: "",
         star_points: "",
         assigned: "",
-        creator: currentFamilyMemberObj.id,
+        creator: currentFamilyMemberObj?.id,
         task_id: id
     });
 

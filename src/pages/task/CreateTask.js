@@ -21,7 +21,7 @@ export const CreateTask = () => {
         description: "",
         star_points: "",
         assigned: "",
-        creator: currentFamilyMemberObj.id,
+        creator: currentFamilyMemberObj?.id,
     });
 
     const { title, category_name, end_date, description, star_points, assigned } = createTaskForm;
@@ -98,9 +98,9 @@ export const CreateTask = () => {
             <Row>
                 <Col xs={12} sm={10} md={6} lg={4} className={`${styles.FormWrapper} mx-auto text-start`}>
                     <h1 className={styles.Header}>Add Task</h1>
-                    {currentFamilyMemberObj?.id !== null ? (
+                    {currentFamilyMemberObj !== null && currentFamilyMemberObj.id !== null ? (
                         <>
-                            {currentFamilyMemberObj.role === 1 ?
+                            {currentFamilyMemberObj?.role === 1 ?
                                 <Form onSubmit={handleFormSubmit}>
 
                                     <Form.Group className="mb-3" controlId="title">
@@ -222,7 +222,7 @@ export const CreateTask = () => {
                             }
                         </>
                     ) : (
-                        <Alert className="text-center mt-4">Choose a family member before adding tasks</Alert>
+                        <Alert variant='warning' className="text-center mt-4">Choose a family member before adding tasks</Alert>
                     )}
                 </Col>
             </Row>
