@@ -280,7 +280,7 @@ The user experience has been improved by using react.
 ### Search Task 
 -  When the user enter text in the search field all tasks were the title or description matches the entered text will be shown.
 
-<img src="documentation/features/feature_search_section.jpg">
+<img src="documentation/features/feature_search_section.jpg" width="70%">
 
 ### Filter Task  
 - The tasks can be filtered in five different ways. Per default the tasks are filtered by “Todo” which means that only tasks that isn’t assigned or marked as done is shown. They are ordered by end date where the oldest tasks are displayed first. 
@@ -290,7 +290,7 @@ The user experience has been improved by using react.
 - “All” tasks, here you can find all tasks, tasks that needs to be done, ongoing tasks(assigned) and completed tasks. Like “Done” the newest tasks are on the top.  
 - If the filter category is empty following text will be displayed "Oops there is nothing there"
 
-<img src="documentation/features/feature_no_tasks.jpg">
+<img src="documentation/features/feature_no_tasks.jpg" width="70%">
 
 ## Design
 ### Color Scheme
