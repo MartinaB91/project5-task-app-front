@@ -189,7 +189,7 @@ The user experience has been improved by using react.
 ### Display Family Members 
 - In this component all the profile’s family members are displayed as an image and family member name.  
 
-<img src="documentation/features/feature_display_family_members.jpg" width="70%" height="50%">
+<img src="documentation/features/feature_display_family_members.jpg" width="70%">
 
 - If the profile doesn’t have any family members yet, the text “You haven’t added any family members yet. Create one below” will be displayed.  
 
@@ -232,6 +232,10 @@ The user experience has been improved by using react.
 - Closed tasks, shows how many tasks the member has marked as done.  
 
 <img src="documentation/features/feature_my_score_board.jpg">
+
+- If the user has not selected a family member family member score board will show a text "You haven't chosen a family member yet. Please Select one in the navbar"
+
+<img src="documentation/features/feature_no_chosen_member_tasks.jpg">
 
 ### Task 
 - Every task contains, ellipsis button, title, star points, end date, task description, assign-button, category and done-button.  
