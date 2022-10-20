@@ -52,7 +52,6 @@ During the development process, unit testing has been done to check if functiona
 |Tests for Epic [#24](https://github.com/MartinaB91/project5-task-app-front/issues/24) Create family scoreboard||
 | ----------- | ----------- |
 |**Test name** |**Test id:** |
-|Test: View open tasks, family scoreboard|[#82](Create family scoreboard) | 
 |Test: View Number of completed tasks Family, family scoreboard|[#83](https://github.com/MartinaB91/project5-task-app-front/issues/83) |
 |Test: View ongoing tasks, family scoreboard| [#84](https://github.com/MartinaB91/project5-task-app-front/issues/84)|
 |Test: View family leader(star), family scoreboard|[#85](https://github.com/MartinaB91/project5-task-app-front/issues/85)|
@@ -82,7 +81,7 @@ Test results [here](/testing/TEST_RECORDS.md)
 
 ### Responsiveness tests
 
-- [#45]https://github.com/MartinaB91/project5-task-app-front/issues/45
+- [#45] (https://github.com/MartinaB91/project5-task-app-front/issues/45)
 
 Test results [here](/testing/TEST_RECORDS.md)
 
