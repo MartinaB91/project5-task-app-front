@@ -83,6 +83,9 @@ On this page you can find documentation from the test process and find out the r
 |[#96](https://github.com/MartinaB91/project5-task-app-front/issues/96)|Pass|||
 |[#97](https://github.com/MartinaB91/project5-task-app-front/issues/97)|Pass|||
 
+**Comments:**
+During the final tests it was discovered that the user will get a 500 Internal server error if not using the page for a long time. For example if the user goes to the page "Add task" and then don't fill in the information and then later on start to fill in the information without refresing the page first they will get the error. This maybe could be solved by automatic trigger a refresh. 
+
 
 ### Responsiveness tests
 
@@ -195,5 +198,7 @@ On this page you can find documentation from the test process and find out the r
 |**Test id:**||**Bug id:**|**Comments**:|
 |[#100](https://github.com/MartinaB91/project5-task-app-front/issues/100)||[#99](https://github.com/MartinaB91/project5-task-app-front/issues/99)|Minor. Don't need to be fixed in this version|
 |||[#101](https://github.com/MartinaB91/project5-task-app-front/issues/101)|Minor.|
+
+
 
 
