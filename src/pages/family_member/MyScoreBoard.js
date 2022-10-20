@@ -17,7 +17,7 @@ export const MyScoreBoard = (props) => {
         <Row className="d-md-block justify-content-center">
             <Col className="text-center">
                 <Image src={RabbitFace} className={`${styles.RabbitFace} mt-3`} aria-label="default image rabbit face" />
-                <p className={`${styles.ScoreBoardText} text-center`}>You haven't choosen a family member yet. Please Select one in the navbar</p>
+                <p className={`${styles.ScoreBoardText} text-center`}>You haven't chosen a family member yet. Please Select one in the navbar</p>
             </Col>
         </Row>
     );
