@@ -5,16 +5,84 @@ On this page you can find documentation from the test process and find out the r
 
 
 ### Test cases
-|Test Record X | |||
+|Test Record 7 | |||
 |--------|------------------------------|-|-|
 |**Tester:**|Martina Björlin|||
-|**Date:**|XXX|||
-|**Enviroment:**| XXX |||
+|**Date:**|2022-10-19|||
+|**Enviroment:**| Production (Heroku) |||
 |**Test Object:**| Family Star app|||
-|**Version:**|XXX |||
-|**Testdata:**| XXX|||
+|**Version Front:**|ID 40644b17-8ca6-4c82-b24f-356293e34c9e |||
+|**Version Back:**|ID ee4846f5-a4cb-47e4-b630-3ca22006ca06 |||
+|**Testdata:**| Add during test case steps|||
 |**Test id:**| **Result:**|**Bug id:**|**Comments**:|
-|User story|Fail/Pass|If fail bug id|If fail category|
+|[#68](https://github.com/MartinaB91/project5-task-app-front/issues/68)|Pass|||
+|[#69](https://github.com/MartinaB91/project5-task-app-front/issues/69)|Pass|||||
+
+
+|Test Record 8 | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-10-19|||
+|**Enviroment:**| Production (Heroku) |||
+|**Test Object:**| Family Star app|||
+|**Version Front:**|ID 47146a44-6673-43c3-8677-f26041661dee |||
+|**Version Back:**|ID ee4846f5-a4cb-47e4-b630-3ca22006ca06 |||
+|**Testdata:**| Add during testing |||
+|**Test id:**| **Result:**|**Bug id:**|**Comments**:|
+|[#71](https://github.com/MartinaB91/project5-task-app-front/issues/71)|Pass|||
+|[#72](https://github.com/MartinaB91/project5-task-app-front/issues/72)|Pass|||
+|[#73](https://github.com/MartinaB91/project5-task-app-front/issues/73)|Pass|||
+|[#74](https://github.com/MartinaB91/project5-task-app-front/issues/74)|Pass|||
+|[#75](https://github.com/MartinaB91/project5-task-app-front/issues/75)|Pass|||
+|[#76](https://github.com/MartinaB91/project5-task-app-front/issues/76)|Pass|||
+|[#77](https://github.com/MartinaB91/project5-task-app-front/issues/77)|Pass|||
+|[#78](https://github.com/MartinaB91/project5-task-app-front/issues/78)|Pass|||
+|[#79](https://github.com/MartinaB91/project5-task-app-front/issues/79)|Pass|||
+|[#80](https://github.com/MartinaB91/project5-task-app-front/issues/80)|Pass|||
+|[#81](https://github.com/MartinaB91/project5-task-app-front/issues/81)|Pass|||
+|[#82](https://github.com/MartinaB91/project5-task-app-front/issues/82)|Pass|||
+|[#83](https://github.com/MartinaB91/project5-task-app-front/issues/83)|Pass|||
+|[#84](https://github.com/users/MartinaB91/projects/6/views/1)|Fail|See comment in README:"Design decision based on test results"||
+
+|Test Record 8 | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-10-20|||
+|**Enviroment:**| Production (Heroku) |||
+|**Test Object:**| Family Star app|||
+|**Version Front:**|ID 4f03c5ac-0acb-4b14-baaf-4e977c29a2d1 |||
+|**Version Back:**|ID 61360956-9803-4604-b53b-2eabdd3ba558 |||
+|**Testdata:**| Add during testing |||
+|**Test id:**| **Result:**|**Bug id:**|**Comments**:|
+|[#68](https://github.com/MartinaB91/project5-task-app-front/issues/68)|Pass|||
+|[#69](https://github.com/MartinaB91/project5-task-app-front/issues/69)|Pass|||
+|[#71](https://github.com/MartinaB91/project5-task-app-front/issues/71)|Pass|||
+|[#72](https://github.com/MartinaB91/project5-task-app-front/issues/72)|Pass|||
+|[#73](https://github.com/MartinaB91/project5-task-app-front/issues/73)|Pass|||
+|[#74](https://github.com/MartinaB91/project5-task-app-front/issues/74)|Pass|||
+|[#75](https://github.com/MartinaB91/project5-task-app-front/issues/75)|Pass|||
+|[#76](https://github.com/MartinaB91/project5-task-app-front/issues/76)|Pass|||
+|[#77](https://github.com/MartinaB91/project5-task-app-front/issues/77)|Pass|||
+|[#78](https://github.com/MartinaB91/project5-task-app-front/issues/78)|Pass|||
+|[#79](https://github.com/MartinaB91/project5-task-app-front/issues/79)|Pass|||
+|[#80](https://github.com/MartinaB91/project5-task-app-front/issues/80)|Pass|||
+|[#81](https://github.com/MartinaB91/project5-task-app-front/issues/81)|Pass|||
+|[#82](https://github.com/MartinaB91/project5-task-app-front/issues/82)|Pass|||
+|[#83](https://github.com/MartinaB91/project5-task-app-front/issues/83)|Pass|||
+|[#84](https://github.com/MartinaB91/project5-task-app-front/issues/84)|Pass|||
+|[#85](https://github.com/MartinaB91/project5-task-app-front/issues/85)|Pass|||
+|[#86](https://github.com/MartinaB91/project5-task-app-front/issues/86)|Pass|||
+|[#88](https://github.com/MartinaB91/project5-task-app-front/issues/88)|Pass|||
+|[#89](https://github.com/MartinaB91/project5-task-app-front/issues/89)|Pass|||
+|[#90](https://github.com/MartinaB91/project5-task-app-front/issues/90)|Pass|||
+|[#91](https://github.com/MartinaB91/project5-task-app-front/issues/91)|Pass|||
+|[#92](https://github.com/MartinaB91/project5-task-app-front/issues/92)|Pass|||
+|[#93](https://github.com/MartinaB91/project5-task-app-front/issues/93)|Pass|||
+|[#94](https://github.com/MartinaB91/project5-task-app-front/issues/94)|Pass|||
+|[#95](https://github.com/MartinaB91/project5-task-app-front/issues/95)|Pass|||
+|[#96](https://github.com/MartinaB91/project5-task-app-front/issues/96)|Pass|||
+|[#97](https://github.com/MartinaB91/project5-task-app-front/issues/97)|Pass|||
+
 
 ### Responsiveness tests
 
@@ -72,19 +140,7 @@ On this page you can find documentation from the test process and find out the r
 |>1400px|Pass|||
 |>1600px|Pass|||
 
-### Exploartory tests
-
-|Test Record X  | |||
-|--------|------------------------------|-|-|
-|**Tester:**|Martina Björlin|||
-|**Date:**|XXX|||
-|**Enviroment:**| XXX|||
-|**Test Object:**| Family Star app|||
-|**Version:**|XXX||||
-|**Goal:**|XXX||||
-|**Test id:**||**Bug id:**|**Comments**:|
-|User story||If bug, bug if|If bug, bug category|
-
+### Exploratory tests
 
 |Test Record 1  | |||
 |--------|------------------------------|-|-|
@@ -128,6 +184,16 @@ On this page you can find documentation from the test process and find out the r
 |/tasks/74/edit  |Fail|||
 |/tasks/74/Test title 22/delete  |Fail|||
 
-### Usability testing
+|Test Record 9  | |||
+|--------|------------------------------|-|-|
+|**Tester:**|Martina Björlin|||
+|**Date:**|2022-10-19|||
+|**Enviroment:**| Production (Heroku) |||
+|**Test Object:**| Family Star app|||
+|**Version:**|ID 176d2e33-bc66-4cf6-a67a-fa3ae131dea5||||
+|**Goal:**|Try to find unexpected behaviour on responsiveness||||
+|**Test id:**||**Bug id:**|**Comments**:|
+|[#100](https://github.com/MartinaB91/project5-task-app-front/issues/100)||[#99](https://github.com/MartinaB91/project5-task-app-front/issues/99)|Minor. Don't need to be fixed in this version|
+|||[#101](https://github.com/MartinaB91/project5-task-app-front/issues/101)|Minor.|
 
 
