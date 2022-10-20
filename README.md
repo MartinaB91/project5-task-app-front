@@ -72,7 +72,8 @@ The main reason for users to revisit the website is because the task managing is
     - [Known bugs](#known-bugs)
     - [Design decision based on test results](#design-decision-based-on-test-results)
 - [Deployment](#deployment)
-    -[Heroku deployment](#heroku-deployment)
+    - [Local deployment](#local-deployment)
+    - [Heroku deployment](#heroku-deployment)
 - [Credits](#credits)
 	- [Code](#code)
     - [Content and Media](#content-and-media)
@@ -350,7 +351,8 @@ Because it's late in the project and that users that have tested/seen the applic
 ### Local deployment
 1. Log into your GitHub account and locate this project.
 2. Create your local workspace and clone the project to your folder by using CLI command “git clone https://github.com/MartinaB91/project5-task-app-front.git”.
-3. Start app by CLI command "npm start".
+3. Create a "Procfile" and add following text "web: npm run start".
+4. Start app by CLI command "npm start".
 
 ### Heroku deployment
 This project is deployed to Heroku. Below the steps taken to deploy is described.
